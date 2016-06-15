@@ -2,7 +2,6 @@ _minted-*
 *.aux
 *.log
 *.out
-*.pdf
 *.gz
 *.toc
 *.nav
