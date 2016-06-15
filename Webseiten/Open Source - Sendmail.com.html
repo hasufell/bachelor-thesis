@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0039)http://www.sendmail.com/sm/open_source/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<link rel="SHORTCUT ICON" href="http://www.sendmail.com/favicon.ico">
+
+<title>Open Source - Sendmail.com</title>
+
+
+
+<!-- sitewide values -->
+<meta name="ROBOTS" content="ALL">
+<meta name="revisit-after" content="10 days">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="Content-Language" content="en-US"> 
+<meta name="CLASSIFICATION" content="Email Security and Solutions">
+<meta http-equiv="author" content="Max Perez - webmaster@sendmail.com">
+<meta name="copyright" content="Copyright © 2000-2016 Sendmail®, Inc. All Rights Reserved.">
+<meta name="Abstract" content="Sendmail® - Modernizing Enterprise Messaging Infrastructures">
+
+<meta name="description" content="Sendmail partners include a host of leading companies who share a proven track record of developing and delivering complimentary email products to provide added-value to the installed Sendmail environment">
+<meta name="keywords" content="sendmail, sentrion, cisco ironport, email, messaging, send mail, email compliance, email security, email security software, email infrastructure, corporate email compliance, messaging security, enterprise messaging, mimecast, proofpoint, exchange, microsoft exchange, exchange on-line, office 365 exchange, email management, cloud email, hybrid cloud email, email archiving, email continuity, email encryption, email applications, sendmail.org">
+
+<link rel="stylesheet" type="text/css" href="./Open Source - Sendmail.com_files/head.css">
+<link rel="stylesheet" type="text/css" href="./Open Source - Sendmail.com_files/main.css">
+<!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/sm/inc/css/main_ie.css">
+<![endif]-->
+<script async="" src="./Open Source - Sendmail.com_files/"></script><script type="text/javascript" async="" src="./Open Source - Sendmail.com_files/"></script><script src="./Open Source - Sendmail.com_files/swfobject.js" type="text/javascript"></script>
+
+
+<script src="./Open Source - Sendmail.com_files/slide_layer.js" type="text/javascript"></script>
+    
+<!-- ImageReady Preload Script (Nav Top - OFF.v.1.5.psd) -->
+<script type="text/javascript">
+
+    //Preload page
+    function loadImages() {
+        if (document.getElementById) {  // DOM3 = IE5, NS6
+            document.getElementById('hidepage').style.visibility = 'hidden';
+        } else {
+            if (document.layers) {  // Netscape 4
+                document.hidepage.visibility = 'hidden';
+            } else {  // IE 4
+                document.all.hidepage.style.visibility = 'hidden';
+            }
+        }
+    }
+    //End preload page - check body for additional
+
+    //Homepage revision - toggle func
+    function setVisibility(objectID,state) {
+        var object = getElementById(objectID);
+        object.style.visibility = state;
+    }
+
+    function toggleVisibility(objectID) {
+        var object = getElementById(objectID);
+        state = object.style.visibility;
+        if (state == 'hidden')
+            object.style.visibility = 'visible';
+        else {
+            if (state == 'visible')
+                object.style.visibility = 'hidden';
+            else object.style.visibility = 'visible';
+        }
+    }
+    //End Homepage revision - toggle func
+
+
+    //Drop down adjust
+
+    function setClassName(objId, className) {
+        if (navigator.appName != "Netscape") {
+        } else {
+            //FF:
+            document.getElementById(objId).className = className;
+        }
+    }
+
+    function setClassName2(objId, className) {
+        /*FF adjust for non_red_tabs */
+        if (navigator.appName != "Netscape") {
+        } else {
+            //FF:
+            document.getElementById(objId).className = className;
+        }
+    }
+
+    //End drop down adjust
+
+    <!--
+    function newImage(arg) {
+        if (document.images) {
+            rslt = new Image();
+            rslt.src = arg;
+            return rslt;
+        }
+    }
+
+
+    function changeImages() {
+        if (document.images && (preloadFlag == true)) {
+            for (var i=0; i<changeImages.arguments.length; i+=2) {
+                document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+            }
+        }
+    }
+
+
+    function changeImagesArray(array) {
+        if (document.images && (preloadFlag == true)) {
+            for (var i=0; i<array.length; i+=2) {
+                document[array[i]].src = array[i+1];
+            }
+        }
+    }
+    function changeImages() {
+        changeImagesArray(changeImages.arguments);
+    }
+
+    var selected;
+    function toggleImages() {
+        for (var i=0; i<toggleImages.arguments.length; i+=2) {
+            if (selected == toggleImages.arguments[i])      changeImagesArray(toggleImages.arguments[i+1]);
+        }
+    }
+
+
+    var preloadFlag = false;
+    function preloadImages() {
+        if (document.images) {
+
+            //HP toggle display:
+            // corrected path below. -max 08-2009
+            //toggle_dkim_sel = newImage("images/toggle-dkim_sel.gif");
+            toggle_dkim_sel = newImage("/sm/img/home_page/toggle_display/toggle-dkim_sel.gif");
+            var customerSuccess = document.getElementById("customerSuccess");
+            var newsTab = document.getElementById("newsTab");;
+            // customerSuccess = newImage("/sm/img/home_page/toggle_display/tab_customer_success_on.png");
+            // newsTab = newImage("/sm/img/home_page/toggle_display/tab_news_off.png");
+
+            // commented out obsolite image file. need to clean this up -max 08-2009
+            //Homepage Nav:
+            /* repaced these images with text and css mar 2010 will remove when change is confirmed
+                sentrion_appliances = newImage("/sm/img/nav_top/blue/sentrion_on.png");
+                solutions = newImage("/sm/img/nav_top/blue/solutions_on.png");
+                services = newImage("/sm/img/nav_top/blue/services_on.png");
+                partners = newImage("/sm/img/nav_top/blue/partners_on.png");
+                support = newImage("/sm/img/nav_top/blue/support_on.png");
+                company = newImage("/sm/img/nav_top/blue/company_on.png");
+                resources = newImage("/sm/img/nav_top/blue/resources_on.png");
+                contact_us = newImage("/sm/img/nav_top/blue/contact_us_on.png");
+             */
+            // home = newImage("/sm/img/nav_top_home/home-over.png");
+
+            //HP Rotator Banners
+            // this is obsolete, and had the wrong path anyway. these image maps have been replaced with text/css
+            // i corrected the path, but commenting out until i figure out what is going on with this -max 08-2009
+            //HP Image Map
+            // btm_r_content_box_v_1_2_01_contact_usa_over = newImage("/sm/img/home_page/btm_r_content/revised/btm_r_content_box.v.1.2_01-.gif");
+            // btm_r_content_box_v_1_2_01_blog_over = newImage("/sm/img/images/btm_r_content/revised/btm_r_content_box.v.1.2_-03.gif");
+            // btm_r_content_box_v_1_2_01_resources_over = newImage("/sm/img/home_page/btm_r_content/revised/btm_r_content_box.v.1.2_-04.gif");
+            // btm_r_content_box_v_1_2_01_chalktalks_over = newImage("/sm/img/home_page/btm_r_content/revised/btm_r_content_box.v.1.2_-05.gif");
+
+            preloadFlag = true;
+        }
+    }
+
+
+    //homepage toggle display:
+    function doNewstoggle() {
+        document.getElementById("customer_stories").style.visibility = 'hidden';
+        document.getElementById("news").style.visibility = 'visible';
+    }
+
+    function doCustomertoggle() {
+        document.getElementById("customer_stories").style.visibility = 'visible';
+        document.getElementById("news").style.visibility = 'hidden';
+    }
+
+    // Define PreLoad Image List - clear the search box
+    function doClearField(theText) {
+        if (theText.value == theText.defaultValue) {
+            theText.value = "";
+        }
+    }
+
+    // -->
+</script>
+<!-- End Preload Script -->
+
+
+<script language="JavaScript" type="text/javascript">
+
+    var objNavMenu = null;
+    var prevObjNavMenu = null;
+    var prevObjDropMenu = null;
+    var numDropMenu = 9;
+    ////// link styles
+    var bgLinkColor = ''; /* #cccccc */
+    var bgLinkHover = ''/* #ffffff */
+    var bgLinkActive = '' /* #000000 */
+    var linkColor = '' /* #000000 */
+    var linkHover = '' /* #000000 */
+    var linkActive = '' /* #ffffff */
+
+    var isIE = null;
+    if (navigator.appName.indexOf('Microsoft Internet Explorer') != -1) isIE=1;
+    var isSafari = null;
+    isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+    var isOpera = null;
+    isOpera = navigator.appName.indexOf('Opera') > -1;
+    var isChrome = null;
+    isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    if ( isChrome ) {
+        isSafari = null;
+    }
+
+    function initDropMenu () {
+        document.onclick = hideDropMenu;
+        for (i=1; i<=numDropMenu; i++) {
+            menuName = 'dropMenu' + i;
+            navName = 'navMenu' + i;
+            objDropMenu = document.getElementById(menuName);
+            objNavMenu = document.getElementById(navName);
+            objDropMenu.style.visibility = 'hidden';
+            objNavMenu.onmouseover =  menuHover;
+            objNavMenu.onmouseout = menuOut;
+            objNavMenu.onclick = showDropMenu;
+        }
+        objNavMenu = null;
+        return;
+    }
+
+    function  menuHover(e) {
+        document.onclick = null;
+        hoverObjNavMenu = document.getElementById(this.id);
+        if (hoverObjNavMenu != objNavMenu) {
+            hoverObjNavMenu.style.color = linkHover;
+            hoverObjNavMenu.style.backgroundColor = bgLinkHover;
+        }
+    }
+
+    function menuOut (e) {
+        document.onclick = hideDropMenu;
+        outObjNavMenu = document.getElementById(this.id);
+        if (outObjNavMenu != objNavMenu) {
+            outObjNavMenu.style.color = linkColor;
+            outObjNavMenu.style.backgroundColor = bgLinkColor;
+        }
+    }
+
+    function showDropMenu(e) {
+        menuName = 'drop' + this.id.substring(3,this.id.length);
+        objDropMenu = document.getElementById(menuName);
+        if (prevObjDropMenu == objDropMenu) {
+            hideDropMenu();
+            return;
+        }
+        if (prevObjDropMenu != null) hideDropMenu();
+        objNavMenu = document.getElementById(this.id);
+
+        if ((prevObjNavMenu != objNavMenu ) || (prevObjDropMenu == null)) {
+            objNavMenu.style.color = linkActive;
+            objNavMenu.style.backgroundColor = bgLinkActive;
+        }
+
+        if (objDropMenu) {
+            xPos = objNavMenu.offsetParent.offsetLeft + objNavMenu.offsetLeft;
+            yPos = objNavMenu.offsetParent.offsetTop + objNavMenu.offsetParent.offsetHeight;
+            if (isIE) {
+                yPos -= 1;
+                xPos -= 14;
+            } else if ( isChrome || isSafari ) {
+                yPos -= 9;
+                xPos -= 9;
+            } else if ( isOpera ) {
+                yPos -= 9;
+                xPos -= 9;
+            } else {
+                yPos -= 9;
+                xPos -= 11;
+            }
+
+            objDropMenu.style.left = xPos + 'px';
+            objDropMenu.style.top = yPos + 'px';
+            objDropMenu.style.visibility = 'visible';
+            prevObjDropMenu = objDropMenu;
+            prevObjNavMenu = objNavMenu;
+        }
+    }
+
+    function hideDropMenu() {
+        document.onclick = null;
+        if (prevObjDropMenu) {
+            prevObjDropMenu.style.visibility = 'hidden';
+            prevObjDropMenu = null;
+            prevObjNavMenu.style.color = linkColor;
+            prevObjNavMenu.style.backgroundColor = bgLinkColor;
+        }
+        objNavMenu = null;
+    }
+
+
+    //Sentrion Pop Over divs:
+
+    function setVisibility(objectID,state) {
+        var object = document.getElementById(objectID);
+        object.style.visibility = state;
+    }
+
+    function toggleVisibility(objectID) {
+        var object = document.getElementById(objectID);
+        state = object.style.visibility;
+        if (state == 'hidden')
+            object.style.visibility = 'visible';
+        else {
+            if (state == 'visible')
+                object.style.visibility = 'hidden';
+            else object.style.visibility = 'visible';
+        }
+    }
+
+
+
+    // How many pixels from the top to display the navBar
+    var topOffset = 1;
+    window.defaultStatus ="";
+    // window.onload = doLoad;
+
+    //End Sentrion Pop Over Divs
+</script>
+
+<script src="./Open Source - Sendmail.com_files/munchkin.js" type="text/javascript"></script>
+<script>
+  mktoMunchkin("860-YTI-520");
+  var mmf_return = "mmf return is: ";
+  mktoMunchkinFunction('function',
+                       { key: 'value', key2: 'value'},
+                       'hash');
+</script>
+
+<script async="true" type="text/javascript" src="./Open Source - Sendmail.com_files/"></script><link id="vTabsCoreCSS" rel="stylesheet" href="chrome-extension://okpnlgbgcfchbicbhjmmhldhkbkfilce/themes/styles.css"></head>
+
+<body onload="preloadImages();initDropMenu();loadImages();">
+<div style="background-image:url(&#39;/sm/img/top/bg.top.gif&#39;); background-repeat:repeat-x;">&nbsp;</div>
+
+<div id="top_nav_div" align="center">
+    <div id="dropMenu1" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/sentrion_appliances/" class="menuLink">Sentrion Overview</a>
+    <a href="http://www.sendmail.com/sm/sentrion_appliances/sentrion_mpe/" class="menuLink">Sentrion Platform</a>
+    <a href="http://www.sendmail.com/sm/sentrion_appliances/sentrion_mimecast/" class="menuLink">Sentrion Mimecast</a>
+    <a href="http://www.sendmail.com/sm/sentrion_appliances/sentrion_hard_appliances/" class="menuLink">Hard Appliances</a>
+    <a href="http://www.sendmail.com/sm/sentrion_appliances/sentrion_mpv/" class="menuLink">Virtual Appliances</a>
+    </div>
+
+<div id="dropMenu8" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/apps/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/apps/compliance/" class="menuLink">Policy Compliance</a>
+    <a href="http://www.sendmail.com/sm/apps/secure/" class="menuLink">Secure Content</a>
+    <a href="http://www.sendmail.com/sm/apps/filtering/" class="menuLink">Filtering</a>
+    <a href="http://www.sendmail.com/sm/apps/cloud/" class="menuLink">Cloud</a>
+    <a href="http://www.sendmail.com/sm/apps/partner/" class="menuLink">Partner</a>
+    <a href="http://www.sendmail.com/sm/apps/enterprise/" class="menuLink">Enterprise</a>
+    <a href="http://www.sendmail.com/sm/apps/community/" class="menuLink">Community</a>
+    </div>
+
+<div id="dropMenu2" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/open_source/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/open_source/download/" class="menuLink">Download</a>
+    <a href="http://www.sendmail.com/sm/open_source/security/" class="menuLink">Security</a>
+    <a href="http://www.sendmail.com/sm/open_source/support/" class="menuLink">Support</a>
+    <a href="http://www.sendmail.com/sm/open_source/news/" class="menuLink">News</a>
+    <a href="http://www.sendmail.com/sm/open_source/docs/" class="menuLink">Documentation</a>
+    <a href="http://www.sendmail.com/sm/open_source/tips/" class="menuLink">Tips &amp; Tricks</a>
+    <a href="http://www.sendmail.com/sm/open_source/dkim/" class="menuLink">DKIM</a>
+    <a href="http://www.sendmail.com/sm/open_source/support/support_faq/" class="menuLink">FAQ</a>
+    <a href="http://www.sendmail.com/sm/open_source/misc/" class="menuLink">Misc</a>
+    <a href="http://www.sendmail.com/sm/open_source/milter/" class="menuLink">Milters</a>
+</div>
+
+<div id="dropMenu3" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/services/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/services/directory_synchronization/" class="menuLink">Directory Synchronization</a>
+    <a href="http://www.sendmail.com/sm/services/email_architecture_review/" class="menuLink">Messaging Architecture Review</a>
+    <a href="http://www.sendmail.com/sm/services/high_volume_mail/" class="menuLink">High Volume Mail</a>
+    <a href="http://www.sendmail.com/sm/services/hipaa_policy/" class="menuLink">HIPAA Policy</a>
+    <a href="http://www.sendmail.com/sm/services/quickstart_implementation/" class="menuLink">QUICKStart Implementation</a>
+    <a href="http://www.sendmail.com/sm/services/performance_tuning/" class="menuLink">Performance Tuning</a>
+        <a href="http://www.sendmail.com/sm/services/training/" class="menuLink">Training Services Overview</a>
+    <a href="http://www.sendmail.com/sm/services/training/message_routing/" class="menuLink">Message Routing and<br>Configuration</a>
+    <a href="http://www.sendmail.com/sm/services/training/policy_management/" class="menuLink">Message Policy<br>Management</a>
+    <a href="http://www.sendmail.com/sm/services/training/connection_control/" class="menuLink">Connection Control /<br>Attack Prevention</a>
+    <a href="http://www.sendmail.com/sm/services/training/directory_configuration/" class="menuLink">Directory Configuration<br>and Management</a>
+    </div>
+
+<div id="dropMenu4" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/partners/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/partners/milter_partners/" class="menuLink">Milter Community</a>
+    <a href="http://www.sendmail.com/sm/partners/industries/" class="menuLink">Industry Organizations</a>
+    <a href="http://www.sendmail.com/sm/partners/system_resellers/" class="menuLink">System Integrators &amp; Distributors</a>
+</div>
+
+<div id="dropMenu5" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/support/" class="menuLink">Overview</a>
+        <a href="http://www.sendmail.com/sm/support/silver/" class="menuLink">Silver Support</a>
+    <a href="http://www.sendmail.com/sm/support/gold/" class="menuLink">Gold Support</a>
+    <a href="http://www.sendmail.com/sm/support/platinum/" class="menuLink">Platinum Support</a>
+    <a href="http://www.sendmail.com/sm/security/" class="menuLink">Security Advisories</a>
+    <a href="http://www.sendmail.com/sm/support/contact_support/" class="menuLink">Contact Support</a>
+</div>
+
+<div id="dropMenu6" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/company/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/company/customers/" class="menuLink">Customers</a>
+        <a href="http://www.sendmail.com/sm/company/press/" class="menuLink">Press Room</a>
+    <a href="http://www.proofpoint.com/about-us/leadership-board-directors.php" class="menuLink">Board of Directors</a>
+    <a href="http://www.proofpoint.com/about-us/leadership-management-team.php" class="menuLink">Leadership<br> Management Team</a>
+    <a href="http://www.proofpoint.com/about-us/careers/index.php" class="menuLink">Join Our Team</a>
+    <a href="http://www.sendmail.com/sm/contact/" class="menuLink">Contact Us</a>
+</div>
+
+<div id="dropMenu7" class="menuDrop" style="visibility: hidden;">
+    <a href="http://www.sendmail.com/sm/resources/" class="menuLink">Overview</a>
+    <a href="http://www.sendmail.com/sm/resources/ask_the_experts/" class="menuLink">Ask the Experts</a>
+    <a href="http://www.sendmail.com/sm/services/training/chalk/" class="menuLink">Security Chalk Talks</a>
+    <a href="http://www.sendmail.com/sm/resources/collateral/" class="menuLink">Collateral</a>
+    <a href="http://www.sendmail.com/sm/resources/product_reviews/" class="menuLink">Product Reviews &amp; Awards</a>
+    <a href="http://www.sendmail.com/sm/resources/tools/ip_reputation/" class="menuLink">IP Reputation Check</a>
+    <a href="http://www.sendmail.com/sm/resources/tools/commtouch_malware/" class="menuLink">Real-time Outbreak Monitor</a>
+    </div>
+
+
+</div> <!-- end nav top div -->
+    <form action="http://www.sendmail.com/sm/company/search/" id="cse-search-box">
+                <div id="page_body" align="center">
+            <!--  Nav Top Table -->
+            
+
+            <div id="wrap" style="background-color:#E6EEF5;border:none;">
+
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height:97px;">
+                                                    <!-- <tr style="background-image:url('/sm/img/top/bg.top.gif'); background-repeat:repeat-x;"> -->
+                        <tbody><tr style="background-image:none;">
+                            <td rowspan="2" style="vertical-align:top;text-align:left;width:300px;height:97px;">
+                                <a href="http://www.sendmail.com/"><img src="./Open Source - Sendmail.com_files/proofpoint-sendmail-logo_240.png" alt="Sendmail Inc." style="margin:36px 0px 0px 30px;" border="0"></a></td>
+                            
+                            <td rowspan="2" style="vertical-align:top;text-align:right;width:380px;height:97px;">
+                                				<p style="margin:2.4em 0 0 0;color:#98002e;font-weight:bold;margin-top:3.9em;">
+				</p>
+                            </td>
+
+                            <td style="vertical-align:top;text-align:right;width:280px;padding:30px 15px 0px 0px;">
+                                                                <span id="home_and_login"><a href="http://www.sendmail.com/">HOME</a> | <a href="https://www.sendmail.com/cfusion/CFIDE/smi/support/">CUSTOMER LOGIN</a></span>
+                                <!-- displays popup notification of office move 
+                                <span id='home_and_login'><a href='/'>HOME</a> | <a href=" https://www.sendmail.com/cfusion/CFIDE/smi/support/ " onclick="alert('Due to a data center move the weekend of October 19, customers needing to reach Sendmail Support for Production Down emergencies should call: \n\n1-877-473-6362 (option 1 then 4-digit PIN) or +1 510 594-5402 (option 2, option 1, then 4-digit PIN).\n\nThank you. We will be back on line by 8AM Monday morning, 21 October.')">CUSTOMER LOGIN</a></span>
+                                -->
+                            </td>
+
+                            <td style="vertical-align:top;text-align:left;width:280px;padding:25px 0px 0px 0px;">
+                                                                <div>
+                                                                            <input type="hidden" name="cx" value="007539067038001830779:wavt_pkwan4">
+                                    <input type="hidden" name="cof" value="FORID:10">
+                                    <input type="hidden" name="ie" value="UTF-8">
+                                    <input type="text" name="q" size="20" style="float: left; background: url(&quot;https://www.google.com/cse/static/en/google_custom_search_watermark.gif&quot;) 0% 50% no-repeat rgb(255, 255, 255);">
+                                    <input name="sa" type="image" src="./Open Source - Sendmail.com_files/btn_search_trans.png" value="submit" style="vertical-align:middle;margin-top:0px;_margin-top:-2px;margin-left:2px;_margin-left:0;">
+                                    <!-- 
+                                    <input name="sa"  type="image" src="/images/102506.hp/btn.search.gif" value="submit" style="vertical-align:middle;">
+                                    <input type="submit" name="sa" value="Search" />
+                                     -->
+                                </div>
+                                <script type="text/javascript" src="./Open Source - Sendmail.com_files/brand"></script>
+                                                                </td>
+
+                        </tr>
+<tr>
+    <td colspan="2">
+
+            
+    </td>
+</tr>
+                    </tbody></table>
+
+                    <div class="clear"></div>
+</div> <!-- end head wrap div -->
+
+                    <div id="menuBar" class="menuBar" style="width:100%;">
+
+    <div id="tabs" style="width:984px;">
+                <div id="navMenu1" class="menuHeader" style="width:206px;">
+            <a href="http://www.sendmail.com/sm/open_source/#" onclick="setClassName2(&#39;dropMenu1&#39;,&#39;menuDrop&#39;);" class="menuHeader">Sentrion Message Processors</a>
+        </div>
+                    <div id="navMenu8" class="menuHeader" style="width:190px;">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu8&#39;,&#39;menuDrop&#39;);">Sentrion Application Store</a>
+        </div>
+                    <div id="navMenu3" class="menuHeader">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu3&#39;,&#39;menuDrop&#39;);">Services</a>
+        </div>
+                    <div id="navMenu4" class="menuHeader">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu4&#39;,&#39;menuDrop&#39;);">Partners</a>
+        </div>
+                    <div id="navMenu5" class="menuHeader">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu5&#39;,&#39;menuDrop&#39;);">Support</a>
+        </div>
+                    <div id="navMenu6" class="menuHeader">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu6&#39;,&#39;menuDrop&#39;);">Company</a>
+        </div>
+                    <div id="navMenu7" class="menuHeader" style="width:105px;">
+            <a href="http://www.sendmail.com/sm/open_source/#" class="menuHeader" onclick="setClassName2(&#39;dropMenu7&#39;,&#39;menuDrop&#39;);">Resources</a>
+        </div>
+                    <div id="navMenu2" class="menuHeader_red_105" style="width:105px;">
+            <a href="http://www.sendmail.com/sm/open_source/#" onclick="setClassName(&#39;dropMenu9&#39;,&#39;menuDrop&#39;);" class="menuHeader_red">Open Source</a>
+        </div>
+                </div> <!--  end tabs div -->
+</div> <!--  end menu bar div -->
+
+<div class="clear"></div>
+<div id="nav_top_btm_line"></div> 
+
+
+&nbsp;
+<div id="wrap">
+
+                    <div class="clear"></div>
+                                            <!-- End Nav Top Table -->
+
+                                        <div class="content_display_outer_full">
+
+                         
+
+<link rel="stylesheet" type="text/css" href="./Open Source - Sendmail.com_files/open_source.css"><div class="content_display_full" id="content_display_full">
+
+<style type="text/css">
+    #open_source_portal table { width:99%;border-collapse:collapse;border:1px solid #CAD3DD;border-top:0;border-bottom:18px solid #CAD3DD;margin-top:0;padding-top:0;background-color:#CAD3DD; background-color:#fff; }
+    #open_source_portal th { text-align:center;padding:.5em; }
+    #open_source_portal td { text-align:left;vertical-align: top;padding:1.5em; }
+    #open_source_hiring a { color:#fff; }
+    #open_source_hiring a:hover { color:#98002e; }
+    #table_open_source td { width:50%; }
+    #table_boxes table { border:none;width:100%;}
+    #table_boxes th { width:33%;padding:1em 0 1em 4.9em;_padding:0 0 1em 0em; }
+    #table_boxes th a { text-align:center;margin-top:0.0em;margin-bottom:0;color:#fff;font-size:16px;font-weight:bold; }
+    #table_boxes th a:hover { color:#98002e; }
+</style>
+
+
+<div style="float:left;border:0px solid red;width:40em;">
+    <h3 class="page_headline">Welcome to the Sendmail Community</h3>
+    <div class="indent_40">
+        <h4 class="page_subhead">For customers, prospective customers, partners, developers, and open source users</h4>
+    </div>
+</div>
+
+<div id="open_source_hiring" style="float:right;margin-right:3em;margin-top:1.2em;margin-bottom:2em;">
+    <a href="http://www.sendmail.com/sm/open_source/community_letter/"><img src="./Open Source - Sendmail.com_files/letter-bt.jpg" style="border:0;"></a>
+    </div>
+
+<div id="open_source_portal" style="width:73.5em;clear:both;">
+    <b class="b1h"></b><b class="b2h"></b><b class="b3h"></b><b class="b4h"></b>
+    <div class="headh">
+        &nbsp;     </div>
+    <div class="contenth"> 
+        <table id="table_open_source" style="border-bottom:none; width:auto; border-left:none;border-right:none;">
+            <tbody><tr>
+                <td colspan="2">
+                    <h1 style="color:#00549e;margin:0;padding:0;">Finding the right solution</h1>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-right:1px solid #AAA;border-right:none;"><h2 style="color:#98002e;margin:0;padding:0;">Open Source</h2>
+                    <ul>
+                        <li>Open Source Gurus</li>
+                        <li>Scholars who need a platform for experimentation</li>
+                        <li>Small, simple environments that do not require complex deployment architecture</li>
+                        <li>Companies that can afford and/or feel comfortable being outside Industry best practices</li>
+                    </ul>
+                    <div style="display:block;margin-left:4em;">
+                        <div style="width:49%;_width:40%;float:left;">
+                            <a href="http://www.sendmail.com/sm/open_source/download/">Download</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/download/licensing">Licensing</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/security">Security</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/docs/">Documentation</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/tips/">Tips and Tricks</a>
+                        </div>
+                        <div style="width:40%;float:left;">
+                            <a href="http://www.sendmail.com/sm/open_source/dkim/">DKIM</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/support/">Support &amp; FAQ</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/news/">News</a><br>
+                            <a href="http://www.sendmail.com/sm/open_source/support/contact/">Contact</a>
+                                                    </div>
+                    </div>
+                </td>
+                <td><h2 style="color:#98002e;margin:0;padding:0;">Sentrion Enterprise Platform</h2>
+                    <ul>
+                        <li>Large, complex environments</li>
+                        <li>Environments that require enterprise-scalability</li>
+                        <li>Users who want comprehensive enterprise-grade support offerings</li>
+                        <li>Environments that require strict access control</li>
+                        <li>Environments planning to modernize or execute a cloud migration</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+        </tr></tbody></table>
+        <table id="table_boxes" style="width:100%;_width:950px;border-collapse:collapse;border:none;">
+            <tbody><tr><th>
+                
+        <style type="text/css">
+
+.b1560792013, .b2560792013, .b3560792013, .b4560792013{font-size:1px; overflow:hidden; display:block;}
+.b1560792013 {height:1px; background:#666; margin:0 5px;}
+.b2560792013 {height:1px; background:#00549e; border-right:2px solid #666; border-left:2px solid #666; margin:0 3px;}
+.b3560792013 {height:1px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 2px;}
+.b4560792013 {height:2px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 1px;}
+.contentb560792013 {background: #00549e; border-right:1px solid #666; border-left:1px solid #666;}
+.contentb560792013 div {margin-left: 0px;}
+        </style>
+        
+            <div style="width:150px">
+	            <b class="b1560792013"></b><b class="b2560792013"></b><b class="b3560792013"></b><b class="b4560792013"></b>
+	            <div class="contentb560792013">
+		            <div style="padding:0px">
+        <a href="mailto:sales@sendmail.com">Contact Sales</a>
+		            </div>
+	            </div>
+	            <b class="b4560792013"></b><b class="b3560792013"></b><b class="b2560792013"></b><b class="b1560792013"></b>
+            </div>
+                    </th>
+            <th>
+                
+        <style type="text/css">
+
+.b11377916940, .b21377916940, .b31377916940, .b41377916940{font-size:1px; overflow:hidden; display:block;}
+.b11377916940 {height:1px; background:#666; margin:0 5px;}
+.b21377916940 {height:1px; background:#00549e; border-right:2px solid #666; border-left:2px solid #666; margin:0 3px;}
+.b31377916940 {height:1px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 2px;}
+.b41377916940 {height:2px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 1px;}
+.contentb1377916940 {background: #00549e; border-right:1px solid #666; border-left:1px solid #666;}
+.contentb1377916940 div {margin-left: 0px;}
+        </style>
+        
+            <div style="width:150px">
+	            <b class="b11377916940"></b><b class="b21377916940"></b><b class="b31377916940"></b><b class="b41377916940"></b>
+	            <div class="contentb1377916940">
+		            <div style="padding:0px">
+        <a href="http://www.sendmail.com/sm/company/architects/">Our Experts</a>
+		            </div>
+	            </div>
+	            <b class="b41377916940"></b><b class="b31377916940"></b><b class="b21377916940"></b><b class="b11377916940"></b>
+            </div>
+                    </th>
+            <th>
+                
+        <style type="text/css">
+
+.b143710436, .b243710436, .b343710436, .b443710436{font-size:1px; overflow:hidden; display:block;}
+.b143710436 {height:1px; background:#666; margin:0 5px;}
+.b243710436 {height:1px; background:#00549e; border-right:2px solid #666; border-left:2px solid #666; margin:0 3px;}
+.b343710436 {height:1px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 2px;}
+.b443710436 {height:2px; background:#00549e; border-right:1px solid #666; border-left:1px solid #666; margin:0 1px;}
+.contentb43710436 {background: #00549e; border-right:1px solid #666; border-left:1px solid #666;}
+.contentb43710436 div {margin-left: 0px;}
+        </style>
+        
+            <div style="width:150px">
+	            <b class="b143710436"></b><b class="b243710436"></b><b class="b343710436"></b><b class="b443710436"></b>
+	            <div class="contentb43710436">
+		            <div style="padding:0px">
+        <a href="http://www.sendmail.com/sm/sentrion_appliances/">Sentrion</a>
+		            </div>
+	            </div>
+	            <b class="b443710436"></b><b class="b343710436"></b><b class="b243710436"></b><b class="b143710436"></b>
+            </div>
+                    </th>
+        </tr></tbody></table>
+
+
+        <table id="table_open_source" style="border-collapse:collapse;width:auto;border-top:none; border-left:none; border-right:none;">
+            <tbody><tr>
+                <td>
+                    <p style="font-weight:bold;">Sendmail, Inc. Commitment</p>
+                    <p>
+                        Sendmail, Inc. offers a commercial-grade platform that is vendor-agnostic and allows diverse, best-of-breed applications to be managed in a unified framework, the Sentrion Email Integration Platform. Sentrion helps reduce the time spent managing and integrating point solutions and vastly enhances functionality and performance. 
+                    </p>
+                    <p>
+                        While the Sentrion platform is specifically designed with large, complex environments in mind, we make a subset of that solution available as an open source offering. For over 25 years we have championed the belief that everyone should have access to the sophisticated tools and technologies required to run a more secure and efficient email environment. This includes companies that are too small to afford, the scholars who need a platform to experiment on, and the students and heroes who have not yet convinced their companies to modernize their infrastructure with an industry recognized platform like Sentrion.
+                    </p>
+                    <p>
+                        Sentrion is not for everyone, but if you are using open source for a large complex environment and need an enterprise platform that will enable your messaging roadmap for years to come (virtualization, consolidation, cloud migration, etc.), <a href="http://www.sendmail.com/pdfs/sentrion_appliances/sentrion_ds_sentrion_20130121.pdf">download</a> the product specs or request a <a href="mailto:demo-request@sendmail.com">demo</a> to see if Sentrion is right for you. 
+                    </p>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+    <b class="b4bh"></b><b class="b3bh"></b><b class="b2bh"></b><b class="b1h"></b>
+</div>
+
+
+</div> <!-- end content display -->
+	        <div class="clear"></div>
+
+	        <br><br>
+	        </div> <!-- content display outer -->
+    
+	        <div class="clear"></div>
+    
+	        </div><!--  Ending wrap div -->
+    
+            <div id="footer">
+	            <a href="http://www.sendmail.com/sm/company/site_map/">Site Map</a> | <a href="http://www.sendmail.com/sm/company/privacy/">Privacy Policy</a> | <a href="http://www.sendmail.com/sm/company/terms/">Terms &amp; Conditions</a> | Copyright © 1998-2016 Sendmail, Inc. All Rights Reserved.
+	        </div>
+    
+	        <div class="clear"></div>
+    
+        </div><input name="siteurl" type="hidden" value="www.sendmail.com/sm/open_source/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form><!-- end page div -->
+    
+	    <!-- Begin Salesforce Tracking Code, Place immediately before closing </BODY> tag -->
+<!-- End Salesforce Tracking Code, Place immediately before closing </BODY> tag -->
+
+
+<!-- start google universal analytics tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-668253-1', 'sendmail.com');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- end google tracking code -->
+
+
+
+	<!-- LeadFormix started 3/2/2011-->
+	<a href="http://www.leadformix.com/" title="Marketing Automation" onclick="window.open(this.href);return(false);">
+	<script language="javascript">
+	var pkBaseURL = (("https:" == document.location.protocol) ? "https://vlog.leadformix.com/" : "http://vlog.leadformix.com/");
+	document.write(unescape("%3Cscript src='" + pkBaseURL + "bf/bf.js' type='text/javascript'%3E%3C/script%3E"));
+	</script><script src="./Open Source - Sendmail.com_files/" type="text/javascript"></script>
+	<script type="text/javascript">
+	var pkBaseURL = (("https:" == document.location.protocol) ? "https://vlog.leadformix.com/" : "http://vlog.leadformix.com/");
+	<!--
+	bf_action_name = '';
+	bf_idsite = 6603;
+	bf_url = pkBaseURL+'bf/bf.php';
+	setTimeout('bf_log("' + bf_action_name+'",'+ bf_idsite+',"'+ bf_url +'")',0);
+	//-->
+	</script></a>
+	<!-- LeadFormix -->
+    <script type="text/javascript">
+    adroll_adv_id = "LJNZ3OKDDNBKLAYMM36FOR";
+    adroll_pix_id = "2GGLUWLR4NFVTIGBIMSA65";
+    (function () {
+    var oldonload = window.onload;
+    window.onload = function(){
+       __adroll_loaded=true;
+       var scr = document.createElement("script");
+       var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+       scr.setAttribute('async', 'true');
+       scr.type = "text/javascript";
+       scr.src = host + "/j/roundtrip.js";
+       ((document.getElementsByTagName('head') || [null])[0] ||
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+       if(oldonload){oldonload()}};
+    }());
+    </script>
+    
+    
+        <div id="foot_stripe">&nbsp;</div>
+    
+
+
+<v-div id="vTabsPanelExtension" class="v-tabs-panel v-tabs-panel-hide classic-v-theme-StG1Q1" style="width: 245px; zoom: 80%;"><v-div class="v-tabs-resizer"></v-div><v-div class="v-tabs-menu"><v-div class="v-tabs-menu-btn v-tabs-menu-newpage" title="New tab"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-tabs v-tabs-menu-btn-active" title="Tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-recent" title="Recent tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-keeper" title="Tab keeper"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks" title="Bookmarks manager"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks-tree" title="Bookmarks browser"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-notes" title="Notes"></v-div><div class="v-tabs-menu-btn v-tabs-menu-settings" title="Settings"></div><div class="v-tabs-menu-btn v-tabs-menu-minimizer" title="Hide panel"></div><div class="v-tabs-menu-btn v-tabs-menu-blank"></div></v-div><v-div class="v-tabs-list-wrap"><v-div class="v-tabs-list" style="width: 185px;"><v-div class="v-tabs-item" data-tab-id="608" data-tab-index="0" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVQ4T2NkoBAwUqifAWTAISC2JdOgQyADPgAxP5kGfAAZwAfExUBcCMS8RBr0GaiuD4SRw0AUKFADxOlAzI7DoB9A8RlA3AbEr0FqQAbsAOJmID4K1aQEpKuAOB6IWaBif4D0QqjGe1AxayBdCzLgPxSDDCoD4itQBWpAugPKrgDSt6BsHSDdBcQeIAfADIC5+B+QsQ6IG5EMgsmBNNYDcRAQM8EE0Q2Aif8FMpYAMchrIDWgsIkBYmaYAkIGoKvDycflAvoacARoHShKyAFHqJKZyLEZrgcAW5MmRP1u4vIAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="608"></v-div><v-div class="v-tabs-text" title="Microsoft Word - DIME.docx">Microsoft Word - DIME.docx</v-div></v-div><v-div class="v-tabs-item" data-tab-id="616" data-tab-index="1" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="616"></v-div><v-div class="v-tabs-text" title="Email-Statistics-Report-2013-2017-Executive-Summary.pdf">Email-Statistics-Report-2013-2017-Executive-Summar</v-div></v-div><v-div class="v-tabs-item v-tabs-item-active" data-tab-id="618" data-tab-index="2" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVQ4T2O0r9v230FbgoEcwMjIyMBYv/Lc/4YwQ3L0MzSuvoDbgA9ffzIsOHCHwUBBiMFBWxKrBTgNOHD1OcOErdcYJiSYMSiI8TJ8fvCU4eaCTQxsArwM6gl+DOwCfGADsRqwYP9thgPXXjAsyLYFK9oZUADWyKsgxXB5wlIGYQN1Br8Dc7EbALN5Q5kzWMHPD58Yfn34DNQsDeY/O3CaYbNjCkP6/4uYBoD8bFC6ieFCtx+DADc72Nn3N+xn0CuIQfH/TEZ97AY0rDoP1MjGUOCtDdZwpmE6g25BNNy/IDGQoZscUhiiH2xHdUGAqRxDQPc+hgfTQjFCe8OphwwBZvJg8TUGYQy+B+ZgBiIoIQV07WP4sDAaxQCQq2Bp5FhBFwMPMCCRvQSPhQQHFQbF7DUM9aEGYA2wwGwA8g0UhYFRuBEYgGcYHBc0o1iAEo0Ttl5laFh1ARwOIAMLvLXAgXlpwhKGLw+eMVhNKMPwHt6UCFJ9f8M+sCbFACcMzSABvAa8uXADrEnEQAOrZoIG4NSFJAF2ATCk/xOjGJsaUOwBAJAg2BQtJrBlAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="618"></v-div><v-div class="v-tabs-text" title="Open Source - Sendmail.com">Open Source - Sendmail.com</v-div></v-div><v-div class="v-tabs-item" data-tab-id="620" data-tab-index="3" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDElEQVQ4T5VTsRHCMAyUF6CmoDOhoKZiAC4TsAPHHQWjcJclmCAVJRUTAOnZwrFky5EV5y6kcmzr/6V/Gyh8detc++7opN5YwHW1tPA5GqOvZxup8LJO+9XdObsAaOtQjP8SaAC4fR2h+2ICigUlhYB3IwkBSGZdXATzANxSUCDYEyPvSQmiNVZhqKdfF4YlZc8AQBWG2f8BkC4lAB7grBaEukkAZEH7mn3uvWRHsgFADkh5d34617xCsLDvw8oDx/80RPY1c0WHAEmE/DBEtlEdci357V3KZiRsH+LJl7T8naU5ZBEeBUmGqSQ77slZZFFOcn2ocH3aAlwfUbYC1K9y9Dxp0jGdsnbqOfe9WLRfLl8SegAAAABJRU5ErkJggg=="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="620"></v-div><v-div class="v-tabs-text" title="The GNU Privacy Guard">The GNU Privacy Guard</v-div></v-div><v-div class="v-tabs-item" data-tab-id="624" data-tab-index="4" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="624"></v-div><v-div class="v-tabs-text" title="Tor Browser">Tor Browser</v-div></v-div><v-div class="v-tabs-item" data-tab-id="626" data-tab-index="5" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="626"></v-div><v-div class="v-tabs-text" title="torbirdy – Tor Bug Tracker &amp; Wiki">torbirdy – Tor Bug Tracker &amp; Wiki</v-div></v-div><v-div class="v-tabs-item" data-tab-id="628" data-tab-index="6" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="628"></v-div><v-div class="v-tabs-text" title="Haraka SMTP Email Server">Haraka SMTP Email Server</v-div></v-div></v-div></v-div></v-div><v-div id="vTabsDropZone_gom4wkE&amp;1AfkprN" class="v-tabs-drop-zone classic-v-theme-StG1Q1"></v-div><v-div id="vTabsPanelActivator_FZBceIksle" class="v-tabs-panel-activator classic-v-theme-StG1Q1 v-tabs-panel-activator-type-half" style="zoom: 80%;"></v-div></body></html>

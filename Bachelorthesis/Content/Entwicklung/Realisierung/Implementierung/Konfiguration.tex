@@ -1,0 +1,30 @@
+Nun müssen die Implementierungen noch adäquat in das Plugin-System integriert werden. Haraka Plugins werden erst ausgeführt, wenn sie in der Konfigurationsdatei \verb#config/plugins# in der korrekten Reihenfolge aufgelistet sind. Ebenso müssen einige weitere Anpassungen gemacht werden, damit ein Testlauf möglich wird. Beispielsweise muss der \verb#get_mx# Hook überschrieben werden, da hier nur lokale Systeme ohne MX-Record vorliegen. Die Implementierung ist ebenso im Anhang einsehbar. % toref
+
+Die Konfigurationsdatei für die Hops ist folgendermaßen definiert:
+\begin{mail}{Hop-Konfiguration}{hopconfig}
+my_mx
+access
+dnsbl
+helo.checks
+open_relay
+data.headers
+enable_parse_body
+my_transaction
+max_unrecognized_commands   
+\end{mail}
+
+Die Konfigurationsdatei für das SMTP-Gateway ist folgendermaßen definiert:
+\begin{mail}{MSA-Konfiguration}{msaconfig}
+my_mx
+access
+dnsbl
+helo.checks
+mail_from.is_resolvable
+open_relay
+data.headers
+enable_parse_body
+create_myst_mail
+max_unrecognized_commands    
+\end{mail}
+
+Der Hauptunterschied liegt lediglich in Zeile 8 und Zeile 9, welche die Plugins beschreiben, die über \verb#data_post# das Transaktions-Objekt verändern.

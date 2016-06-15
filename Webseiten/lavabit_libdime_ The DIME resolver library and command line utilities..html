@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://github.com/lavabit/libdime -->
+<html lang="en" class=" is-copy-enabled is-u2f-enabled"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <link crossorigin="anonymous" href="./lavabit_libdime_ The DIME resolver library and command line utilities._files/frameworks-2d635ad8ba43f32e07aa1fd713d692eff9a2e78dcd63daa5b580c38b36df3fdb.css" integrity="sha256-LWNa2LpD8y4Hqh/XE9aS7/mi543NY9qltYDDizbfP9s=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="./lavabit_libdime_ The DIME resolver library and command line utilities._files/github-ac57e85eb92ed03f8984683a81109bed474faec913166035b2ff3a0f62206618.css" integrity="sha256-rFfoXrku0D+JhGg6gRCb7UdPrskTFmA1sv86D2IgZhg=" media="all" rel="stylesheet">
+    
+    
+    
+
+    <link as="script" href="./lavabit_libdime_ The DIME resolver library and command line utilities._files/frameworks-e677f2022a5d36e8f5ad35d0fcb01f83f1cdb613eda0449f533197693bcc6bda.js" rel="preload">
+    <link as="script" href="./lavabit_libdime_ The DIME resolver library and command line utilities._files/github-b18da7a1736acf63af955a0d6afbdd11f6506fc3f5a9113a4d5b875fe8d4eadd.js" rel="preload">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>lavabit/libdime: The DIME resolver library and command line utilities.</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="https://github.com/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://github.com/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://github.com/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://github.com/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://github.com/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars1.githubusercontent.com/u/1934147?v=3&amp;s=400" name="twitter:image:src"><meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="lavabit/libdime" name="twitter:title"><meta content="libdime - The DIME resolver library and command line utilities." name="twitter:description">
+      <meta content="https://avatars1.githubusercontent.com/u/1934147?v=3&amp;s=400" property="og:image"><meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="lavabit/libdime" property="og:title"><meta content="https://github.com/lavabit/libdime" property="og:url"><meta content="libdime - The DIME resolver library and command line utilities." property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <style type="text/css">:root .container > .infoBoxList > .shareInfoBox
+{display:none !important;}</style><link rel="web-socket" href="wss://live.github.com/_sockets/MTI0MTg0NTo0ZDI4OWMxYTI4ZWVmOTZmM2NlMTVhOWRkNDAxZTlhYzpiMTg0M2ZjZTY0OGZkMmViN2FlYmY5ODJkNjdkNTliMzVjZjY2YWI3YTgxMmRkZGJjOTdkODllMWFiYTM2ZGI5--4051e867c1feadfcea7f2f5a6fd55242d37c25b1">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="25C9D616:2C0F:14E096E:56E6EF3F" name="octolytics-dimension-request_id"><meta content="1241845" name="octolytics-actor-id"><meta content="hasufell" name="octolytics-actor-login"><meta content="078e9f4867d22cddcccf0b39413a537a5611ec87094f9cb00cdc285b4627dbd8" name="octolytics-actor-hash">
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location">
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="hasufell">
+
+        <meta name="expected-hostname" content="github.com">
+      <meta name="js-proxy-site-detection-payload" content="NGY0MzY1YTMxNzdiMGNlYTE5MWY4N2MwMGY2NjEzNDQ1MzdhNTJhM2FmMTAxZDYyMzU1NTZhMTExMzgxOGY1Y3x7InJlbW90ZV9hZGRyZXNzIjoiMzcuMjAxLjIxNC4yMiIsInJlcXVlc3RfaWQiOiIyNUM5RDYxNjoyQzBGOjE0RTA5NkU6NTZFNkVGM0YifQ==">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="92ff398f35743b85c4d88e9f068658fbaed18799" name="form-nonce">
+
+    <meta http-equiv="x-pjax-version" content="8d4d721e87d2fbc28bf9d144820cbe54">
+    
+
+      
+  <meta name="description" content="libdime - The DIME resolver library and command line utilities.">
+  <meta name="go-import" content="github.com/lavabit/libdime git https://github.com/lavabit/libdime.git">
+
+  <meta content="1934147" name="octolytics-dimension-user_id"><meta content="lavabit" name="octolytics-dimension-user_login"><meta content="28369696" name="octolytics-dimension-repository_id"><meta content="lavabit/libdime" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="28369696" name="octolytics-dimension-repository_network_root_id"><meta content="lavabit/libdime" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/lavabit/libdime/commits/develop.atom" rel="alternate" title="Recent Commits to libdime:develop" type="application/atom+xml">
+
+
+      <link rel="canonical" href="https://github.com/lavabit/libdime" data-pjax-transient="">
+  <link id="vTabsCoreCSS" rel="stylesheet" href="chrome-extension://okpnlgbgcfchbicbhjmmhldhkbkfilce/themes/styles.css"></head>
+
+
+  <body class="logged_in   env-production linux vis-public">
+    <a href="https://github.com/lavabit/libdime#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+      <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a>
+
+
+      <div class="site-search repo-scope js-site-search" role="search">
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/lavabit/libdime/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/lavabit/libdime/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+  </label>
+</form>
+      </div>
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="https://github.com/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="https://github.com/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+    
+    <a href="https://github.com/notifications" aria-label="You have unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s js-socket-channel js-notification-indicator" data-channel="notification-changed-v2:1241845" data-ga-click="Header, go to notifications, icon:unread" data-hotkey="g n">
+        <span class="mail-status unread"></span>
+        <svg aria-hidden="true" class="octicon octicon-bell" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 12v1H0v-1l0.73-0.58c0.77-0.77 0.81-2.55 1.19-4.42 0.77-3.77 4.08-5 4.08-5 0-0.55 0.45-1 1-1s1 0.45 1 1c0 0 3.39 1.23 4.16 5 0.38 1.88 0.42 3.66 1.19 4.42l0.66 0.58z m-7 4c1.11 0 2-0.89 2-2H5c0 1.11 0.89 2 2 2z"></path></svg>
+</a>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="https://github.com/new" aria-label="Create new…" data-ga-click="Header, create new, icon:add">
+      <svg aria-hidden="true" class="octicon octicon-plus left" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+
+  <a class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="lavabit/libdime">This repository</span>
+  </div>
+    <a class="dropdown-item" href="https://github.com/lavabit/libdime/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="https://github.com/hasufell" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@hasufell" class="avatar" height="20" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/1241845" width="20">
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu  dropdown-menu-sw">
+        <div class=" dropdown-header header-nav-current-user css-truncate">
+            Signed in as <strong class="css-truncate-target">hasufell</strong>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="https://github.com/hasufell" data-ga-click="Header, go to profile, text:your profile">
+            Your profile
+          </a>
+        <a class="dropdown-item" href="https://github.com/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+          <a class="dropdown-item" href="https://github.com/explore" data-ga-click="Header, go to explore, text:explore">
+            Explore
+          </a>
+          <a class="dropdown-item" href="https://github.com/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+            Settings
+          </a>
+
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/logout" class="logout-form" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="oVvQYlrrEWeaJK3YVPAWt4wzu2mmubhct9eDS1Wcci7JtHlKPCpBOl4Sr4Wsh+H+Tl0fjdI77gVrYZX1kiekow=="></div>
+            <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+              Sign out
+            </button>
+</form>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="">
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="0WgTSe2Zmo3bPdAGbOCKN1j0uap4yK0RNhwDgSTOKzzDQrlfWUgm8PXX8g5TwBheXY6Menc8itCDhb72ONSn4A=="></div>      <input id="repository_id" name="repository_id" type="hidden" value="28369696">
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="https://github.com/lavabit/libdime/subscription" class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true" data-ga-click="Repository, click Watch settings, action:files#disambiguate">
+            <span class="js-select-button">
+              <svg aria-hidden="true" class="octicon octicon-eye" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count" href="https://github.com/lavabit/libdime/watchers">
+            30
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included">
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed">
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore">
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8 2.81v10.38c0 0.67-0.81 1-1.28 0.53L3 10H1c-0.55 0-1-0.45-1-1V7c0-0.55 0.45-1 1-1h2l3.72-3.72c0.47-0.47 1.28-0.14 1.28 0.53z m7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06 1.97 1.97-1.97 1.97 1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06-1.97-1.97 1.97-1.97z"></path></svg>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/lavabit/libdime/unstar" class="js-toggler-form starred" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="/DKQnbZ9AJ1WvaE+TZ0VPEGTSOkPSULXPgzKvD8vjW3AZvYjTGILcKg/yyrAbV8/FqBlSiXZL3bLuHK+PQ6CJg=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar lavabit/libdime" data-ga-click="Repository, click unstar button, action:files#disambiguate; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/lavabit/libdime/stargazers">
+          132
+        </a>
+</form>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/lavabit/libdime/star" class="js-toggler-form unstarred" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="OaVrYmgc20EoXFqiesu56m0eYi8fFNanMFb2OrYsPNGBmaVDbnUcAPnYw2VwOFxV5fkrgir7ah6BTPwEYq+H+Q=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this repository" title="Star lavabit/libdime" data-ga-click="Repository, click star button, action:files#disambiguate; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/lavabit/libdime/stargazers">
+          132
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <a href="https://github.com/lavabit/libdime#fork-destination-box" class="btn btn-sm btn-with-count" title="Fork your own copy of lavabit/libdime to your account" aria-label="Fork your own copy of lavabit/libdime to your account" rel="facebox" data-ga-click="Repository, show fork modal, action:files#disambiguate; text:Fork">
+              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" role="img" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1c-1.11 0-2 0.89-2 2 0 0.73 0.41 1.38 1 1.72v1.28L5 8 3 6v-1.28c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v1.78l3 3v1.78c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V9.5l3-3V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2zM2 4.2c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3 10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3-10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+            Fork
+          </a>
+
+          <div id="fork-destination-box" style="display: none;">
+            <h2 class="facebox-header" data-facebox-id="facebox-header">Where should we fork this repository?</h2>
+            <include-fragment src="" class="js-fork-select-fragment fork-select-fragment" data-url="/lavabit/libdime/fork?fragment=1">
+              <img alt="Loading" height="64" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-128.gif" width="64">
+            </include-fragment>
+          </div>
+
+    <a href="https://github.com/lavabit/libdime/network" class="social-count">
+      15
+    </a>
+  </li>
+</ul>
+
+    <h1 class="entry-title public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9h-1v-1h1v1z m0-3h-1v1h1v-1z m0-2h-1v1h1v-1z m0-2h-1v1h1v-1z m8-1v12c0 0.55-0.45 1-1 1H6v2l-1.5-1.5-1.5 1.5V14H1c-0.55 0-1-0.45-1-1V1C0 0.45 0.45 0 1 0h10c0.55 0 1 0.45 1 1z m-1 10H1v2h2v-1h3v1h5V11z m0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a href="https://github.com/lavabit" class="url fn" rel="author">lavabit</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="https://github.com/lavabit/libdime" data-pjax="#js-repo-pjax-container">libdime</a></strong>
+
+  <span class="page-context-loader">
+    <img alt="" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+  </span>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="https://github.com/lavabit/libdime" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /lavabit/libdime" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3l-1.5 1.5 3.5 3.5L8 11.5l1.5 1.5 4.5-5L9.5 3zM4.5 3L0 8l4.5 5 1.5-1.5L2.5 8l3.5-3.5L4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="https://github.com/lavabit/libdime/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /lavabit/libdime/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8s2.56-5.7 5.7-5.7m0-1.3C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7S10.86 1 7 1z m1 3H6v5h2V4z m0 6H6v2h2V10z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">10</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="https://github.com/lavabit/libdime/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /lavabit/libdime/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28c0-1.73 0-6.28 0-6.28-0.03-0.78-0.34-1.47-0.94-2.06s-1.28-0.91-2.06-0.94c0 0-1.02 0-1 0V0L4 3l3 3V4h1c0.27 0.02 0.48 0.11 0.69 0.31s0.3 0.42 0.31 0.69v6.28c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72z m-1 2.92c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2zM4 3c0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72 0 1.55 0 5.56 0 6.56-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V4.72c0.59-0.34 1-0.98 1-1.72z m-0.8 10c0 0.66-0.55 1.2-1.2 1.2s-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2z m-1.2-8.8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="https://github.com/lavabit/libdime/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /lavabit/libdime/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M2 5h4v1H2v-1z m0 3h4v-1H2v1z m0 2h4v-1H2v1z m11-5H9v1h4v-1z m0 2H9v1h4v-1z m0 2H9v1h4v-1z m2-6v9c0 0.55-0.45 1-1 1H8.5l-1 1-1-1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h5.5l1 1 1-1h5.5c0.55 0 1 0.45 1 1z m-8 0.5l-0.5-0.5H1v9h6V3.5z m7-0.5H8.5l-0.5 0.5v8.5h6V3z"></path></svg>
+      Wiki
+</a>
+  <a href="https://github.com/lavabit/libdime/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /lavabit/libdime/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0V10h3.6L4.5 8.2l0.9 5.4L9 8.5l1.6 1.5H14V8H11.5z"></path></svg>
+    Pulse
+</a>
+  <a href="https://github.com/lavabit/libdime/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /lavabit/libdime/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15z m-11-1H3V8h2v5z m4 0H7V3h2v10z m4 0H11V6h2v7z"></path></svg>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+<div class="repository-meta js-details-container">
+  <span class="repository-meta-content">
+        <span itemprop="about"> The DIME resolver library and command line utilities.</span>
+  </span>
+
+</div>
+
+
+  <div class="overall-summary overall-summary-bottomless">
+    <div class="stats-switcher-viewport js-stats-switcher-viewport">
+      <div class="stats-switcher-wrapper">
+      <ul class="numbers-summary">
+        <li class="commits">
+          <a data-pjax="" href="https://github.com/lavabit/libdime/commits/develop">
+              <svg aria-hidden="true" class="octicon octicon-history" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M8 13H6V6h5v2H8v5zM7 1c-2.19 0-4.13 1.02-5.41 2.59L0 2v4h4l-1.5-1.5c1.05-1.33 2.67-2.2 4.5-2.2 3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8c0-0.34 0.03-0.67 0.09-1H0.08c-0.05 0.33-0.08 0.66-0.08 1 0 3.86 3.14 7 7 7s7-3.14 7-7S10.86 1 7 1z"></path></svg>
+              <span class="num text-emphasized">
+                524
+              </span>
+              commits
+          </a>
+        </li>
+        <li>
+          <a data-pjax="" href="https://github.com/lavabit/libdime/branches">
+            <svg aria-hidden="true" class="octicon octicon-git-branch" height="16" role="img" version="1.1" viewBox="0 0 10 16" width="10"><path d="M10 5c0-1.11-0.89-2-2-2s-2 0.89-2 2c0 0.73 0.41 1.38 1 1.72v0.3c-0.02 0.52-0.23 0.98-0.63 1.38s-0.86 0.61-1.38 0.63c-0.83 0.02-1.48 0.16-2 0.45V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v6.56C0.41 11.63 0 12.27 0 13c0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.53-0.2-1-0.53-1.36 0.09-0.06 0.48-0.41 0.59-0.47 0.25-0.11 0.56-0.17 0.94-0.17 1.05-0.05 1.95-0.45 2.75-1.25s1.2-1.98 1.25-3.02h-0.02c0.61-0.36 1.02-1 1.02-1.73zM2 1.8c0.66 0 1.2 0.55 1.2 1.2s-0.55 1.2-1.2 1.2-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2z m0 12.41c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m6-8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+            <span class="num text-emphasized">
+              6
+            </span>
+            branches
+          </a>
+        </li>
+
+        <li>
+          <a data-pjax="" href="https://github.com/lavabit/libdime/releases">
+            <svg aria-hidden="true" class="octicon octicon-tag" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M6.73 2.73c-0.47-0.47-1.11-0.73-1.77-0.73H2.5C1.13 2 0 3.13 0 4.5v2.47c0 0.66 0.27 1.3 0.73 1.77l6.06 6.06c0.39 0.39 1.02 0.39 1.41 0l4.59-4.59c0.39-0.39 0.39-1.02 0-1.41L6.73 2.73zM1.38 8.09c-0.31-0.3-0.47-0.7-0.47-1.13V4.5c0-0.88 0.72-1.59 1.59-1.59h2.47c0.42 0 0.83 0.16 1.13 0.47l6.14 6.13-4.73 4.73L1.38 8.09z m0.63-4.09h2v2H2V4z"></path></svg>
+            <span class="num text-emphasized">
+              0
+            </span>
+            releases
+          </a>
+        </li>
+
+        <li>
+            <a href="https://github.com/lavabit/libdime/graphs/contributors">
+    <span class="num text-emphasized">
+      6
+    </span>
+    contributors
+</a>
+        </li>
+      </ul>
+
+        <div class="repository-lang-stats">
+          <ol class="repository-lang-stats-numbers">
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=c" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#555555;"></span>
+                  <span class="lang">C</span>
+                  <span class="percent">64.5%</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=cpp" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#f34b7d;"></span>
+                  <span class="lang">C++</span>
+                  <span class="percent">31.1%</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=python" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#3572A5;"></span>
+                  <span class="lang">Python</span>
+                  <span class="percent">3.6%</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=cmake" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#ccc;"></span>
+                  <span class="lang">CMake</span>
+                  <span class="percent">0.3%</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=bash" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#89e051;"></span>
+                  <span class="lang">Shell</span>
+                  <span class="percent">0.2%</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lavabit/libdime/search?l=makefile" data-ga-click="Repository, language stats search click, location:repo overview">
+                  <span class="color-block language-color" style="background-color:#427819;"></span>
+                  <span class="lang">Makefile</span>
+                  <span class="percent">0.1%</span>
+                </a>
+            </li>
+            <li>
+                <span class="other">
+                  <span class="color-block language-color" style="background-color:#ededed;"></span>
+                  <span class="lang">Other</span>
+                  <span class="percent">0.2%</span>
+                </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+      <span class="language-color" aria-label="C 64.5%" style="width:64.5%; background-color:#555555;" itemprop="programmingLanguage">C</span>
+      <span class="language-color" aria-label="C++ 31.1%" style="width:31.1%; background-color:#f34b7d;" itemprop="programmingLanguage">C++</span>
+      <span class="language-color" aria-label="Python 3.6%" style="width:3.6%; background-color:#3572A5;" itemprop="programmingLanguage">Python</span>
+      <span class="language-color" aria-label="CMake 0.3%" style="width:0.3%; background-color:#ccc;" itemprop="programmingLanguage">CMake</span>
+      <span class="language-color" aria-label="Shell 0.2%" style="width:0.2%; background-color:#89e051;" itemprop="programmingLanguage">Shell</span>
+      <span class="language-color" aria-label="Makefile 0.1%" style="width:0.1%; background-color:#427819;" itemprop="programmingLanguage">Makefile</span>
+      <span class="language-color" aria-label="Other 0.2%" style="width:0.2%; background-color:#ededed;" itemprop="programmingLanguage">Other</span>
+    </div>
+
+    
+
+  <div class="file-navigation in-mid-page">
+  <div class="right">
+    <div class="btn-group">
+      
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/lavabit/libdime/new/develop" class="button_to" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="Pq1vaLHo+HhglK4hqHC/C1SewyqZi3c129QLKPBb73T3knbtN/29b9P1As2Zd892Wc9yayTaO18qNQdnoU6UFg=="></div>
+    <button class="btn btn-sm" type="submit" data-disable-with="Creating file…">
+        New file
+    </button>
+</form>
+
+        <a href="https://github.com/lavabit/libdime/upload" class="btn btn-sm">
+          Upload files
+        </a>
+
+      <a href="https://github.com/lavabit/libdime/find/develop" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+    </div>
+      <div class="file-navigation-options" data-multiple="">
+
+        <div class="file-navigation-option">
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="92ff398f35743b85c4d88e9f068658fbaed18799" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="8g8nA5ymEQablL5DBlxH6MYodYXP4sF3cg6oF0RFnTNrGXDI+92pk+FPN3AuhUmgGal6mYvhSGWXYCMJTSLVdw=="></div>
+            <input type="hidden" name="protocol_type" value="clone">
+
+            <div class="select-menu js-menu-container js-select-menu">
+              <div class="input-group js-select-button js-zeroclipboard-container">
+                <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone SSH, location:repo overview">
+    SSH
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="git@github.com:lavabit/libdime.git" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M2 12h4v1H2v-1z m5-6H2v1h5v-1z m2 3V7L6 10l3 3V11h5V9H9z m-4.5-1H2v1h2.5v-1zM2 11h2.5v-1H2v1z m9 1h1v2c-0.02 0.28-0.11 0.52-0.3 0.7s-0.42 0.28-0.7 0.3H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3C4 0.89 4.89 0 6 0s2 0.89 2 2h3c0.55 0 1 0.45 1 1v5h-1V5H1v9h10V12zM2 4h8c0-0.55-0.45-1-1-1h-1c-0.55 0-1-0.45-1-1s-0.45-1-1-1-1 0.45-1 1-0.45 1-1 1h-1c-0.55 0-1 0.45-1 1z"></path></svg></button>
+</div>
+
+              </div>
+
+              <div class="select-menu-modal-holder">
+                <div class="select-menu-modal js-menu-content" aria-hidden="true">
+                  <div class="select-menu-header">
+                    <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+                    <span class="select-menu-title">Choose a clone URL</span>
+                  </div>
+
+                  <div class="select-menu-list js-navigation-container" role="menu">
+                      <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                        <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                        <div class="select-menu-item-text">
+                          <input type="radio" name="protocol_selector" value="http">
+                          <span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+                            <span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+                          <span class="js-select-button-text hidden-select-button-text">
+                            <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/lavabit/libdime.git" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M2 12h4v1H2v-1z m5-6H2v1h5v-1z m2 3V7L6 10l3 3V11h5V9H9z m-4.5-1H2v1h2.5v-1zM2 11h2.5v-1H2v1z m9 1h1v2c-0.02 0.28-0.11 0.52-0.3 0.7s-0.42 0.28-0.7 0.3H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3C4 0.89 4.89 0 6 0s2 0.89 2 2h3c0.55 0 1 0.45 1 1v5h-1V5H1v9h10V12zM2 4h8c0-0.55-0.45-1-1-1h-1c-0.55 0-1-0.45-1-1s-0.45-1-1-1-1 0.45-1 1-0.45 1-1 1h-1c-0.55 0-1 0.45-1 1z"></path></svg></button>
+</div>
+
+                          </span>
+                        </div>
+                      </div>
+                      <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                        <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                        <div class="select-menu-item-text">
+                          <input type="radio" name="protocol_selector" value="ssh" checked="">
+                          <span class="select-menu-item-heading">
+                            SSH
+                            
+                          </span>
+                            <span class="description">
+                              Clone with an SSH key and passphrase from your GitHub settings.
+                            </span>
+                          <span class="js-select-button-text hidden-select-button-text">
+                            <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone SSH, location:repo overview">
+    SSH
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="git@github.com:lavabit/libdime.git" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M2 12h4v1H2v-1z m5-6H2v1h5v-1z m2 3V7L6 10l3 3V11h5V9H9z m-4.5-1H2v1h2.5v-1zM2 11h2.5v-1H2v1z m9 1h1v2c-0.02 0.28-0.11 0.52-0.3 0.7s-0.42 0.28-0.7 0.3H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3C4 0.89 4.89 0 6 0s2 0.89 2 2h3c0.55 0 1 0.45 1 1v5h-1V5H1v9h10V12zM2 4h8c0-0.55-0.45-1-1-1h-1c-0.55 0-1-0.45-1-1s-0.45-1-1-1-1 0.45-1 1-0.45 1-1 1h-1c-0.55 0-1 0.45-1 1z"></path></svg></button>
+</div>
+
+                          </span>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="select-menu-list" role="menu">
+                    <a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+                      <svg aria-hidden="true" class="octicon octicon-question select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M6 10h2v2H6V10z m4-3.5c0 2.14-2 2.5-2 2.5H6c0-0.55 0.45-1 1-1h0.5c0.28 0 0.5-0.22 0.5-0.5v-1c0-0.28-0.22-0.5-0.5-0.5h-1c-0.28 0-0.5 0.22-0.5 0.5v0.5H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8s2.56-5.7 5.7-5.7m0-1.3C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7S10.86 1 7 1z"></path></svg>
+                      <div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+</form>        </div>
+
+          <div class="file-navigation-option">
+  </div>
+
+
+        <div class="file-navigation-option">
+          <a href="https://github.com/lavabit/libdime/archive/develop.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+        </div>
+      </div>
+  </div>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="develop" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">develop</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/lavabit/libdime#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/lavabit/libdime#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="https://github.com/lavabit/libdime/tree/develop" data-name="develop" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="develop">
+                develop
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/lavabit/libdime/tree/feature/core_providers_merge" data-name="feature/core_providers_merge" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="feature/core_providers_merge">
+                feature/core_providers_merge
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/lavabit/libdime/tree/feature/dmtp" data-name="feature/dmtp" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="feature/dmtp">
+                feature/dmtp
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/lavabit/libdime/tree/feature/docs" data-name="feature/docs" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="feature/docs">
+                feature/docs
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/lavabit/libdime/tree/feature/errors" data-name="feature/errors" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="feature/errors">
+                feature/errors
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/lavabit/libdime/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="master">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+      <a href="https://github.com/lavabit/libdime/pull/new/develop" class="btn btn-sm btn-primary new-pull-request-btn" data-pjax="" data-ga-click="Repository, new pull request, location:repo overview">
+        New pull request
+      </a>
+
+  <div class="breadcrumb">
+    
+  </div>
+</div>
+
+
+
+
+
+  <div class="commit-tease js-details-container">
+    <span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="https://github.com/lavabit/libdime/commit/8889b36754567ee244c651c3ca65e0fac4ca5bd1" data-pjax="">
+        8889b36
+      </a>
+      <span itemprop="dateModified"><time datetime="2015-09-29T18:17:42Z" is="relative-time" title="Sep 29, 2015, 8:17 PM GMT+2">on Sep 29, 2015</time></span>
+    </span>
+
+
+    <span class="commit-author-section">
+      <img alt="@mikezackles" class="avatar" height="20" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/77851" width="20">
+      <a href="https://github.com/mikezackles" class="user-mention" rel="contributor">mikezackles</a>
+    </span>
+
+        <a href="https://github.com/lavabit/libdime/commit/8889b36754567ee244c651c3ca65e0fac4ca5bd1" class="message" data-pjax="true" title="Merge pull request #34 from flounders/develop
+
+Updated some of the documentation.">Merge pull request</a> <a href="https://github.com/lavabit/libdime/pull/34" class="issue-link js-issue-link" data-url="https://github.com/lavabit/libdime/issues/34" data-id="101476099" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#34</a> <a href="https://github.com/lavabit/libdime/commit/8889b36754567ee244c651c3ca65e0fac4ca5bd1" class="message" data-pjax="true" title="Merge pull request #34 from flounders/develop
+
+Updated some of the documentation.">from flounders/develop</a>
+          <span class="hidden-text-expander inline">
+            <button type="button" class="ellipsis-expander js-details-target">…</button>
+          </span>
+    
+
+      <div class="commit-desc"><pre class="text-small">Updated some of the documentation.</pre></div>
+  </div>
+
+
+<div class="file-wrap">
+
+  <a href="https://github.com/lavabit/libdime/tree/8889b36754567ee244c651c3ca65e0fac4ca5bd1" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax="">
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><svg aria-hidden="true" class="octicon octicon-alert" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/bundle" class="js-directory-link js-navigation-open" id="94377c156735b39dfa4ac607234cb87c-d962c7fc0ca114d0e017214a7ecad7525c246b26" title="bundle">bundle</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/ea9646528bb4211f56b3d9de3c7589574574baac" class="message" data-pjax="true" title="Undefine ALIGN macro before libdonna uses it
+
+See
+https://github.com/josh-ripple/ed25519-donna/commit/e1e5a55a6b2cede036f4e7d9dd3526864a262312">Undefine ALIGN macro before libdonna uses it</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-05T19:48:12Z" is="time-ago" title="Aug 5, 2015, 9:48 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/check" class="js-directory-link js-navigation-open" id="0ba4439ee9a46d9d9f14c60f88f45f87-c106643a2fe82dc2fe4f738e1066c3fb4f837e87" title="check">check</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/b2df84554d8d3233d52ac0ec6714a269affdf46d" class="message" data-pjax="true" title="Remove unused code path (secp256k1 for signing)">Remove unused code path (secp256k1 for signing)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-07T20:02:18Z" is="time-ago" title="Aug 7, 2015, 10:02 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/docs" class="js-directory-link js-navigation-open" id="e3e2a9bfd88566b05001b02a3f51d286-358000328a57dddc32fbdc3c55ffbaf3c6cdf18b" title="docs">docs</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/8889b36754567ee244c651c3ca65e0fac4ca5bd1" class="message" data-pjax="true" title="Merge pull request #34 from flounders/develop
+
+Updated some of the documentation.">Merge pull request</a> <a href="https://github.com/lavabit/libdime/pull/34" class="issue-link js-issue-link" data-url="https://github.com/lavabit/libdime/issues/34" data-id="101476099" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#34</a> <a href="https://github.com/lavabit/libdime/commit/8889b36754567ee244c651c3ca65e0fac4ca5bd1" class="message" data-pjax="true" title="Merge pull request #34 from flounders/develop
+
+Updated some of the documentation.">from flounders/develop</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-09-29T18:17:42Z" is="time-ago" title="Sep 29, 2015, 8:17 PM GMT+2">6 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item navigation-focus">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/include/dime" class="js-directory-link js-navigation-open" id="10395abb8b599ec52f7a6b2f345059b9-7bcaa6a8c5a6e07a19645957241393fe13a310dd" title="This path skips through empty directories"><span class="simplified-path">include/</span>dime</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/8e0ca1e2aca49e1ae9f9d9f5ae173e7caf25e55d" class="message" data-pjax="true" title="include conflict
+
+closes #36">include conflict</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-09-29T13:45:56Z" is="time-ago" title="Sep 29, 2015, 3:45 PM GMT+2">6 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/libs" class="js-directory-link js-navigation-open" id="cb4cb2401e6e43cf74a54523b8da5f02-0f40fd31e8fd480f15067c26577601ad0979fd67" title="libs">libs</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/53be19e0f88eedfd77a2ccc73c2b108786d663d9" class="message" data-pjax="true" title="fixed memory leak.
+
+closes #40">fixed memory leak.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-09-29T13:55:32Z" is="time-ago" title="Sep 29, 2015, 3:55 PM GMT+2">6 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/m4" class="js-directory-link js-navigation-open" id="fd6b6fc9220b72d21683ae8e4f50a210-29f8a7cce28b1fd9df821b045168d874807b1c6d" title="m4">m4</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/2c5f2f1088262826805a7a5c704eaf17b39a1e08" class="message" data-pjax="true" title="Update ax_pthread.m4 (unreleased version)
+
+This is the latest version from here:
+http://savannah.gnu.org/patch/?8186">Update ax_pthread.m4 (unreleased version)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-05T20:14:59Z" is="time-ago" title="Aug 5, 2015, 10:14 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/res" class="js-directory-link js-navigation-open" id="9b207167e5381c47682c6b4f58a623fb-3914e8e6c9c996343fcbbf08804d8dc671d40f68" title="res">res</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/4adf2cb5d38045f28bc8d80a90bf61808ff8491d" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-12-23T18:20:02Z" is="time-ago" title="Dec 23, 2014, 7:20 PM GMT+1">a year ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/scripts" class="js-directory-link js-navigation-open" id="d6c5855a62cf32a4dadbc2831f0f295f-dc54a7c7814f71a2503b588117e5428f0c1d574d" title="scripts">scripts</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/42ff1806595f51911154d89f9a2f6b3ea592d055" class="message" data-pjax="true" title="Clang test script">Clang test script</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-07-24T15:00:46Z" is="time-ago" title="Jul 24, 2015, 5:00 PM GMT+2">8 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-directory" height="16" role="img" version="1.1" viewBox="0 0 14 16" width="14"><path d="M13 4H7v-1c0-0.66-0.31-1-1-1H1c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h12c0.55 0 1-0.45 1-1V5c0-0.55-0.45-1-1-1z m-7 0H1v-1h5v1z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/tree/develop/tools" class="js-directory-link js-navigation-open" id="4a931512ce65bdc9ca6808adf92d8783-45326a2ec060f5b30c69a5d6b08de753026b1cd8" title="tools">tools</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/e9bee134759d2913915f07dca4028a8e43fd7c03" class="message" data-pjax="true" title="Add genrec tool to build">Add genrec tool to build</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-06T20:52:57Z" is="time-ago" title="Aug 6, 2015, 10:52 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/.ackrc" class="js-directory-link js-navigation-open" id="fe696288a26fe16e96b008653947cf1e-a484480671d70003fb932c1dba7a1dd87ae3d0a5" title=".ackrc">.ackrc</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/5a2397100588c8fa6b3c11d0b40ad8896973d786" class="message" data-pjax="true" title="Updated ack configuration to automatically sort files">Updated ack configuration to automatically sort files</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-26T09:07:23Z" is="time-ago" title="Apr 26, 2015, 11:07 AM GMT+2">11 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/.cproject" class="js-directory-link js-navigation-open" id="cc687ffe64ec44df5d4bcd9deaf1a518-2b9e2c8d72b2c9d2f0c8ed8533c4abb0369069b5" title=".cproject">.cproject</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/0830de685c8cb5202005175bdc3b08c58b1d81d0" class="message" data-pjax="true" title="Updated envelope chunks to spec.
+They now only contain the cryptographic fingerprint of the corresponding signets.
+Since we use those fingerprints to retrieve the signets in the first place we
+no longer need to ensure that the fingerprints match those of provided signets.
+
+Added the fingerprints to the dmime_object_t to make signet look up easier.">Updated envelope chunks to spec.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-07-23T21:37:06Z" is="time-ago" title="Jul 23, 2015, 11:37 PM GMT+2">8 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-67b0491c211985c072662142efead059e8f7274e" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/d04efcacd8ae8b8ef56ff0d679bddb938bac13ef" class="message" data-pjax="true" title="Ignore build artifacts for in-source builds">Ignore build artifacts for in-source builds</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-10T16:21:39Z" is="time-ago" title="Aug 10, 2015, 6:21 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/.project" class="js-directory-link js-navigation-open" id="267c7db53673cb611d5c91164fdd974b-9548045af31b23d66c636432aec9e6f18d7a8d6b" title=".project">.project</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/1d659818b6c3a6ec07c29a612f0425899bc04513" class="message" data-pjax="true" title="Conflicts:
+	check/signet/check_signet.c
+	include/signet/general.h
+	include/signet/signet.h
+	libs/dmessage/parser.c
+	libs/signet/signet.c">Conflicts:</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-07-20T22:00:13Z" is="time-ago" title="Jul 21, 2015, 12:00 AM GMT+2">8 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/Doxyfile" class="js-directory-link js-navigation-open" id="ef0172b9c0ab10af3b7f842de2b9d5ca-4f29904e15700cab2ee0f662e6d9cff27b829925" title="Doxyfile">Doxyfile</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/5a7693fe92dd77e586042abda0c5cd3387252230" class="message" data-pjax="true" title="Improved documentation of deallocation functions">Improved documentation of deallocation functions</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-01T09:58:01Z" is="time-ago" title="May 1, 2015, 11:58 AM GMT+2">11 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/HACKING.md" class="js-directory-link js-navigation-open" id="2cb561c5e46512465f54a0f84d421c80-7ca8e26af0c49a0c747dd11606677757638da047" title="HACKING.md">HACKING.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/5e97c472e505e13693de922746af71a686448ea9" class="message" data-pjax="true" title="Reformat HACKING.md
+Reformat README.md
+Add quickstart.md
+Change style to fix tab/space alignment mixup.">Reformat HACKING.md</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-06-10T00:48:40Z" is="time-ago" title="Jun 10, 2015, 2:48 AM GMT+2">9 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-f5af53b6e835aa5380aec74091ed94fa49143a6f" itemprop="license" title="LICENSE">LICENSE</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/dfe0313aa54eba367536bc1c3d05b75476f6f0d6" class="message" data-pjax="true" title="Adding the license file.">Adding the license file.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-08T23:03:26Z" is="time-ago" title="Jan 9, 2015, 12:03 AM GMT+1">a year ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/Makefile.am" class="js-directory-link js-navigation-open" id="c949f93d03f44a4217d7a138f9e2e54a-7eb1c6926be15608925295a35bb03bfb9d4ffcf7" title="Makefile.am">Makefile.am</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/ecc407f12dd574c4dfb2f843ef5478cb80ed4e0f" class="message" data-pjax="true" title="Begin porting base64 functions">Begin porting base64 functions</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-10T22:25:47Z" is="time-ago" title="Aug 11, 2015, 12:25 AM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-ac43c093b810231253adc2d831506ba83be78712" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/5ea4b9e983782935d24e8c6c0d413177fce104d9" class="message" data-pjax="true" title="Updated some of the documentation.">Updated some of the documentation.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-17T17:53:42Z" is="time-ago" title="Aug 17, 2015, 7:53 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/configure.ac" class="js-directory-link js-navigation-open" id="67e997bcfdac55191033d57a16d1408a-e30435fa6ff1094f654c8c901d26b5d8ec31afc7" title="configure.ac">configure.ac</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/5186bad2f345a27a256b5752c8671c72f5f93194" class="message" data-pjax="true" title="Check strerror_r version">Check strerror_r version</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-05T19:37:01Z" is="time-ago" title="Aug 5, 2015, 9:37 PM GMT+2">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path></svg>
+            <img alt="" class="spinner" height="16" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/lavabit/libdime/blob/develop/uncrustify.cfg" class="js-directory-link js-navigation-open" id="bf6ecadcd7e9e8c65f902a1313bc87f4-19101dcd098018471d506dd5e5120c36ccdb1daa" title="uncrustify.cfg">uncrustify.cfg</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/lavabit/libdime/commit/7db33c9f03ea57577a31135fa50e6dcba9a9d184" class="message" data-pjax="true" title="Normalized newline handling between &quot;}&quot; and &quot;else&quot;">Normalized newline handling between "}" and "else"</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-26T10:55:39Z" is="time-ago" title="Apr 26, 2015, 12:55 PM GMT+2">11 months ago</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+  <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
+    <h3>
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M2 5h4v1H2v-1z m0 3h4v-1H2v1z m0 2h4v-1H2v1z m11-5H9v1h4v-1z m0 2H9v1h4v-1z m0 2H9v1h4v-1z m2-6v9c0 0.55-0.45 1-1 1H8.5l-1 1-1-1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h5.5l1 1 1-1h5.5c0.55 0 1 0.45 1 1z m-8 0.5l-0.5-0.5H1v9h6V3.5z m7-0.5H8.5l-0.5 0.5v8.5h6V3z"></path></svg>
+      README.md
+    </h3>
+
+      <article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-dark-internet-mail-environment-dime" class="anchor" href="https://github.com/lavabit/libdime#dark-internet-mail-environment-dime" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Dark Internet Mail Environment (DIME)</h1>
+
+<h2><a id="user-content-introduction" class="anchor" href="https://github.com/lavabit/libdime#introduction" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Introduction</h2>
+
+<p>Internet electronic mail (email) was designed in the early days of the Internet, and so
+lacks any mechanism to protect the privacy of the sender and addressee. Several techniques
+have been used in an attempt to increase the privacy of email. These techniques have provided
+either modest increases in privacy, or have proven to be very difficult to use for most people.</p>
+
+<p>In addition to protection of content, truly private email must limit information disclosed to 
+handling agents, only exposing information necessary for delivery (the metadata), and provide robust
+identity guarantees which prevent the impersonation of senders. </p>
+
+<p>The Dark Internet Mail Environment (DIME) achieves this level of privacy with core protocols
+using multiple layers of key management and multiple layers of message encryption.
+The <a href="https://darkmail.info/spec">DIME Protocol Specifications</a>
+contain the full technical details of the DIME.</p>
+
+<p>The <strong>libdime</strong> project holds the DIME libraries and related command line utilities.</p>
+
+<h2><a id="user-content-dependencies-supported-platforms-and-build-instructions" class="anchor" href="https://github.com/lavabit/libdime#dependencies-supported-platforms-and-build-instructions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Dependencies, Supported Platforms, and Build Instructions</h2>
+
+<p>Please see the <a href="https://github.com/lavabit/libdime/blob/develop/docs/quickstart.md">Quick Start Guide</a>.</p>
+
+<p>System:
+c dl rt pthread resolv openssl</p>
+
+<p>Bundled:
+zlib donna</p>
+
+<p>Unit Tests:
+python check</p>
+
+<h2><a id="user-content-supported-platforms" class="anchor" href="https://github.com/lavabit/libdime#supported-platforms" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Supported Platforms</h2>
+
+<ul>
+<li>CentOS 6 x86_64</li>
+<li>CentOS 7 x86_64</li>
+</ul>
+
+<h2><a id="user-content-directories" class="anchor" href="https://github.com/lavabit/libdime#directories" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Directories</h2>
+
+<table><thead>
+<tr>
+<th align="left">Directory</th>
+<th align="left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">libs/</td>
+<td align="left">The DIME libraries</td>
+</tr>
+<tr>
+<td align="left">libs/core/</td>
+<td align="left">Various string and other data manipulation functions taken from the magma core component.</td>
+</tr>
+<tr>
+<td align="left">libs/common/</td>
+<td align="left">Error handling, network and cryptographic functionality common to the remaining DIME libraries.</td>
+</tr>
+<tr>
+<td align="left">libs/signet/</td>
+<td align="left">Signet data format handler, including creation, signing, parsing and validating.</td>
+</tr>
+<tr>
+<td align="left">libs/signet-resolver/</td>
+<td align="left">Logic to retrieve management records then the signets for users or organizations, including the relevant validation logic.</td>
+</tr>
+<tr>
+<td align="left">tools/</td>
+<td align="left">The command line utilities.</td>
+</tr>
+<tr>
+<td align="left">tools/dime/</td>
+<td align="left">Generate a DIME message and send it.</td>
+</tr>
+<tr>
+<td align="left">tools/signet/</td>
+<td align="left">Generate, sign, view and verify a signet.</td>
+</tr>
+<tr>
+<td align="left">res/</td>
+<td align="left">Resource files used by the different components and utilities.</td>
+</tr>
+<tr>
+<td align="left">checks/</td>
+<td align="left">Unit tests (eventually).</td>
+</tr>
+<tr>
+<td align="left">include/</td>
+<td align="left">The header files provided by the library components.</td>
+</tr>
+</tbody></table>
+
+<h2><a id="user-content-compiling" class="anchor" href="https://github.com/lavabit/libdime#compiling" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Compiling</h2>
+
+<p>First, produce the build files from the autotools files:</p>
+
+<pre><code>autoreconf --install
+</code></pre>
+
+<p>Then:</p>
+
+<pre><code>./configure
+make
+</code></pre>
+
+<p>The specific make targets:</p>
+
+<pre><code>make signet
+make dime
+</code></pre>
+
+<h2><a id="user-content-video" class="anchor" href="https://github.com/lavabit/libdime#video" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Video</h2>
+
+<p>An old/outdated video showing the components and command-line tools:</p>
+
+<p><a href="https://darkmail.info/downloads/dime-library-cli-demo.mp4">https://darkmail.info/downloads/dime-library-cli-demo.mp4</a></p>
+</article>
+  </div>
+
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+          <li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage" class="site-footer-mark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" role="img" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2016 <span title="0.25448s from github-fe128-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      
+      <script crossorigin="anonymous" integrity="sha256-5nfyAipdNuj1rTXQ/LAfg/HNthPtoESfUzGXaTvMa9o=" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/frameworks-e677f2022a5d36e8f5ad35d0fcb01f83f1cdb613eda0449f533197693bcc6bda.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-sY2noXNqz2OvlVoNavvdEfZQb8P1qRE6TVuHX+jU6t0=" src="./lavabit_libdime_ The DIME resolver library and command line utilities._files/github-b18da7a1736acf63af955a0d6afbdd11f6506fc3f5a9113a4d5b875fe8d4eadd.js"></script>
+      
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+    </button>
+  </div>
+</div>
+
+  
+
+
+<v-div id="vTabsPanelExtension" class="v-tabs-panel v-tabs-panel-hide classic-v-theme-StG1Q1" style="width: 245px; zoom: 80%;"><v-div class="v-tabs-resizer"></v-div><v-div class="v-tabs-menu"><v-div class="v-tabs-menu-btn v-tabs-menu-newpage" title="New tab"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-tabs v-tabs-menu-btn-active" title="Tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-recent" title="Recent tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-keeper" title="Tab keeper"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks" title="Bookmarks manager"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks-tree" title="Bookmarks browser"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-notes" title="Notes"></v-div><div class="v-tabs-menu-btn v-tabs-menu-settings" title="Settings"></div><div class="v-tabs-menu-btn v-tabs-menu-minimizer" title="Hide panel"></div><div class="v-tabs-menu-btn v-tabs-menu-blank"></div></v-div><v-div class="v-tabs-list-wrap"><v-div class="v-tabs-list" style="width: 185px;"><v-div class="v-tabs-item v-tabs-item-active" data-tab-id="604" data-tab-index="0" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACRUlEQVQ4T41TPWgUQRTeN7O33iVZuN3ZO0WCsdFCEBRBI1aCdlrETjCgCJGgqBCws7EUhESMwYBaxD6gYiXYKYpCKgstjJIiuj93niandzszfrPehSUJpwOPnZ0373vv+94bstYtIcRB0nqMGDtKljVk3NqyPmulXmii2TiO3+RDcGdtDVSEmCaiUVj+fO2C/rvmwji+iMOfxtG9OBAI8Zwzdmh9RZv9S6VeR3F8zIBkAAieQ/AZpfU7JeV9xtg4itiDbMtZFqJt2L9XSs0wzs8zogMAeQSQUfJ9f7jA+auMq9az36LoArYctgW22qmgD9/fMFkNgnsAHDPnbSkPk/D9Bzbn58wBMkyD36VeNKDTHVRoNLBSKR9SVYhPUHynUefHysqOZrO51AugVCoNuv39X4zQ6MwioaQUew7+tTCK/P8RsRIECXTwkFMagDYAbPyk4G+4tv8BUkDMajeGgPYBaLtMUCtNT9Zqtae9ADzPO+HY9pNMM60/Elp4Fy0c73RhyYDU6/WFzUDK5fJ+BD9G9kHjRytnCIh70caFVKkpVFKFnYbvJf6vJUmStddz3SMFx7mJgRhGMOskU2jjvmyQMP9TNmOX01bruGXbIzjcDvSzoPPd+F3XDfqKxTBfFRLcxru40h1lJ/D9efR3t0rTiZZSy41G462h2Qkqbq1Uml0AKeWzKElGjGz5R2NjSG6gxAmY8zUMS7jwKw8A0doY11sYtutmjoxvw6uDUEOo5BT4T8KPl5wtM/JXManzEHgxT+UPJe8EOGZp/DUAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="604"></v-div><v-div class="v-tabs-text" title="lavabit/libdime: The DIME resolver library and command line utilities.">lavabit/libdime: The DIME resolver library and com</v-div></v-div><v-div class="v-tabs-item" data-tab-id="606" data-tab-index="1" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACHklEQVQ4T2NkoBAwUqifgbYGGGVWGP/n4tNiePd8x/n5k19jcy2GC4x907h+irAI83758u+7nEblXz7hJNYXd53OTe86ATLA2NiYVUlJ6d/q1av/gvgYBmillnt+FRGbzM3MxvSfkUHox9+/zLyvHrlemtMHNkC/fkYGIyPTjwsNaQtQDGhgYGBanlGV8I+bJ/I/n5Az09+/YMP/////+//Xj1tZv3xceH1W1wbdydtmfecRdPv66OYS7jePD4EVGaelsf5mFTf6ySvY+YeD256Tk5vhx7cvDEyMjAxs7BwMX3/9ZGD7+mklNxv7rK9CslnvBCTc/nx+d03k0eUuRtugIMk/f1n0npn5drHzi+r+5+YHG8r08TXDf15hBsZ/fxgYv31i+Mcv9vv/v3//vn9+x8R590KX+N1TB1i+fjzDaOwbKcL155vYbV23SR8lFJ3/cXAy8P7/w8D+9yfDexYuBsb//xgY//xm+MfICjToK4PI0xsbpG4dLWVmYf33nYvpLTwQFbIaI7mVNGeJigrz/Ac6/dpPFoY3/1kYGP7+Zfj/+w8D8/ev//g+vtwt/fRG9pWF3XdhUQo3QFtbm80nKTNZz0C36CungMLEq+9Ybr77+p/5z89vbD+/3eX58mqF6Ovbcy8tnvEKOT2gRyNjREGFvIqynMGj7yxCBx+//8n269NjzlePblxcv/g1UPF/9MRE26RMTEaj2AUAqCrYmjIEdwEAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="606"></v-div><v-div class="v-tabs-text" title="Docker - Build, Ship, and Run Any App, Anywhere">Docker - Build, Ship, and Run Any App, Anywhere</v-div></v-div><v-div class="v-tabs-item" data-tab-id="608" data-tab-index="2" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVQ4T2NkoBAwUqifAWTAISC2JdOgQyADPgAxP5kGfAAZwAfExUBcCMS8RBr0GaiuD4SRw0AUKFADxOlAzI7DoB9A8RlA3AbEr0FqQAbsAOJmID4K1aQEpKuAOB6IWaBif4D0QqjGe1AxayBdCzLgPxSDDCoD4itQBWpAugPKrgDSt6BsHSDdBcQeIAfADIC5+B+QsQ6IG5EMgsmBNNYDcRAQM8EE0Q2Aif8FMpYAMchrIDWgsIkBYmaYAkIGoKvDycflAvoacARoHShKyAFHqJKZyLEZrgcAW5MmRP1u4vIAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="608"></v-div><v-div class="v-tabs-text" title="https://darkmail.info/downloads/dark-internet-mail-environment-march-2015.pdf">https://darkmail.info/downloads/dark-internet-mail</v-div></v-div><v-div class="v-tabs-item" data-tab-id="610" data-tab-index="3" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADQElEQVQ4T3VTC0hTURj+7r3zbm62+Zq5cpTawzRbpMVCyzIwlIgixKSgICmKHvagBwVpEaU9KCKkiOhlzR5kDyuKXjizsIflM1NLU6e2uenyurvd7XYaJtLjh++cw3/O/53/nP//KPzDxi8tMJtrnpy1Vt3Y+a/94T7qzwO6rIv2kdoQP70+DLVN3Xj9oQ08T4Pi3LA+3q1zWts+/pdg1rabYnpmHHps/fhc24nyZitC1AH4ITAQ3W5MUPvibY0ZrQULhy4eWqw4VybOGKVCTVcvvtR+R4PTgZ43rzBnWSZcMjk8TgHtbd3o73digGPRXjDfG+sdkncW2Yw3K1RbT6zEqEYjbkenoazgIeg+HrD2Qqh/Bl1OPiFxQKuWobT0K+SCvbf1ykp/L8G0nEei9MEuCDM3wRUZCdOh7YjXKZCYoIepw4Li4gq4YjMQkRSHBvKEgDA1xof7o2SNjqJCo+NT2UlZ9y+sG4Oqxk7UVxoxO2kuMjKWEmoPRI8HTp7DjNlZ6NCmICQ6Gv09FoSP06D8zJHjVMSS3KcjI2LnvtifDB+pAobCy0hPXwLQNCASDgJG4oOTR/NwpFqLuITJ+PbNgvYmEzhTVxcVoF99Sa/4tPyq4RLsdjt4l4iw0RqwvkpwHIdTx/KwcUs27j0wYn2hBWmZ8Xj5rB5Bo4NRX1rXR0GmCk9NnNlcZDhNMvAFzfig4lU5omJioFQq0drciFCNBglZ16Gy16Gan4jJKVEICpTj+cXHr72fGBmeKZYUr4dEwkKu8INMLoeUZUmJRLgFFyzdnWBoCulrz+N9AwvVxDEQHCJ63uVGeAnk/vq9vE3ISU3W4mDeZkhYhgS64SORENBgyGfScGPKohsQB7rh6BPgF6uDuWwPNdRIwWNXmX601IW6qKZrbk/X4bSkpFOH8nPjHZyV5gc4VH+oxL78T3A7XVAtWIwvdw4kCAMtL4drIVTCajYITlMZSUpGICWgGYahUxITs83KhdMqn5YgUBUEm92Uz9uNO4Y6cVAcpG5QDgaPIHMwQeCvbo2Zt93Q0NShiIqdjqq7mwKIz/ZbUH+pcZjSfhFqWPXUk87vNbdoqa+/h+8zEJ/F22GD9hMO30WNW/1vKAAAAABJRU5ErkJggg=="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="610"></v-div><v-div class="v-tabs-text" title="Thunderbird — Software made to make email easier. — Mozilla">Thunderbird — Software made to make email easier. </v-div></v-div><v-div class="v-tabs-item" data-tab-id="612" data-tab-index="4" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADCUlEQVQ4T6WTXUhTYRzGn7NZ7cOmW62ctab4MVt+f0RotWOZxdLMSIowo2IX0cdFIRnVzlH7uLAYQV1UlMG6ESOLygg0j0Wlw/zCUkE45MrN0trUmubaaTvVMugm+l+9vC/v733+/+d5CfxnETPvXyovp/ZTVDnLsnqTxQSLydLsP4/LjKP6nveV/+2tPwBGY0bTt+EERpEaQbbeqcKxMzX0s4fVtNdrw9lLLdl+QH19vd5gMPBgfxElxQbqwCGaOVJF0YL3PeT6OCee9koglOlwv70fycoRqOdJIVxSQDvZZnLN2t20yWT6DSjNz9dzilfMmMeBfXkhEIsFqL7nwrpkCU7VfgYzEBJQHhz0EcUb8ugJmZu8ee4Br4g4YT5BDbTepUtIB4IJDrVWFRyOMRwscOM16wZ1R4Vh1wTCQqMhFAoRJW+CJmcn+Ws+hL+n2zf3MOPORKiVT8BJSiFSjGFbUi0c9ilY2jLxfjwSNlsnRkYGkaZxI3YVyVw4XfNDQdVJY1NbxzUyVnsYCtFlTI16oAqfg8wUKV50TaC6MR6zwzR4VHcbUCiQpBzCrqJECLgipv1tB0lYrVZ9T+tqxjMehP7RWORkFGKs7wpS07yobXLC/ECLDx4XPwft3EiIuAZIJGDSl+pIafAAeBvPlck4f/9QlkGnUaGh8QB25Ibi/HU36tlkvBvt5wGLCCXCw7uQrpkNsSQJdh+XByyOmc9laT8ifZkYnmkvNq6Qo6X7Cw5fnoQYkT4FDiwMU2KYHcTyxElMT8NnrQ5acRT5I0giEbc9FyjbK4VUIPJNW4CsvTbY7T8dlMsRvdiNBNVXeJVqRuSykbKYLcxV861sHhC1IJ5L2RyKVXPfYIn6M7rtX9BsDcLjzlnAp0+BHKzNkyNCHMRoEg4GwsQD/FZWVhpotjeOSdu6glQLn5N2iJmvHwjypWOSlgxN0lEZCdi0Moe2mM0oOr4PR41H+b8RAPjzHZGaS20u1ME5zJI3Lt7NLiwt1NdV1TVXVFToZ8Y3IOkXYObGv66/A7X4J0uu+P1wAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="612"></v-div><v-div class="v-tabs-text" title="OpenBSD 5.3">OpenBSD 5.3</v-div></v-div><v-div class="v-tabs-item" data-tab-id="614" data-tab-index="5" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADCUlEQVQ4T6WTXUhTYRzGn7NZ7cOmW62ctab4MVt+f0RotWOZxdLMSIowo2IX0cdFIRnVzlH7uLAYQV1UlMG6ESOLygg0j0Wlw/zCUkE45MrN0trUmubaaTvVMugm+l+9vC/v733+/+d5CfxnETPvXyovp/ZTVDnLsnqTxQSLydLsP4/LjKP6nveV/+2tPwBGY0bTt+EERpEaQbbeqcKxMzX0s4fVtNdrw9lLLdl+QH19vd5gMPBgfxElxQbqwCGaOVJF0YL3PeT6OCee9koglOlwv70fycoRqOdJIVxSQDvZZnLN2t20yWT6DSjNz9dzilfMmMeBfXkhEIsFqL7nwrpkCU7VfgYzEBJQHhz0EcUb8ugJmZu8ee4Br4g4YT5BDbTepUtIB4IJDrVWFRyOMRwscOM16wZ1R4Vh1wTCQqMhFAoRJW+CJmcn+Ws+hL+n2zf3MOPORKiVT8BJSiFSjGFbUi0c9ilY2jLxfjwSNlsnRkYGkaZxI3YVyVw4XfNDQdVJY1NbxzUyVnsYCtFlTI16oAqfg8wUKV50TaC6MR6zwzR4VHcbUCiQpBzCrqJECLgipv1tB0lYrVZ9T+tqxjMehP7RWORkFGKs7wpS07yobXLC/ECLDx4XPwft3EiIuAZIJGDSl+pIafAAeBvPlck4f/9QlkGnUaGh8QB25Ibi/HU36tlkvBvt5wGLCCXCw7uQrpkNsSQJdh+XByyOmc9laT8ifZkYnmkvNq6Qo6X7Cw5fnoQYkT4FDiwMU2KYHcTyxElMT8NnrQ5acRT5I0giEbc9FyjbK4VUIPJNW4CsvTbY7T8dlMsRvdiNBNVXeJVqRuSykbKYLcxV861sHhC1IJ5L2RyKVXPfYIn6M7rtX9BsDcLjzlnAp0+BHKzNkyNCHMRoEg4GwsQD/FZWVhpotjeOSdu6glQLn5N2iJmvHwjypWOSlgxN0lEZCdi0Moe2mM0oOr4PR41H+b8RAPjzHZGaS20u1ME5zJI3Lt7NLiwt1NdV1TVXVFToZ8Y3IOkXYObGv66/A7X4J0uu+P1wAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="614"></v-div><v-div class="v-tabs-text" title="OpenSMTPD">OpenSMTPD</v-div></v-div><v-div class="v-tabs-item" data-tab-id="616" data-tab-index="6" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="616"></v-div><v-div class="v-tabs-text" title="www.radicati.com/wp/wp-content/uploads/2013/04/Email-Statistics-Report-2013-2017-Executive-Summary.pdf">www.radicati.com/wp/wp-content/uploads/2013/04/Ema</v-div></v-div><v-div class="v-tabs-item" data-tab-id="618" data-tab-index="7" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVQ4T2O0r9v230FbgoEcwMjIyMBYv/Lc/4YwQ3L0MzSuvoDbgA9ffzIsOHCHwUBBiMFBWxKrBTgNOHD1OcOErdcYJiSYMSiI8TJ8fvCU4eaCTQxsArwM6gl+DOwCfGADsRqwYP9thgPXXjAsyLYFK9oZUADWyKsgxXB5wlIGYQN1Br8Dc7EbALN5Q5kzWMHPD58Yfn34DNQsDeY/O3CaYbNjCkP6/4uYBoD8bFC6ieFCtx+DADc72Nn3N+xn0CuIQfH/TEZ97AY0rDoP1MjGUOCtDdZwpmE6g25BNNy/IDGQoZscUhiiH2xHdUGAqRxDQPc+hgfTQjFCe8OphwwBZvJg8TUGYQy+B+ZgBiIoIQV07WP4sDAaxQCQq2Bp5FhBFwMPMCCRvQSPhQQHFQbF7DUM9aEGYA2wwGwA8g0UhYFRuBEYgGcYHBc0o1iAEo0Ttl5laFh1ARwOIAMLvLXAgXlpwhKGLw+eMVhNKMPwHt6UCFJ9f8M+sCbFACcMzSABvAa8uXADrEnEQAOrZoIG4NSFJAF2ATCk/xOjGJsaUOwBAJAg2BQtJrBlAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="618"></v-div><v-div class="v-tabs-text" title="Open Source - Sendmail.com">Open Source - Sendmail.com</v-div></v-div><v-div class="v-tabs-item" data-tab-id="620" data-tab-index="8" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDElEQVQ4T5VTsRHCMAyUF6CmoDOhoKZiAC4TsAPHHQWjcJclmCAVJRUTAOnZwrFky5EV5y6kcmzr/6V/Gyh8detc++7opN5YwHW1tPA5GqOvZxup8LJO+9XdObsAaOtQjP8SaAC4fR2h+2ICigUlhYB3IwkBSGZdXATzANxSUCDYEyPvSQmiNVZhqKdfF4YlZc8AQBWG2f8BkC4lAB7grBaEukkAZEH7mn3uvWRHsgFADkh5d34617xCsLDvw8oDx/80RPY1c0WHAEmE/DBEtlEdci357V3KZiRsH+LJl7T8naU5ZBEeBUmGqSQ77slZZFFOcn2ocH3aAlwfUbYC1K9y9Dxp0jGdsnbqOfe9WLRfLl8SegAAAABJRU5ErkJggg=="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="620"></v-div><v-div class="v-tabs-text" title="The GNU Privacy Guard">The GNU Privacy Guard</v-div></v-div><v-div class="v-tabs-item" data-tab-id="624" data-tab-index="9" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="624"></v-div><v-div class="v-tabs-text" title="Tor Browser">Tor Browser</v-div></v-div><v-div class="v-tabs-item" data-tab-id="626" data-tab-index="10" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="626"></v-div><v-div class="v-tabs-text" title="torbirdy – Tor Bug Tracker &amp; Wiki">torbirdy – Tor Bug Tracker &amp; Wiki</v-div></v-div><v-div class="v-tabs-item" data-tab-id="628" data-tab-index="11" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="628"></v-div><v-div class="v-tabs-text" title="Haraka SMTP Email Server">Haraka SMTP Email Server</v-div></v-div></v-div></v-div></v-div><v-div id="vTabsDropZone_gom4wkE&amp;1AfkprN" class="v-tabs-drop-zone classic-v-theme-StG1Q1"></v-div><v-div id="vTabsPanelActivator_FZBceIksle" class="v-tabs-panel-activator classic-v-theme-StG1Q1 v-tabs-panel-activator-type-half" style="zoom: 80%;"></v-div></body></html>

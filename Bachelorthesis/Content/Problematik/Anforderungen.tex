@@ -1,0 +1,75 @@
+Nachfolgend werden die Anforderungen an eine adäquate Lösung formuliert. Dabei handelt es sich nicht um die Anforderungen an ein E-Mail System an sich, sondern um die Anforderungen, die relevant für größtmögliche Datensicherheit und Anonymität in einem bereits funktionierenden E-Mail System sind. Als System werden alle Komponenten bezeichnet, die beim Senden und Empfangen einer E-Mail involviert sind.
+
+Die nachfolgenden Anforderungen sind rein funktional und beziehen sich lediglich auf Verschlüsselung und Anonymisierung.
+
+\begin{longtable}{|c|m{12cm}|}
+	\hline 
+	Nummer & Anforderung \\
+	\hline
+	\EmptyRow 
+	\hline \endhead
+		\Textlabel{FA 1}{text:FA1} &
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			den Textinhalt seiner E-Mail vor dem Versenden an den
+			MSA kryptografisch zu verschlüsseln. \\
+	\hline \Grayrow 
+		\Textlabel{FA 2}{text:FA2} & 
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			die Transaktion zwischen MUA und MSA über eine
+			verschlüsselte Verbindung zu etablieren.\\
+	\hline
+		\hline
+		\Textlabel{FA 3}{text:FA3} &
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			die Verbindungsdaten der Transaktion zwischen MUA und
+			MSA zu anonymisieren.\\
+	\hline \Grayrow 
+		\Textlabel{FA 4}{text:FA4} & 
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			die Transaktion zwischen MUA und POP3/IMAP Server
+			über eine verschlüsselte Verbindung zu etablieren.\\
+	\hline
+		\hline
+		\Textlabel{FA 5}{text:FA5} &			
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			die Verbindungsdaten der Transaktion zwischen MUA und
+			POP3/IMAP Server zu anonymisieren.\\
+	\hline \Grayrow
+		\Textlabel{FA 6}{text:FA6} & 
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			den Versand und die Zustellung der E-Mail auf MTA-Ebene
+			nur über verschlüsselte Verbindungen zu erlauben.\\
+	\hline
+		\hline
+		\Textlabel{FA 7}{text:FA7} &
+			Das System muss dem Benutzer die Möglichkeit bieten,
+			den Versand und die Zustellung der E-Mail auf MTA-Ebene
+			nur über anonymisierte Verbindungen zu erlauben.\\
+	\hline
+	\CaptionLongtable{Funktionale Anforderungen}
+	\label{tab:FunctionalRequirements}
+\end{longtable}
+
+Die nachfolgenden Anforderungen sind nicht funktional und beziehen sich auf mögliche Probleme, die aus der Implementierung der genannten funktionalen Anforderungen entstehen könnten.
+
+\begin{longtable}{|c|m{12cm}|}
+	\hline 
+	Nummer & Anforderung \\
+	\hline
+	\EmptyRow 
+	\hline \endhead
+		\Textlabel{NFA 1}{text:NFA1} &
+			Das System muss kompatibel mit den Protokollen
+			SMTP, POP3 und IMAP sein.\\
+	\hline \Grayrow 
+		\Textlabel{NFA 2}{text:NFA2} & 
+			Das System sollte die bereits existierenden Methoden
+			zur Spam-Abwehr nicht erschweren. \\
+	\hline
+	\CaptionLongtable{Nicht-Funktionale Anforderungen}
+	\label{tab:NonFunctionalRequirements}
+\end{longtable}
+
+Wie zu erkennen ist, folgt aus den funktionalen Anforderungen der Versuch, nicht nur Teile des E-Mail Verkehrs zu verschlüsseln und anonymisieren, sondern das System als ganzes. Da das betrachtete System bestehend aus den Protokollen SMTP, POP3 und IMAP aber aus verschiedenen Einzelteilen besteht, müssen die Lösungen auch spezifisch auf die jeweiligen Teilsysteme bezogen sein. Das bedeutet ebenso, dass ein direkter Bezug zu konkreten Protokollen besteht und dies keine abstrakte Anforderungsliste an irgendein E-Mail System ist.
+
+Die nichtfunktionalen Anforderungen beschäftigen sich hingegen mit der Kompatibilität und der praktischen Einsetzbarkeit des Systems. Diese Komponenten spielen eine wichtige Rolle für eine mögliche Akzeptanz einer Lösung.

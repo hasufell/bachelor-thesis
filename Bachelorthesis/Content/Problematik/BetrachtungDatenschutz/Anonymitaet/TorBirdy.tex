@@ -1,0 +1,28 @@
+\QuoteM{TorBirdy} \RefIt{torbirdyhp} \RefIt{torbirdy} ist eine Erweiterung für den MUA \QuoteDirectNoPage{Mozilla Thunderbird}{thunderbirdhp} mit dem Ziel die Kommunikation folgender Komponenten zu anonymisieren:
+\begin{itemize}
+\item MUA kommuniziert mit entfernten MSA
+\item MUA kommuniziert mit entfernten POP3/IMAP4 Server
+\end{itemize}
+
+Dies sind zwei von den eingangs drei erwähnten Angriffspunkten.
+
+Das Prinzip von TorBirdy ist, den gesamten Datenverkehr der Kommunikation von Thunderbird mit dem E-Mail Server über das Tor-Netzwerk \RefIt{torpaper} zu leiten.
+
+Das Tor-Netzwerk selbst ist allerdings abstrakter als dieser Anwendungsfall. Es erlaubt allgemein das Anonymisieren von TCP-Verbindungen jeglicher Art. Dieses wird wiederum auf Basis des \QuoteM{Onion Routings} \RefIt{onionrouting1} \RefIt{onionrouting2} realisiert. Das Onion Routing läuft grob in folgenden Schritten ab \QuoteIndirectNoPage{onionrouting2}:
+\begin{enumerate}
+\item der initiale Sender wählt von einem sogenannten Verzeichnisserver (engl. \QuoteM{directory node}) eine geordnete, aber zufällige Liste von Knoten aus, welche den Pfad bilden, den die Daten bis zum schlussendlichen Empfänger nehmen
+\item vom Verzeichnisserver wird ein öffentlicher Schlüssel (asymmetrisches Verschlüsselungsverfahren) für den ersten Knoten bezogen, der sogenannte Eintrittsknoten (engl. \QuoteM{entry node})
+\item eine Verbindung wird hergestellt und ein Sitzungsschlüssel (symmetrisches Verschlüsselungsverfahren) erstellt
+\item über die erstellte Verbindung kann der Sender eine Nachricht an einen zweiten Knoten senden, die allerdings mit dessen öffentlichem Schlüssel verschlüsselt wurde und somit nicht vom Eintrittsknoten entschlüsselt werden kann
+\item der zweite Knoten verbindet sich dazu mit dem ersten Knoten und ist somit indirekt mit dem Sender verbunden, ohne davon Wissen zu haben
+\item diese Verbindung kann jetzt zu einem dritten, vierten, usw. ... Knoten erweitert werden
+\item der schlussendliche Empfänger benutzt dieselbe Reihe von Knoten zurück zum Sender, nur umgekehrt
+\end{enumerate}
+
+Dieses Konzept wird \QuoteM{Onion Routing} genannt, da hier eine verschachtelte Verschlüsselung vorliegt, die nach und nach beim Weiterreichen an den jeweils nächsten Knoten wie eine Zwiebel geschält wird. Die Nachrichten für jede Schicht sind mit dem öffentlichen Schlüssel für exakt diese Schicht verschlüsselt, sodass kein Knoten in der Mitte den vollständigen Pfad herausfinden kann.
+Zu jedem Zeitpunkt hat jeder Knoten nur Wissen über den vorherigen Knoten und den nachfolgenden Knoten. Der erste Knoten ist immer der Eintrittsknoten und der letzte der Austrittsknoten (engl. \QuoteM{exit node}). Die Verbindungspfade werden im Tor-Netzwerk in regelmäßigen Abständen geändert. Das Tor-Netzwerk selber benutzt intern konsistent TLS Verschlüsselung.
+
+Dieses Konzept wird vor allem im WWW benutzt, über den sogenannten \QuoteM{Tor Browser} \RefIt{torbrowserhp}.
+TorBirdy macht allerdings in derselben Weise Gebrauch davon, bleibt aber kompatibel mit den Protokollen SMTP, POP3 und IMAP.
+
+Anzumerken ist, dass der Versand von E-Mails auch über Weboberflächen möglich ist und somit eine gewöhnliche Verbindung über den Tor Browser verwendet werden kann. Allerdings gibt es auch diverse Gründe dies für vollwertige MUAs zu ermöglichen \QuoteIndirect{torbirdy}{S. 4}.

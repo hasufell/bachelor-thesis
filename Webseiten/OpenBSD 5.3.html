@@ -1,0 +1,850 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0030)http://www.openbsd.org/53.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>OpenBSD 5.3</title>
+
+<meta name="description" content="OpenBSD 5.3">
+<meta name="copyright" content="This document copyright 2013 by OpenBSD.">
+<link rel="canonical" href="http://www.openbsd.org/53.html">
+<link id="vTabsCoreCSS" rel="stylesheet" href="chrome-extension://okpnlgbgcfchbicbhjmmhldhkbkfilce/themes/styles.css"></head>
+
+<body bgcolor="#ffffff" text="#000000" link="#24248E">
+
+<a href="http://www.openbsd.org/index.html">
+<img alt="[OpenBSD]" height="30" width="141" hspace="24" src="./OpenBSD 5.3_files/smalltitle.gif" border="0"></a>
+<p>
+
+<a href="./OpenBSD 5.3_files/RoyPuffy.jpg">
+<img align="left" width="227" height="343" hspace="24" src="./OpenBSD 5.3_files/RoyPuffy.jpg"></a>
+</p><h2><font color="#0000e0">OpenBSD 5.3</font></h2>
+<p>
+Released May 1, 2013<br>
+Copyright 1997-2013, Theo de Raadt.<br>
+<font color="#e00000">ISBN 978-0-9881561-1-1</font>
+<br>
+5.3 Song: <a href="http://www.openbsd.org/lyrics.html#53">"Blade Swimmer"</a>
+</p><p>
+</p><ul>
+<li>Order a CDROM from our <a href="https://openbsdstore.com/">ordering system</a>.
+</li><li>See the information on <a href="http://www.openbsd.org/ftp.html">The FTP page</a> for
+    a list of mirror machines.
+</li><li>Go to the <font color="#e00000">pub/OpenBSD/5.3/</font> directory on
+    one of the mirror sites.
+</li><li>Have a look at <a href="http://www.openbsd.org/errata53.html">The 5.3 Errata page</a> for a list
+    of bugs and workarounds.
+</li><li>See a <a href="http://www.openbsd.org/plus53.html">detailed log of changes</a> between the
+    5.2 and 5.3 releases.
+</li></ul>
+<br clear="all">
+<p>
+All applicable copyrights and credits can be found in the applicable
+file sources found in the files src.tar.gz, sys.tar.gz,
+xenocara.tar.gz, or in the files fetched via ports.tar.gz.  The
+distribution files used to build packages from the ports.tar.gz file
+are not included on the CDROM because of lack of space.
+</p><p>
+
+<a name="new"></a>
+</p><hr>
+<p>
+</p><h3><font color="#0000e0">What's New</font></h3>
+<p>
+This is a partial list of new features and systems included in OpenBSD 5.3.
+For a comprehensive list, see the <a href="http://www.openbsd.org/plus53.html">changelog</a> leading
+to 5.3.
+</p><p>
+
+</p><ul>
+<li>Improved hardware support, including:
+    <ul>
+    <li>New driver <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=oce&amp;sektion=4">oce(4)</a> for Emulex OneConnect 10Gb Ethernet adapters.
+    </li><li>New driver <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=rtsx&amp;sektion=4">rtsx(4)</a> for the Realtek RTS5209 card reader.
+    </li><li>New driver <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mfii&amp;sektion=4">mfii(4)</a> for the LSI Logic MegaRAID SAS Fusion controllers.
+    </li><li>New driver <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smsc&amp;sektion=4">smsc(4)</a> for SMSC LAN95xx 10/100 USB Ethernet adapters.
+    </li><li>New drivers for Toradex OAK USB sensors: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=uoaklux&amp;sektion=4">uoaklux(4)</a> (illuminance), <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=uoakrh&amp;sektion=4">uoakrh(4)</a> (temperature and relative humidity) and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=uoakv&amp;sektion=4">uoakv(4)</a> (+/- 10V 8channel ADC).
+    </li><li>New drivers for <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=virtio&amp;sektion=4">virtio(4)</a> devices: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vio&amp;sektion=4">vio(4)</a> (network), <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vioblk&amp;sektion=4">vioblk(4)</a> (block devices, attaching as SCSI disks) and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=viomb&amp;sektion=4">viomb(4)</a> (memory ballooning).
+    </li><li>Support for Adaptec 39320LPE added to <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ahd&amp;sektion=4">ahd(4)</a>.
+    </li><li>Broadcom 5718/5719/5720 Gigabit Ethernet devices supported in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bge&amp;sektion=4">bge(4)</a>.
+    </li><li>Intel X540-based 10Gb Ethernet devices supported in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ix&amp;sektion=4">ix(4)</a>.
+    </li><li>Support for SFP+ hot-plug (82599) and various other improvements in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ix&amp;sektion=4">ix(4)</a>.
+    </li><li>TX interrupt mitigation, hardware VLAN tagging and checksum offload reduce CPU use in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vr&amp;sektion=4">vr(4)</a>.
+    </li><li>Baby jumbo frames supported in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vr&amp;sektion=4">vr(4)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sis&amp;sektion=4">sis(4)</a> useful for e.g. MPLS, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vlan&amp;sektion=4">vlan(4)</a> tag stacking (QinQ) and RFC4638 <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=pppoe&amp;sektion=4">pppoe(4)</a>.
+    </li><li>TCP RX Checksum offload in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=gem&amp;sektion=4">gem(4)</a>.
+    </li><li>Improvements for NICs using 82579/pch2 in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=em&amp;sektion=4">em(4)</a>.
+    </li><li>Flow control is now supported on <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bnx&amp;sektion=4">bnx(4)</a> 5708S/5709S adapters, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=gem&amp;sektion=4">gem(4)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=jme&amp;sektion=4">jme(4)</a>.
+
+    </li><li>Power-saving clients supported in hostap mode with <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=acx&amp;sektion=4">acx(4)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=athn&amp;sektion=4">athn(4)</a>.
+    </li><li>A cause of RT2661 <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ral&amp;sektion=4">ral(4)</a> wedging in hostap mode was fixed.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=iwn&amp;sektion=4">iwn(4)</a> supports additional devices (Centrino Advanced-N 6235 and initial support for Centrino Wireless-N 1030).
+
+    </li><li>Improvements to <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ahci&amp;sektion=4">ahci(4)</a>.
+    </li><li>Support for the fixed-function performance counter on newer x86 chips with constant time stamp counters.
+    </li><li>Elantech touchpads supported in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=pms&amp;sektion=4">pms(4)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=synaptics&amp;sektion=4">synaptics(4)</a>.
+    </li><li>Support for "physical devices" on skinny <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mfi&amp;sektion=4">mfi(4)</a> controllers.
+    </li><li>VMware emulated SAS adapters supported by <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mpi&amp;sektion=4">mpi(4)</a>.
+    </li><li>Support for Intel's Supervisor Mode Execution Protection (SMEP) and Supervisor Mode Access Prevention (SMAP) features on i386 and amd64.
+    </li><li>Support for the RDRAND instruction to read the hardware random number generator on recent Intel processors.
+    </li><li>amd64 PCI memory extent changed to cover the whole 64-bit memory space; fixes erroneous extent allocation panic on IBM x3100.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ulpt&amp;sektion=4">ulpt(4)</a> can now upload firmware to certain HP LaserJet printers.
+    </li><li>Added stat clock to Loongson machines, improving accuracy of CPU usage statistics.
+    </li><li>CPU throttling supported on Loongson 2F.
+    </li><li>Support for Apple UniNorth and U3 AGP added to <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=agp&amp;sektion=4">agp(4)</a>.
+    </li><li>DRM support for macppc.
+    </li></ul>
+<p>
+
+</p></li><li>Generic network stack improvements:
+    <ul>
+    <li>Restriction on writing to <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=trunk&amp;sektion=4">trunk(4)</a> member interfaces relaxed; BPF can now write to interfaces directly (useful for LLDP).
+    </li><li>UDP support added to <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sosplice&amp;sektion=9">sosplice(9)</a> (zero-copy socket splicing).
+    </li><li>IPv6 autoconfprivacy is enabled by default (can be disabled per-interface with an <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ifconfig&amp;sektion=8">ifconfig(8)</a> flag).
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ifconfig&amp;sektion=8">ifconfig(8)</a> <tt>hwfeatures</tt> displays the maximum MTU supported by the driver (indicating support for jumbo/baby-jumbo frames).
+    </li><li>Vastly improved IPsec v3 compatibility, including support for Extended Sequence Numbers in the AES-NI driver for AES-GCM and other modes.
+    </li></ul>
+<p>
+
+</p></li><li>Routing daemons and other userland network improvements:
+    <ul>
+    <li>OpenBSD now includes <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=npppd&amp;sektion=8">npppd(8)</a>, a server-side daemon for L2TP, L2TP/IPsec, PPTP and PPPoE.
+    </li><li>New standalone <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=tftp-proxy&amp;sektion=8">tftp-proxy(8)</a> to replace the old <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=inetd&amp;sektion=8">inetd(8)</a>-based implementation.
+    </li><li>SNMPv3 supported in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=snmpd&amp;sektion=8">snmpd(8)</a>.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bgpd&amp;sektion=8">bgpd(8)</a> is more tolerant of unknown capabilities when bringing up a session (logs a warning rather than fails).
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bgpd&amp;sektion=8">bgpd(8)</a> now handles client side of "graceful restart".
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bgpd&amp;sektion=8">bgpd(8)</a> can now filter based on the NEXTHOP attribute.
+    </li><li>A stratum can now be assigned to hardware sensors in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ntpd&amp;sektion=8">ntpd(8)</a>.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=authpf&amp;sektion=8">authpf(8)</a> now supports the use of per-group rules files.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ftp&amp;sektion=1">ftp(1)</a> client now supports basic HTTP authentication as per RFC 2617 and 3986 like "ftp http[s]://user:pass@host/file".
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ftp&amp;sektion=1">ftp(1)</a> client's mput command allows to upload a directory tree recursively using the -r switch.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=relayd&amp;sektion=8">relayd(8)</a> has various improvements including additional scheduling algorithms (least-states, for redirections, and random/source-hash, for relays).
+    </li><li>The <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=iked&amp;sektion=8">iked(8)</a> IKEv2 daemon supports NAT-T. (The isakmpd daemon for IKEv1 has supported this for a long time).
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=iked&amp;sektion=8">iked(8)</a> blocks IPv6 traffic unless there are v6 VPN flows; this is to prevent leakages as described in <a href="http://tools.ietf.org/html/draft-gont-opsec-vpn-leakages">draft-gont-opsec-vpn-leakages</a>.
+    </li></ul>
+<p>
+
+</p></li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dhclient&amp;sektion=8">dhclient(8)</a> improvements:
+    <ul>
+    <li>dhclient-script eliminated, all configuration is done with ioctl's and routing sockets.
+    </li><li>interface configuration is much faster.
+    </li><li>HUP signals cause dhclient to restart; making it re-read the <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dhclient.conf&amp;sektion=5">dhclient.conf(5)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=resolv.conf.tail&amp;sektion=5">resolv.conf.tail(5)</a> files, and obtain a new lease.
+    </li><li>INIT, USR1, USR2 signals cause dhclient to exit after attempting to remove routes and addresses it configured.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=resolv.conf&amp;sektion=5">resolv.conf(5)</a> is written only when the in-use default route was inserted by dhclient. Possible changes to the default route are detected and cause dhclient to write out resolv.conf when appropriate.
+    </li><li>interface hardware address changes are detected and cause dhclient to restart.
+    </li><li>dhclient.conf directive 'ignore' and command line option '-i' added, allowing the suppression of specific options offered by server.
+    </li><li>'-L' command line option added, allowing the creation of a complete record of the most recent offer and what we modified it to when binding the lease.
+    </li><li>rejected offers no longer prevent dhclient from trying recorded leases and going daemon.
+    </li><li>cleanup of routing tables when starting and exiting is more complete.
+    </li><li>log messages cleaned up and reduced.
+    </li><li>dhclient is automatically placed in the routing domain of the interface.
+    </li><li>incoming and outgoing packet buffers are separate, eliminating possible transmission of inappropriate packets when re-trying DISCOVER and REQUEST.
+    </li><li>resolv.conf.tail read only once, at startup.
+    </li><li>both OFFER and ACK packets that lack required options are rejected.
+    </li><li>file names passed to '-L' and '-l' are constrained to be regular files.
+    </li><li>bind success reported after binding complete, not when it is started.
+    </li><li>privileged process daemonizes, eliminating its controlling terminal.
+    </li><li>STDIN/STDOUT/STDERR no longer redirected to /dev/null when '-d' specified.
+    </li><li>all existing addresses on the interface are deleted when binding a new lease.
+    </li><li>leases which would cause routing problems because another interface is already configured with the same subnet are rejected.
+    </li><li>premature and repeated DISCOVER and/or REQUEST messages at startup are avoided.
+    </li><li>permanent ARP cache entries are no longer deleted during binding.
+    </li><li>allow empty lists of option names for 'ignore', 'request', and 'require' dhclient.conf directives, so lists can be reset in interface declarations.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dhcpd&amp;sektion=8">dhcpd(8)</a> and dhclient recognize the same list of dhcp options.
+    </li><li>hand-rolled IMSG implementation replaced with <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=imsg_init&amp;sektion=3">imsg_init(3)</a> and related functions..
+    </li><li>hand-rolled date string construction replaced with <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strftime&amp;sektion=3">strftime(3)</a> invocations.
+    </li><li>hand-rolled '%m' option replaced with <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strerror&amp;sektion=3">strerror(3)</a> invocations.
+    </li><li>many other internal code improvements.
+    </li></ul>
+<p>
+
+</p></li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=pf&amp;sektion=4">pf(4)</a> improvements:
+    <ul>
+    <li> The <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=divert&amp;sektion=4">divert(4)</a>
+         socket now supports the new IP_DIVERTFL socket option to control whether both inbound and outbound packets are diverted (the default) or only packets travelling in one direction.
+    </li><li>Sloppy state tracking (a special mode occasionally needed with asymmetric routing) now works correctly with ICMP.
+    </li><li>PF now restricts the fragment limit to protect against a misconfiguration running the kernel out of mbuf clusters.
+    </li></ul>
+<p>
+
+</p></li><li>OpenSMTPD 5.3:
+    <ul>
+    <li>New features:
+      <ul>
+	<li>code is now considered stable and suitable for use in production.
+	</li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smtpctl&amp;sektion=8">smtpctl(8)</a> <i>trace</i> supports runtime tracing of various components, including imsg exchanges, incoming and outgoing sessions, aliases expansion and much more.
+	</li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smtpctl&amp;sektion=8">smtpctl(8)</a> <i>monitor</i> can now be used to monitor in real-time an instance of <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smtpd&amp;sektion=8">smtpd(8)</a>.
+	</li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smtpctl&amp;sektion=8">smtpctl(8)</a> <i>show queue</i> now supports an "online" mode where the scheduler is queried instead of the disk-based queue to provide more accurate information.
+	</li><li>virtual domain support has been reworked to simplify and bring support for new features like global catch-alls and shared user mappings.
+	</li><li>new table API replaces the map API: better handling of transient errors, improved performances and a much better interface.
+	</li><li>the transfer process may now select the source IP address to use as well as the HELO hostname to advertise from a table.
+	</li><li>each listener may advertise a different banner hostname.
+	</li><li>an alternate user database may be provided instead of relying on <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=getpwnam&amp;sektion=3">getpwnam(3)</a>.
+	</li><li>users may now be authenticated using credentials from a table.
+	</li><li>incoming sessions can be tagged, allowing for rules to only match envelopes that have been reinjected in the daemon after being passed to a proxy tool.
+	</li><li>intermediate bounces are now sent at configurable rates.
+	</li><li>rules can now check for a sender email address or domain.
+	</li><li>experimental (yet functional) support for aldap and sqlite as table backends.
+      </li></ul>
+
+    </li><li>Improvements:
+      <ul>
+	<li>improved logging format to make it both easier to read and parse.
+	</li><li>improved memory use by scheduler, smtp, queue and transfer processes.
+	</li><li>more reliable and efficient disk-based queue.
+	</li><li>improved scheduler, dns and relaying logic that optimizes transfers.
+	</li><li>simplified grammar for <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=smtpd.conf&amp;sektion=5">smtpd.conf(5)</a>.
+	</li><li>initial support for client and server SSL peer certificates validation.
+	</li><li>SSL certificate tree is now isolated and network-facing processes request SSL information on-demand by imsg.
+	</li><li>improved and simplified SMTP and MTA engines.
+	</li><li>much improved performances on both incoming and outgoing code paths.
+	</li><li>tons of cleanup and assorted minor bug fixes.
+      </li></ul>
+    </li></ul>
+<p>
+
+</p></li><li>Security improvements:
+    <ul>
+    <li>Position-independent executables (PIE) are now used <b>by default</b> on alpha, amd64, hppa, landisk, loongson, sgi and sparc64.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=gcc&amp;sektion=1">gcc(1)</a> stack smashing protector added for Alpha and MIPS (enabled by default).
+    </li><li>Shared libraries on GCC 4 platforms now each get their own stack protector cookies instead of sharing a single global cookie.
+    </li></ul>
+<p>
+
+</p></li><li>Performance improvements:
+    <ul>
+    <li>Switch default disk I/O sort algorithm to NSCAN for improved fairness and response times.
+    </li><li>Softdep speedup improvements by the revert of a previously necessary workaround to prevent kva starvation.
+    </li><li>Large performance and reliability improvements in 
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=make&amp;sektion=1">make(1)</a>,
+especially in parallel mode. make no longer does any busy waiting, it handles
+concurrent targets correctly, and displays more accurate error messages.
+    </li><li>Increased stack alignment in constructor functions and new threads on i386 to meet requirements for SSE.
+    </li><li>Coredumping no longer hogs CPU or I/O and can be aborted by sending the process a SIGKILL signal.
+    </li></ul>
+<p>
+
+</p></li><li>Threading improvements:
+    <ul>
+    <li>Threaded programs and libraries can now be linked with the POSIX-standard -lpthread flag instead of the OpenBSD-specific -pthread flag
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=abort&amp;sektion=3">abort(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=raise&amp;sektion=3">raise(3)</a> now direct the signal to the calling thread, as specified by POSIX.
+    </li><li>Whether a thread is currently executing on an alternate signal stack (c.f.  <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sigaltstack&amp;sektion=2">sigaltstack(2)</a>) is now determined dynamically, so the stack can be reused if <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=siglongjmp&amp;sektion=3">siglongjmp(3)</a> is used to exit the signal handler.
+    </li><li>libpthread now caches automatically allocated, default size thread stacks.
+    </li><li>Improvements in the handling of profiling, tracing, and %cpu calculation of threaded processes.
+    </li></ul>
+<p>
+
+</p></li><li>Assorted improvements:
+    <ul>
+    <li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ldomctl&amp;sektion=8&amp;arch=sparc64">ldomctl(8)</a>
+      was added to manage logical domains on sun4v systems through
+      <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ldomd&amp;sektion=8&amp;arch=sparc64">ldomd(8)</a>.
+    </li><li>Support for WPA Enterprise was added to the wpa_supplicant package.
+    </li><li>OpenBSD/luna88k and OpenBSD/mvme88k have switched to GCC 3, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=elf&amp;sektion=5">elf(5)</a> and gained shared library support.
+    </li><li>OpenBSD/hp300 and OpenBSD/mvme68k have switched to GCC 3 and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=elf&amp;sektion=5">elf(5)</a>.
+    </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=softraid&amp;sektion=4">softraid(4)</a> RAID1 and crypto volumes are now bootable on i386 and amd64 (full disk encryption).
+    </li><li>The <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mg&amp;sektion=1">mg(1)</a>
+      emacs-like editor now supports <tt>diff-buffer-with-file</tt>, <tt>make-directory</tt> and <tt>revert-buffer</tt>.
+      Column numbers have been made configurable and locale is respected for ctype purposes, like displaying ISO Latin 1 characters.
+    </li><li>Improved our own <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=pkg-config&amp;sektion=1">pkg-config(1)</a>
+      implementation to make it compatible with freedesktop.org's 0.27.1 release.
+    </li><li>A number of improvements to the buffer cache and page daemon interactions to avoid issues in low memory/low kva situations.
+    </li><li>Various bug fixes in uvm to avoid potential races and deadlock issues.
+    </li><li>Memory filesystem (mfs) switched to bufq, giving us queue limits and FIFO queueing (rather than the current LIFO queueing).
+    </li><li>Many improvements to the <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=cwm&amp;sektion=1">cwm(1)</a> window manager,
+including tab completion and Xft support for menus, improved Xinerama support, and per-group vertical/horizontal manual tiling support.
+    </li><li>Added <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dprintf&amp;sektion=3">dprintf(3)</a>, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=grantpt&amp;sektion=3">grantpt(3)</a>, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=posix_openpt&amp;sektion=3">posix_openpt(3)</a>, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ptsname&amp;sektion=3">ptsname(3)</a>, <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=unlockpt&amp;sektion=3">unlockpt(3)</a>, and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vdprintf&amp;sektion=3">vdprintf(3)</a>.
+    </li><li>Corrected the order of invocation of constructor and destruction functions.
+    </li><li>Improved compliance and/or cleanliness of header files, particularly
+	&lt;dlfcn.h&gt;, &lt;netdb.h&gt;, &lt;net/if.h&gt;,
+	&lt;netinet/in.h&gt;, &lt;sys/socket.h&gt;, &lt;sys/uio.h&gt;,
+	and &lt;sys/un.h&gt;.
+    </li></ul>
+<p>
+
+</p></li><li>OpenSSH 6.2:
+    <ul>
+    <li>New features:
+      <ul>
+      <li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          and
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          Added support for AES-GCM authenticated encryption in SSH protocol 2.
+          The new cipher is available as "aes128-gcm@openssh.com" and
+          "aes256-gcm@openssh.com". It uses an identical packet format to the
+          AES-GCM mode specified in RFC 5647, but uses simpler and different
+          selection rules during key exchange.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          and
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          Added support for encrypt-then-mac (EtM) MAC modes for SSH protocol 2.
+          These modes alter the packet format and compute the MAC over the
+          packet length and encrypted packet rather than over the plaintext
+          data. These modes are considered more secure and are used by default
+          when available.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          and
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          Added support for the UMAC-128 MAC as "umac-128@openssh.com" and
+          "umac-128-etm@openssh.com". The latter being an encrypt-then-mac mode.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          Added support for multiple required authentication in SSH protocol 2
+          via an <tt>AuthenticationMethods</tt> option. This option lists one
+          or more comma-separated lists of authentication method names.
+          Successful completion of all the methods in any list is required for
+          authentication to complete. This allows, for example, requiring a
+          user having to authenticate via public key or GSSAPI before they are
+          offered password authentication.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>
+          and
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>:
+          Added support for Key Revocation Lists (KRLs), a compact binary
+          format to represent lists of revoked keys and certificates that take
+          as little as one bit per certificate when revoking by serial number.
+          KRLs may be generated using
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>
+          and are loaded into
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>
+          via the existing <tt>RevokedKeys</tt>
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config&amp;sektion=5">sshd_config(5)</a>
+          option.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          <tt>IdentitiesOnly</tt> now applies to keys obtained from a
+          PKCS11Provider. This allows control of which keys are offered from
+          tokens using <tt>IdentityFile</tt>.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config&amp;sektion=5">sshd_config(5)</a>'s
+          AllowTcpForwarding now accepts "<tt>local</tt>" and "<tt>remote</tt>"
+          in addition to its previous "<tt>yes</tt>"/"<tt>no</tt>" keywords to
+          allow the server to specify whether just local or remote TCP
+          forwarding is enabled.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd&amp;sektion=8">sshd(8)</a>:
+          Added a
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config&amp;sektion=5">sshd_config(5)</a>
+          option <tt>AuthorizedKeysCommand</tt> to support fetching
+          authorized_keys from a command in addition to (or instead of) from
+          the filesystem. The command is run under an account specified by an
+          <tt>AuthorizedKeysCommandUser</tt>
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config&amp;sektion=5">sshd_config(5)</a>
+          option.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sftp-server&amp;sektion=8">sftp-server(8)</a>:
+          Now supports a <tt>-d</tt> option to allow the starting directory to
+          be something other than the user's home directory.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>:
+          Now allows fingerprinting of keys hosted in PKCS#11 tokens using
+          "ssh-keygen -lD pkcs11_provider".
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          When SSH protocol 2 only is selected (the default),
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          now immediately sends its SSH protocol banner to the server without
+          waiting to receive the server's banner, saving time when connecting.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          Added <tt>~v</tt> and <tt>~V</tt> escape sequences to raise and lower
+          the logging level respectively.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>
+          Made the escape command help (<tt>~?</tt>) context sensitive so that
+          only commands that will work in the current session are shown.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>:
+          When deleting host lines from known_hosts using "ssh-keygen -R host",
+          <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>
+          now prints details of which lines were removed.
+      </li></ul>
+    </li><li>The following significant bugs have been fixed in this release:
+      <ul>
+      <li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          Force a clean shutdown of ControlMaster client sessions when the
+          <tt>~.</tt> escape sequence is used. This means that <tt>~.</tt>
+          should now work in mux clients even if the server is no longer
+          responding.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          Correctly detect errors during local TCP forward setup in multiplexed
+          clients. (bz#2055)
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-add&amp;sektion=1">ssh-add(1)</a>:
+          Made deleting explicit keys "ssh-add -d" symmetric with adding keys
+          with respect to certificates. It now tries to delete the
+          corresponding certificate and respects the <tt>-k</tt> option to
+          allow deleting of the key only.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=sftp&amp;sektion=1">sftp(1)</a>:
+          Fix a number of parsing and command-editing bugs, including bz#1956.
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          When muxmaster is run with <tt>-N</tt>, ensure that it shuts down
+          gracefully when a client sends it "-O stop" rather than hanging
+          around. (bz#1985)
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-keygen&amp;sektion=1">ssh-keygen(1)</a>:
+          When screening moduli candidates, append to the file rather than
+          overwriting to allow resumption. (bz#1957)
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          Record "Received disconnect" messages at ERROR rather than INFO
+          priority. (bz#2057)
+      </li><li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&amp;sektion=1">ssh(1)</a>:
+          Loudly warn if explicitly-provided private key is unreadable.
+          (bz#1981)
+      </li></ul>
+    </li></ul>
+<p>
+
+</p></li><li>Over 7,800 ports, major performance and stability improvements in 
+the package build process
+    <ul>
+    <li>The parallel ports builder is more efficient. The main improvement is
+that dpb consumes much less cpu on busy boxes, but there are lots of small
+optimizations that amount to a large performance increase:
+dpb can now build selected large ports using parallel make, and it 
+has a notion of affinity, so that ports failing on a cluster will be 
+preferentially restarted on the same machine.
+    </li></ul>
+<p>
+</p></li><li>Many pre-built packages for each architecture:
+    <table border="0" cellspacing="0" cellpadding="2" width="95%">
+    <tbody><tr>
+    <td valign="top" width="25%">
+    <ul>
+      <li>i386:       7670
+      </li><li>sparc64:    6756
+      </li><li>alpha:      6151
+    </li></ul></td><td valign="top" width="25%"><ul>
+      <li>sh:         1111
+      </li><li>amd64:      7632
+      </li><li>powerpc:    7215
+    </li></ul></td><td valign="top" width="25%"><ul>
+      <li>sparc:      4635
+      </li><li>arm:        4944
+      </li><li>hppa:       6401
+    </li></ul></td><td valign="top" width="25%"><ul>
+      <li>vax:        2081
+      </li><li>mips64:     6519
+      </li><li>mips64el:   6539
+  </li></ul></td></tr></tbody></table>
+<p>
+
+</p></li><li>Some highlights:
+    <ul>
+    <li>GNOME 3.6.2			</li><li>KDE 3.5.10
+    </li><li>Xfce 4.10			</li><li>MySQL 5.1.68
+    </li><li>PostgreSQL 9.2.3		</li><li>Postfix 2.9.6
+    </li><li>OpenLDAP 2.3.43 and 2.4.33	</li><li>Mozilla Firefox 3.6.28 and 18.0.2
+    </li><li>Mozilla Thunderbird 17.0.2	</li><li>GHC 7.4.2
+    </li><li>LibreOffice 3.6.5.2		</li><li>Emacs 21.4 and 24.2
+    </li><li>Vim 7.3.154			</li><li>PHP 5.2.17 and 5.3.21
+    </li><li>Python 2.5.4, 2.7.3 and 3.2.3	</li><li>Ruby 1.8.7.370 and 1.9.3.392
+    </li><li>Tcl/Tk 8.5.13 and 8.6.0		</li><li>Jdk 1.6.0.32 and 1.7.0.11
+    </li><li>Mono 2.10.9			</li><li>Chromium 24.0.1312.68
+    </li><li>Groff 1.21			</li><li>Go 1.0.3
+    </li><li>GCC 4.6.3 and 4.7.2		</li><li>LLVM/Clang 3.2
+    </li></ul>
+<p>
+
+</p></li><li>As usual, steady improvements in manual pages and other documentation.
+<p>
+
+</p></li><li>The system includes the following major components from outside suppliers:
+    <ul>
+    <li>Xenocara (based on X.Org 7.7 with xserver 1.12.3 + patches,
+      freetype 2.4.11, fontconfig 2.8.0, Mesa 7.11.2, xterm 287,
+      xkeyboard-config 2.7 and more)
+    </li><li>Gcc 4.2.1 (+patches), 3.3.6 (+ patches) and 2.95.3 (+ patches)
+    </li><li>Perl 5.12.2 (+ patches)
+    </li><li>Our improved and secured version of Apache 1.3, with
+      SSL/TLS and DSO support
+    </li><li>Nginx 1.2.6 (+ patches)
+    </li><li>OpenSSL 1.0.1c (+ patches)
+    </li><li>SQLite 3.7.14.1 (+ patches)
+    </li><li>Sendmail 8.14.6, with libmilter
+    </li><li>Bind 9.4.2-P2 (+ patches)
+    </li><li>NSD 3.2.15
+    </li><li>Lynx 2.8.7rel.2 with HTTPS and IPv6 support (+ patches)
+    </li><li>Sudo 1.7.2p8
+    </li><li>Ncurses 5.7
+    </li><li>Heimdal 0.7.2 (+ patches)
+    </li><li>Binutils 2.15 (+ patches)
+    </li><li>Gdb 6.3 (+ patches)
+    </li><li>Less 444 (+ patches)
+    </li><li>Awk Aug 10, 2011 version
+    </li></ul>
+
+</li></ul>
+
+<a name="install"></a>
+<hr>
+<p>
+</p><h3><font color="#0000e0">How to install</font></h3>
+<p>
+Following this are the instructions which you would have on a piece of
+paper if you had purchased a CDROM set instead of doing an alternate
+form of install.  The instructions for doing an FTP (or other style
+of) install are very similar; the CDROM instructions are left intact
+so that you can see how much easier it would have been if you had
+purchased a CDROM instead.
+</p><p>
+
+</p><hr>
+Please refer to the following files on the three CDROMs or FTP mirror for
+extensive details on how to install OpenBSD 5.3 on your machine:
+<p>
+</p><ul>
+<li>CD1:5.3/i386/INSTALL.i386
+<p>
+</p></li><li>CD2:5.3/amd64/INSTALL.amd64
+<p>
+</p></li><li>CD3:5.3/sparc64/INSTALL.sparc64
+<p>
+</p></li><li>FTP:.../OpenBSD/5.3/alpha/INSTALL.alpha
+</li><li>FTP:.../OpenBSD/5.3/armish/INSTALL.armish
+</li><li>FTP:.../OpenBSD/5.3/hp300/INSTALL.hp300
+</li><li>FTP:.../OpenBSD/5.3/hppa/INSTALL.hppa
+</li><li>FTP:.../OpenBSD/5.3/landisk/INSTALL.landisk
+</li><li>FTP:.../OpenBSD/5.3/loongson/INSTALL.loongson
+</li><li>FTP:.../OpenBSD/5.3/luna88k/INSTALL.luna88k
+</li><li>FTP:.../OpenBSD/5.3/macppc/INSTALL.macppc
+</li><li>FTP:.../OpenBSD/5.3/mvme68k/INSTALL.mvme68k
+</li><li>FTP:.../OpenBSD/5.3/mvme88k/INSTALL.mvme88k
+</li><li>FTP:.../OpenBSD/5.3/sgi/INSTALL.sgi
+</li><li>FTP:.../OpenBSD/5.3/socppc/INSTALL.socppc
+</li><li>FTP:.../OpenBSD/5.3/sparc/INSTALL.sparc
+</li><li>FTP:.../OpenBSD/5.3/vax/INSTALL.vax
+</li><li>FTP:.../OpenBSD/5.3/zaurus/INSTALL.zaurus
+</li></ul>
+<hr>
+
+<p>
+Quick installer information for people familiar with OpenBSD, and the
+use of the "disklabel -E" command.  If you are at all confused when
+installing OpenBSD, read the relevant INSTALL.* file as listed above!
+</p><p>
+
+</p><h3><font color="#e00000">OpenBSD/i386:</font></h3>
+<ul>
+Play with your BIOS options to enable booting from a CD. The OpenBSD/i386
+release is on CD1. If your BIOS does not support booting from CD, you will need
+to create a boot floppy to install from. To create a boot floppy write
+<i>CD1:5.3/i386/floppy53.fs</i> to a floppy and boot via the floppy drive.
+
+<p>
+Use <i>CD1:5.3/i386/floppyB53.fs</i> instead for greater SCSI controller
+support, or <i>CD1:5.3/i386/floppyC53.fs</i> for better laptop support.
+
+</p><p>
+If you can't boot from a CD or a floppy disk,
+you can install across the network using PXE as described in
+the included INSTALL.i386 document.
+
+</p><p>
+If you are planning on dual booting OpenBSD with another OS, you will need to
+read INSTALL.i386.
+
+</p><p>
+To make a boot floppy under MS-DOS, use the "rawrite" utility located
+at <i>CD1:5.3/tools/rawrite.exe</i>. To make the boot floppy under a Unix OS,
+use the
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dd&amp;sektion=1">dd(1)</a>
+utility. The following is an example usage of
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=dd&amp;sektion=1">dd(1)</a>,
+where the device could be "floppy", "rfd0c", or
+"rfd0a".
+
+</p><ul><pre># <strong>dd if=&lt;file&gt; of=/dev/&lt;device&gt; bs=32k</strong>
+</pre></ul>
+
+<p>
+Make sure you use properly formatted perfect floppies with NO BAD BLOCKS or
+your install will most likely fail. For more information on creating a boot
+floppy and installing OpenBSD/i386 please refer to
+<a href="http://www.openbsd.org/faq/faq4.html#MkFlop">FAQ 4.3.2</a>.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/amd64:</font></h3>
+<ul>
+The 5.3 release of OpenBSD/amd64 is located on CD2.
+Boot from the CD to begin the install - you may need to adjust
+your BIOS options first.
+If you can't boot from the CD, you can create a boot floppy to install from.
+To do this, write <i>CD2:5.3/amd64/floppy53.fs</i> to a floppy, then
+boot from the floppy drive.
+
+<p>
+If you can't boot from a CD or a floppy disk,
+you can install across the network using PXE as described in the included
+INSTALL.amd64 document.
+
+</p><p>
+If you are planning to dual boot OpenBSD with another OS, you will need to
+read INSTALL.amd64.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/macppc:</font></h3>
+<ul>
+Burn the image from the FTP site to a CDROM, and poweron your machine
+while holding down the <i>C</i> key until the display turns on and
+shows <i>OpenBSD/macppc boot</i>.
+
+<p>
+Alternatively, at the Open Firmware prompt, enter <i>boot cd:,ofwboot
+/5.3/macppc/bsd.rd</i>
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/sparc64:</font></h3>
+<ul>
+Put CD3 in your CDROM drive and type <i>boot cdrom</i>.
+
+<p>
+If this doesn't work, or if you don't have a CDROM drive, you can write
+<i>CD3:5.3/sparc64/floppy53.fs</i> or <i>CD3:5.3/sparc64/floppyB53.fs</i>
+(depending on your machine) to a floppy and boot it with <i>boot
+floppy</i>. Refer to INSTALL.sparc64 for details.
+
+</p><p>
+Make sure you use a properly formatted floppy with NO BAD BLOCKS or your install
+will most likely fail.
+
+</p><p>
+You can also write <i>CD3:5.3/sparc64/miniroot53.fs</i> to the swap partition on
+the disk and boot with <i>boot disk:b</i>.
+
+</p><p>
+If nothing works, you can boot over the network as described in INSTALL.sparc64.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/alpha:</font></h3>
+<ul>
+<p>Write <i>FTP:5.3/alpha/floppy53.fs</i> or
+<i>FTP:5.3/alpha/floppyB53.fs</i> (depending on your machine) to a diskette and
+enter <i>boot dva0</i>. Refer to INSTALL.alpha for more details.
+
+</p><p>
+Make sure you use a properly formatted floppy with NO BAD BLOCKS or your install
+will most likely fail.
+
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/armish:</font></h3>
+<ul>
+<p>
+After connecting a serial port, Thecus can boot directly from the network
+either tftp or http. Configure the network using fconfig, reset,
+then load bsd.rd, see INSTALL.armish for specific details.
+IOData HDL-G can only boot from an EXT-2 partition. Boot into linux
+and copy 'boot' and bsd.rd into the first partition on wd0 (hda1)
+then load and run bsd.rd, preserving the wd0i (hda1) ext2fs partition.
+More details are available in INSTALL.armish.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/hp300:</font></h3>
+<ul>
+<p>
+Boot over the network by following the instructions in INSTALL.hp300.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/hppa:</font></h3>
+<ul>
+<p>
+Boot over the network by following the instructions in INSTALL.hppa or the
+<a href="http://www.openbsd.org/hppa.html#install">hppa platform page</a>.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/landisk:</font></h3>
+<ul>
+<p>
+Write <i>miniroot53.fs</i> to the start of the CF
+or disk, and boot normally.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/loongson:</font></h3>
+<ul>
+<p>
+Write <i>miniroot53.fs</i> to a USB stick and boot bsd.rd from it
+or boot bsd.rd via tftp.
+Refer to the instructions in INSTALL.loongson for more details.
+</p></ul>
+<p>
+
+</p><p>
+</p><h3><font color="#e00000">OpenBSD/luna88k:</font></h3>
+<ul>
+<p>
+Copy bsd.rd to a Mach or UniOS partition, and boot it from the PROM.
+Alternatively, you can create a bootable tape and boot from it. Refer to
+the instructions in INSTALL.luna88k for more details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/mvme68k:</font></h3>
+<ul>
+<p>
+You can create a bootable installation tape or boot over the network.<br>
+The network boot requires a MVME68K BUG version that supports the <i>NIOT</i>
+and <i>NBO</i> debugger commands. Follow the instructions in INSTALL.mvme68k
+for more details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/mvme88k:</font></h3>
+<ul>
+<p>
+You can create a bootable installation tape or boot over the network.<br>
+The network boot requires a MVME88K BUG version that supports the <i>NIOT</i>
+and <i>NBO</i> debugger commands. Follow the instructions in INSTALL.mvme88k
+for more details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/sgi:</font></h3>
+<ul>
+<p>
+To install on an O2, burn cd53.iso on a CD-R, put it in the CD drive of your
+machine and select <i>Install System Software</i> from the System Maintenance
+menu.
+
+</p><p>
+On other systems, or if your machine doesn't have a CD drive, you can
+setup a DHCP/tftp network server, and boot using "bootp()/bsd.rd.IP##" using
+the kernel matching your system type.
+Refer to the instructions in INSTALL.sgi for more details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/socppc:</font></h3>
+<ul>
+<p>
+After connecting a serial port, boot over the network via DHCP/tftp.
+Refer to the instructions in INSTALL.socppc for more details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/sparc:</font></h3>
+<ul>
+Boot from one of the provided install ISO images, using one of the two
+commands listed below, depending on the version of your ROM.
+
+<ul><pre>ok <strong>boot cdrom 5.3/sparc/bsd.rd</strong>
+or
+&gt; <strong>b sd(0,6,0)5.3/sparc/bsd.rd</strong>
+</pre></ul>
+
+<p>
+If your SPARC system does not have a CD drive, you can alternatively boot from floppy.
+To do so you need to write <i>floppy53.fs</i> to a floppy.
+For more information see <a href="http://www.openbsd.org/faq/faq4.html#MkFlop">FAQ 4.3.2</a>.
+To boot from the floppy use one of the two commands listed below,
+depending on the version of your ROM.
+
+</p><ul><pre>ok <strong>boot floppy</strong>
+or
+&gt; <strong>b fd()</strong>
+</pre></ul>
+
+<p>
+Make sure you use a properly formatted floppy with NO BAD BLOCKS or your install
+will most likely fail.
+
+</p><p>
+If your SPARC system doesn't have a floppy drive nor a CD drive, you can either
+setup a bootable tape, or install via network, as told in the
+INSTALL.sparc file.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/vax:</font></h3>
+<ul>
+Boot over the network via mopbooting as described in INSTALL.vax.
+</ul>
+
+<p>
+</p><h3><font color="#e00000">OpenBSD/zaurus:</font></h3>
+<ul>
+<p>
+Using the Linux built-in graphical ipkg installer, install the
+openbsd53_arm.ipk package.  Reboot, then run it.  Read INSTALL.zaurus
+for a few important details.
+</p></ul>
+
+<p>
+</p><h3><font color="#e00000">Notes about the source code:</font></h3>
+<ul>
+src.tar.gz contains a source archive starting at /usr/src.  This file
+contains everything you need except for the kernel sources, which are
+in a separate archive.  To extract:
+<p>
+</p><ul><pre># <strong>mkdir -p /usr/src</strong>
+# <strong>cd /usr/src</strong>
+# <strong>tar xvfz /tmp/src.tar.gz</strong>
+</pre></ul>
+<p>
+sys.tar.gz contains a source archive starting at /usr/src/sys.
+This file contains all the kernel sources you need to rebuild kernels.
+To extract:
+</p><p>
+</p><ul><pre># <strong>mkdir -p /usr/src/sys</strong>
+# <strong>cd /usr/src</strong>
+# <strong>tar xvfz /tmp/sys.tar.gz</strong>
+</pre></ul>
+<p>
+Both of these trees are a regular CVS checkout.  Using these trees it
+is possible to get a head-start on using the anoncvs servers as
+described <a href="http://www.openbsd.org/anoncvs.html">here</a>.
+Using these files
+results in a much faster initial CVS update than you could expect from
+a fresh checkout of the full OpenBSD source tree.
+</p><p>
+</p></ul>
+
+<a name="upgrade"></a>
+<hr>
+<p>
+</p><h3><font color="#0000e0">How to upgrade</font></h3>
+<p>
+If you already have an OpenBSD 5.2 system, and do not want to reinstall,
+upgrade instructions and advice can be found in the
+<a href="http://www.openbsd.org/faq/upgrade53.html">Upgrade Guide</a>.
+
+<a name="ports"></a>
+</p><hr>
+<p>
+</p><h3><font color="#0000e0">Ports Tree</font></h3>
+<p>
+A ports tree archive is also provided.  To extract:
+</p><p>
+</p><ul><pre># <strong>cd /usr</strong>
+# <strong>tar xvfz /tmp/ports.tar.gz</strong>
+</pre></ul>
+<p>
+The <i>ports/</i> subdirectory is a checkout of the OpenBSD ports tree.  Go
+read the <a href="http://www.openbsd.org/faq/ports/index.html">ports</a> page
+if you know nothing about ports
+at this point.  This text is not a manual of how to use ports.
+Rather, it is a set of notes meant to kickstart the user on the
+OpenBSD ports system.
+</p><p>
+The <i>ports/</i> directory represents a CVS (see the manpage for
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=cvs&amp;sektion=1&amp;arch=i386">
+cvs(1)</a> if
+you aren't familiar with CVS) checkout of our ports.  As with our complete
+source tree, our ports tree is available via
+<a href="http://www.openbsd.org/anoncvs.html">AnonCVS</a>.
+So, in order to keep current with it, you must make the <i>ports/</i> tree
+available on a read-write medium and update the tree with a command
+like:
+</p><p>
+</p><ul><pre># <strong>cd /usr/ports</strong>
+# <strong>cvs -d anoncvs@server.openbsd.org:/cvs update -Pd -rOPENBSD_5_3</strong>
+</pre></ul>
+<p>
+[Of course, you must replace the server name here with a nearby anoncvs
+server.]
+</p><p>
+Note that most ports are available as packages through FTP. Updated
+packages for the 5.3 release will be made available if problems arise.
+</p><p>
+If you're interested in seeing a port added, would like to help out, or just
+would like to know more, the mailing list
+<a href="http://www.openbsd.org/mail.html">ports@openbsd.org</a> is a good place to know.
+</p><p>
+
+
+
+</p><v-div id="vTabsPanelExtension" class="v-tabs-panel v-tabs-panel-hide classic-v-theme-StG1Q1" style="width: 245px; zoom: 80%;"><v-div class="v-tabs-resizer"></v-div><v-div class="v-tabs-menu"><v-div class="v-tabs-menu-btn v-tabs-menu-newpage" title="New tab"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-tabs v-tabs-menu-btn-active" title="Tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-recent" title="Recent tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-keeper" title="Tab keeper"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks" title="Bookmarks manager"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks-tree" title="Bookmarks browser"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-notes" title="Notes"></v-div><div class="v-tabs-menu-btn v-tabs-menu-settings" title="Settings"></div><div class="v-tabs-menu-btn v-tabs-menu-minimizer" title="Hide panel"></div><div class="v-tabs-menu-btn v-tabs-menu-blank"></div></v-div><v-div class="v-tabs-list-wrap"><v-div class="v-tabs-list" style="width: 185px;"><v-div class="v-tabs-item" data-tab-id="608" data-tab-index="0" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVQ4T2NkoBAwUqifAWTAISC2JdOgQyADPgAxP5kGfAAZwAfExUBcCMS8RBr0GaiuD4SRw0AUKFADxOlAzI7DoB9A8RlA3AbEr0FqQAbsAOJmID4K1aQEpKuAOB6IWaBif4D0QqjGe1AxayBdCzLgPxSDDCoD4itQBWpAugPKrgDSt6BsHSDdBcQeIAfADIC5+B+QsQ6IG5EMgsmBNNYDcRAQM8EE0Q2Aif8FMpYAMchrIDWgsIkBYmaYAkIGoKvDycflAvoacARoHShKyAFHqJKZyLEZrgcAW5MmRP1u4vIAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="608"></v-div><v-div class="v-tabs-text" title="https://darkmail.info/downloads/dark-internet-mail-environment-march-2015.pdf">https://darkmail.info/downloads/dark-internet-mail</v-div></v-div><v-div class="v-tabs-item v-tabs-item-active" data-tab-id="612" data-tab-index="1" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADCUlEQVQ4T6WTXUhTYRzGn7NZ7cOmW62ctab4MVt+f0RotWOZxdLMSIowo2IX0cdFIRnVzlH7uLAYQV1UlMG6ESOLygg0j0Wlw/zCUkE45MrN0trUmubaaTvVMugm+l+9vC/v733+/+d5CfxnETPvXyovp/ZTVDnLsnqTxQSLydLsP4/LjKP6nveV/+2tPwBGY0bTt+EERpEaQbbeqcKxMzX0s4fVtNdrw9lLLdl+QH19vd5gMPBgfxElxQbqwCGaOVJF0YL3PeT6OCee9koglOlwv70fycoRqOdJIVxSQDvZZnLN2t20yWT6DSjNz9dzilfMmMeBfXkhEIsFqL7nwrpkCU7VfgYzEBJQHhz0EcUb8ugJmZu8ee4Br4g4YT5BDbTepUtIB4IJDrVWFRyOMRwscOM16wZ1R4Vh1wTCQqMhFAoRJW+CJmcn+Ws+hL+n2zf3MOPORKiVT8BJSiFSjGFbUi0c9ilY2jLxfjwSNlsnRkYGkaZxI3YVyVw4XfNDQdVJY1NbxzUyVnsYCtFlTI16oAqfg8wUKV50TaC6MR6zwzR4VHcbUCiQpBzCrqJECLgipv1tB0lYrVZ9T+tqxjMehP7RWORkFGKs7wpS07yobXLC/ECLDx4XPwft3EiIuAZIJGDSl+pIafAAeBvPlck4f/9QlkGnUaGh8QB25Ibi/HU36tlkvBvt5wGLCCXCw7uQrpkNsSQJdh+XByyOmc9laT8ifZkYnmkvNq6Qo6X7Cw5fnoQYkT4FDiwMU2KYHcTyxElMT8NnrQ5acRT5I0giEbc9FyjbK4VUIPJNW4CsvTbY7T8dlMsRvdiNBNVXeJVqRuSykbKYLcxV861sHhC1IJ5L2RyKVXPfYIn6M7rtX9BsDcLjzlnAp0+BHKzNkyNCHMRoEg4GwsQD/FZWVhpotjeOSdu6glQLn5N2iJmvHwjypWOSlgxN0lEZCdi0Moe2mM0oOr4PR41H+b8RAPjzHZGaS20u1ME5zJI3Lt7NLiwt1NdV1TVXVFToZ8Y3IOkXYObGv66/A7X4J0uu+P1wAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="612"></v-div><v-div class="v-tabs-text" title="OpenBSD 5.3">OpenBSD 5.3</v-div></v-div><v-div class="v-tabs-item" data-tab-id="614" data-tab-index="2" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADCUlEQVQ4T6WTXUhTYRzGn7NZ7cOmW62ctab4MVt+f0RotWOZxdLMSIowo2IX0cdFIRnVzlH7uLAYQV1UlMG6ESOLygg0j0Wlw/zCUkE45MrN0trUmubaaTvVMugm+l+9vC/v733+/+d5CfxnETPvXyovp/ZTVDnLsnqTxQSLydLsP4/LjKP6nveV/+2tPwBGY0bTt+EERpEaQbbeqcKxMzX0s4fVtNdrw9lLLdl+QH19vd5gMPBgfxElxQbqwCGaOVJF0YL3PeT6OCee9koglOlwv70fycoRqOdJIVxSQDvZZnLN2t20yWT6DSjNz9dzilfMmMeBfXkhEIsFqL7nwrpkCU7VfgYzEBJQHhz0EcUb8ugJmZu8ee4Br4g4YT5BDbTepUtIB4IJDrVWFRyOMRwscOM16wZ1R4Vh1wTCQqMhFAoRJW+CJmcn+Ws+hL+n2zf3MOPORKiVT8BJSiFSjGFbUi0c9ilY2jLxfjwSNlsnRkYGkaZxI3YVyVw4XfNDQdVJY1NbxzUyVnsYCtFlTI16oAqfg8wUKV50TaC6MR6zwzR4VHcbUCiQpBzCrqJECLgipv1tB0lYrVZ9T+tqxjMehP7RWORkFGKs7wpS07yobXLC/ECLDx4XPwft3EiIuAZIJGDSl+pIafAAeBvPlck4f/9QlkGnUaGh8QB25Ibi/HU36tlkvBvt5wGLCCXCw7uQrpkNsSQJdh+XByyOmc9laT8ifZkYnmkvNq6Qo6X7Cw5fnoQYkT4FDiwMU2KYHcTyxElMT8NnrQ5acRT5I0giEbc9FyjbK4VUIPJNW4CsvTbY7T8dlMsRvdiNBNVXeJVqRuSykbKYLcxV861sHhC1IJ5L2RyKVXPfYIn6M7rtX9BsDcLjzlnAp0+BHKzNkyNCHMRoEg4GwsQD/FZWVhpotjeOSdu6glQLn5N2iJmvHwjypWOSlgxN0lEZCdi0Moe2mM0oOr4PR41H+b8RAPjzHZGaS20u1ME5zJI3Lt7NLiwt1NdV1TVXVFToZ8Y3IOkXYObGv66/A7X4J0uu+P1wAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="614"></v-div><v-div class="v-tabs-text" title="OpenSMTPD">OpenSMTPD</v-div></v-div><v-div class="v-tabs-item" data-tab-id="616" data-tab-index="3" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="616"></v-div><v-div class="v-tabs-text" title="Email-Statistics-Report-2013-2017-Executive-Summary.pdf">Email-Statistics-Report-2013-2017-Executive-Summar</v-div></v-div><v-div class="v-tabs-item" data-tab-id="618" data-tab-index="4" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVQ4T2O0r9v230FbgoEcwMjIyMBYv/Lc/4YwQ3L0MzSuvoDbgA9ffzIsOHCHwUBBiMFBWxKrBTgNOHD1OcOErdcYJiSYMSiI8TJ8fvCU4eaCTQxsArwM6gl+DOwCfGADsRqwYP9thgPXXjAsyLYFK9oZUADWyKsgxXB5wlIGYQN1Br8Dc7EbALN5Q5kzWMHPD58Yfn34DNQsDeY/O3CaYbNjCkP6/4uYBoD8bFC6ieFCtx+DADc72Nn3N+xn0CuIQfH/TEZ97AY0rDoP1MjGUOCtDdZwpmE6g25BNNy/IDGQoZscUhiiH2xHdUGAqRxDQPc+hgfTQjFCe8OphwwBZvJg8TUGYQy+B+ZgBiIoIQV07WP4sDAaxQCQq2Bp5FhBFwMPMCCRvQSPhQQHFQbF7DUM9aEGYA2wwGwA8g0UhYFRuBEYgGcYHBc0o1iAEo0Ttl5laFh1ARwOIAMLvLXAgXlpwhKGLw+eMVhNKMPwHt6UCFJ9f8M+sCbFACcMzSABvAa8uXADrEnEQAOrZoIG4NSFJAF2ATCk/xOjGJsaUOwBAJAg2BQtJrBlAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="618"></v-div><v-div class="v-tabs-text" title="Open Source - Sendmail.com">Open Source - Sendmail.com</v-div></v-div><v-div class="v-tabs-item" data-tab-id="620" data-tab-index="5" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDElEQVQ4T5VTsRHCMAyUF6CmoDOhoKZiAC4TsAPHHQWjcJclmCAVJRUTAOnZwrFky5EV5y6kcmzr/6V/Gyh8detc++7opN5YwHW1tPA5GqOvZxup8LJO+9XdObsAaOtQjP8SaAC4fR2h+2ICigUlhYB3IwkBSGZdXATzANxSUCDYEyPvSQmiNVZhqKdfF4YlZc8AQBWG2f8BkC4lAB7grBaEukkAZEH7mn3uvWRHsgFADkh5d34617xCsLDvw8oDx/80RPY1c0WHAEmE/DBEtlEdci357V3KZiRsH+LJl7T8naU5ZBEeBUmGqSQ77slZZFFOcn2ocH3aAlwfUbYC1K9y9Dxp0jGdsnbqOfe9WLRfLl8SegAAAABJRU5ErkJggg=="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="620"></v-div><v-div class="v-tabs-text" title="The GNU Privacy Guard">The GNU Privacy Guard</v-div></v-div><v-div class="v-tabs-item" data-tab-id="624" data-tab-index="6" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="624"></v-div><v-div class="v-tabs-text" title="Tor Browser">Tor Browser</v-div></v-div><v-div class="v-tabs-item" data-tab-id="626" data-tab-index="7" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="626"></v-div><v-div class="v-tabs-text" title="torbirdy – Tor Bug Tracker &amp; Wiki">torbirdy – Tor Bug Tracker &amp; Wiki</v-div></v-div><v-div class="v-tabs-item" data-tab-id="628" data-tab-index="8" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="628"></v-div><v-div class="v-tabs-text" title="Haraka SMTP Email Server">Haraka SMTP Email Server</v-div></v-div></v-div></v-div></v-div><v-div id="vTabsDropZone_gom4wkE&amp;1AfkprN" class="v-tabs-drop-zone classic-v-theme-StG1Q1"></v-div><v-div id="vTabsPanelActivator_FZBceIksle" class="v-tabs-panel-activator classic-v-theme-StG1Q1 v-tabs-panel-activator-type-half" style="zoom: 80%;"></v-div></body></html>

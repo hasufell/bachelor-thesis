@@ -1,0 +1,7 @@
+Das hier vorgeschlagene System ist nicht nur eine SMTP-Erweiterung. Es handelt sich vor allem um eine Kombination aus bereits existierenden Technologien wie GPG, TorBirdy und TLS.
+
+Selbst wenn für die SMTP-Erweiterung eine konkrete Spezifikation und eine funktionierende Implementierung existiert, muss der Benutzer dennoch weitere Schritte unternehmen, um dieses System korrekt zu benutzen. Dies erhöht die Wahrscheinlichkeit, dass das System inkorrekt benutzt wird.
+
+Dies ist einerseits Dokumentationsarbeit, andererseits ist es aber auch denkbar, ähnlich wie Tor, eine Softwarelösung zur Verfügung zu stellen, die eine korrekte Konfiguration beinhaltet. Allerdings ist dies schwierig, da dies nur auf MUA Ebene möglich ist und der E-Mail Server immer noch fehlkonfiguriert sein kann.
+
+Ebenso ist das Problem der SMTP Spezifikation ungelöst, welche keine Garantie gibt, dass 2 MTAs überhaupt verschlüsselt kommunizieren, selbst wenn beide dies beherrschen. Dies muss auf Implementierungsebene garantiert werden, für alle Komponenten, die in diesem Kryptografiesystem mitwirken.

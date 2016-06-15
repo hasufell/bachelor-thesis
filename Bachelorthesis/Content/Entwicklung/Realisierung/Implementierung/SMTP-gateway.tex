@@ -1,0 +1,38 @@
+Um die initiale MystMail zu erstellen, die die Informationen über die Hops verschlüsselt in sich trägt, wird diese der Einfachheit halber im MSA, also gewissermaßen einem SMTP-Gateway, generiert.
+
+Die Liste der Hops ist statisch und vordefiniert für Testzwecke. Es liegt somit kein Zufallsalgorithmus vor. Die Verschlüsselung ist ebenso lediglich Pseudoverschlüsselung und kodiert gemäß Base64.
+
+\begin{minipage}{\linewidth}
+\begin{JavaScript}{Haraka Myst Erstellung}{hcreatemystmail}
+function create_myst_mail(transaction) {
+	// recipient is always the last hop
+	var recipient = transaction.rcpt_to[0].host;
+	var hops = get_hops();
+	hops.push(recipient);
+
+	// innermost mail, untouched
+	var old_mail = get_raw_mail(transaction.body);
+
+	var i;
+	var new_mail = old_mail;
+	for (i = hops.length - 1; i >= 0; i--) {
+		if (i == 0) {
+			// first hop, "from" must be the actual sender
+			var sender = transaction.mail_from.host;
+			new_mail = create_mail_for_hop(sender, hops[i],
+			             date, new_mail);
+		} else {
+			new_mail = create_mail_for_hop(hops[i-1],
+			             hops[i], date, new_mail);
+		}
+	}
+
+	return new_mail;
+}
+\end{JavaScript}
+\end{minipage}
+
+Die Hilfsfunktionen lassen sich im Anhang einsehen. % toref
+
+Nachdem die Mail erstellt ist, wird ähnlich wie beim MTA-Entscheider im Hook \verb#data_post# angesetzt und das Transaktions-Objekt manipuliert, um die dort enthaltene E-Mail mit der MystMail auszutauschen. Der entsprechende Code ist etwas kompliziert und ebenfalls im Anhang einsehbar.
+ 

@@ -1,0 +1,50 @@
+Nachfolgend wird der Hauptteil des Implementierungscodes aufgezeigt, allerdings ohne die Hilfsfunktionen. Dies soll eine Übersicht über den Haraka-spezifischen Algorithmus für den MTA-Entscheider geben.
+
+\begin{minipage}{\linewidth}
+\begin{JavaScript}{Haraka MTA-Entscheider}{hentscheider}
+exports.hook_data_post = function(next, connection) {
+    // if we have a myst mail, we need to inject our Protocol
+    if (is_myst_mail(connection.transaction.header)) {
+        // we decrypt the mail body and treat it as raw
+        // mail data
+        var decrypted_email = myst_decrypt(connection.
+        	transaction.body.bodytext);
+
+        // replace the current transaction object
+        var t = transform_transaction(decrypted_email,
+        	connection);
+        connection.transaction = t;
+
+        // the unpacked mail is a myst mail too, 
+        // relay it
+        if (is_myst_mail(connection.transaction.header)) {
+            connection.relaying = true;
+        }
+    }
+
+    // let the other handlers do what they want, we are
+    // finished injecting our logic, the rest is still
+    // SMTP compliant
+    next();
+}
+\end{JavaScript}
+\end{minipage}
+
+Die Funktionen \verb#myst_decrypt()# und \verb#transform_transaction()# können zunächst leere Funktionen sein. Wichtig ist hier lediglich die Funktion \verb#is_myst_mail()#, welche folgendermaßen definiert ist:
+
+\begin{JavaScript}{Haraka Myst header checker}{hismystmail}
+function is_myst_mail(header) {
+    if (header.get("X-Myst")) {
+        return true;
+    }
+
+    return false;
+}
+\end{JavaScript}
+
+Damit ist der erste Teil des MTA-Entscheider bereits implementiert und die Logik für das Entpacken und Erstellen der neuen E-Mail kann implementiert werden.
+
+Die Verschlüsselung und Entschlüsselung ist hier lediglich Base64. Die Funktion \verb#transform_transaction()# wird aufgrund ihrer Komplexität nur im Anhang gezeigt, % toref
+da sie ebenso auf interner Haraka-API aufbaut.
+
+Ebenso wichtig ist, anzumerken, dass \verb#connection.relaying = true;# im MTA-Entscheider bedeutet, dass der MTA für alle MystMails ein Open Relay ist. Deshalb kann und sollte ab Zeile 16 weitere Logik darüber entscheiden (z.B. eine Whitelist), ob die E-Mail weitergeleitet werden darf.

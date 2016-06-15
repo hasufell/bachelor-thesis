@@ -1,0 +1,15 @@
+Für die Wahl des Einsprungpunktes kamen mehrere Ansätze in die nähere Auswahl.
+
+Der erste Ansatz war die E-Mails kurz bevor sie die Queue erreichen, im Hook \verb#queue# abzufangen und die E-Mail manuell weiterzuleiten, beispielsweise indem über \verb#outbound.send_email(...)# eine neue E-Mail erstellt und versendet wird. Das Problem hierbei ist allerdings, dass der \verb#queue# Hook speziell ist und man diesen nur vollständig überschreiben kann, nicht aber nur zusätzliche Logik einführen kann. Dies erhöht den Implementierungsaufwand.
+
+Eine weitere Möglichkeit wäre gewesen, an mehreren Stellen anzusetzen, beispielsweise bei den Hooks \verb#mail# und \verb#rcpt#, und für jede Station Informationen zu sammeln, diese dann im \verb#connection.results# Objekt zu speichern und dann zu einem späteren Zeitpunkt eine neue E-Mail zu versenden oder die bestehende zu manipulieren. Da dies allerdings erhöhter Aufwand ist und einen globalen Zustand beinhaltet, wurde diese Idee verworfen.
+
+Der letzte Ansatz war, im Hook \verb#data_post# anzusetzen, direkt nachdem die E-Mail Daten eingegangen sind, also das SMTP Kommando \verb#DATA# abgeschlossen ist. Dies hat mehrere Vorteile. Zum einen kann dieser Hook durch andere Plugins normal weiterverarbeitet werden und zum anderen erlaubt er an dieser Stelle das Transaktionsobjekt, welches gerade erstellt wurde, ohne viel Seiteneffekte direkt zu manipulieren. Ebenso ist dies eine zentrale Stelle, an der noch relativ wenig Plugin-Logik ausgeführt worden ist, sodass kein kompliziertes Speichern von Zwischendaten erforderlich ist.
+
+Somit fiel die Wahl auf den letzten Ansatz und hatte folgende Implikationen:
+\begin{itemize}
+\item Einsprungpunkt nachdem das SMTP Kommando \verb#DATA# vollständig ausgeführt wurde (nach dem E-Mail Text)
+\item keine Zwischenzustände nötig
+\item erlaubt das Weiterverarbeiten durch andere Plugins
+\item direktes Modifizieren des Transaktionsobjektes: E-Mail und andere Meta-Daten werden direkt manipuliert
+\end{itemize}

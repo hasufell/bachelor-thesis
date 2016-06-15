@@ -1,0 +1,19 @@
+Das Testsystem wird gemäß des im Anhang befindlichen Handbuchs gestartet. Bei jedem Hop wird über die Konsole überwacht, welche Informationen eingehen. Ebenso werden temporär eingehende E-Mails in eine Datei geschrieben, um diese debuggen zu können.
+Der Testlauf zeigt auf:
+\begin{itemize}
+\item die E-Mail erreicht den Empfänger Container
+\item die eingegangene E-Mail am Empfänger Container stimmt mit der abgesendeten E-Mail überein
+\item in jedem Hop ist nur die MystMail sichtbar, welche im Body in Base64 Kodierung die nächste MystMail beinhaltet
+\end{itemize}
+
+Da die Implementierung allerdings nur diverse Teile des Algorithmus implementiert, erfüllt sie auch nicht exakt die Anforderungen aus \autoref{tab:FunctionalRequirements}. Dinge, die erfolgreich implementiert wurden, sind:
+\begin{itemize}
+\item MystMail MTA Entscheider als Open Relay (basierend auf dem \verb#X-Myst-Mail# Headerfeld)
+\item MystMail Erstellung auf SMTP-Gateway Ebene mit statischer Hopliste und Base64 Kodierung anstatt kryptografischer Verschlüsselung
+\end{itemize}
+
+Damit kann allerdings bereits nachgewiesen werden, dass der Algorithmus im Kern funktioniert und nur die Informationen an die Hops gelangen, die für diese sichtbar sein sollen. Auf IMF Ebene sind die Informationen durch die Kodierung im Body geschützt und auf IP-Ebene durch das zufällige Routing.
+
+Es kann allerdings nicht nachgewiesen werden, dass eine in der Praxis nutzbare Implementierung möglich oder sinnvoll ist, da u.a. wesentliche Teile der funktionalen Anforderungen aus \autoref{tab:FunctionalRequirements} fehlen wie z.B. tatsächliche kryptografische Verschlüsselung oder ein Algorithmus der eine zufällige Route auswählt. Für einen Nachweis der praktischen Tauglichkeit müssten weitaus mehr Kriterien betrachtet werden und die Implementierung einen anderen Umfang haben. Auf Seite der nichtfunktionalen Anforderungen aus \autoref{tab:NonFunctionalRequirements} wurde zumindest NFA 1 eingehalten, obschon hier der Umstand ausgelassen wird, dass dennoch ein Ökosystem offener E-Mail Relay Server existieren muss, welche den hier beschriebenen Algorithmus beispielsweise als Plugin bereitstellen müssen. Eine MystMail kann nicht über gewöhnliche SMTP Server weitergeleitet werden, da für die Weiterleitung spezielles Wissen erforderlich ist.
+
+Dennoch ist das Kernziel erreicht, indem das Weiterleiten und das Ver -und Entpacken von MystMails erfolgreich implementiert wurde.

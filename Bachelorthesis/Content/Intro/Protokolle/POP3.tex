@@ -1,0 +1,73 @@
+POP3 ist die Version 3 des \QuoteM{Post Office Protocol}, spezifiziert in RFC 1939 \RefIt{rfc1939}. Während SMTP das Versenden, Erstellen und Weiterleiten von E-Mails beschreibt, beschreibt POP3 das Abholen, Auflisten und Löschen von E-Mails an einem E-Mail Server \QuoteIndirect{rfc1939}{S. 2}. Es ist keine Erweiterung des SMTP Protokolls, da es eine eigenständige Funktionalität hat, die SMTP nicht bereitstellt. Ebenso denkbar ist, dass POP3 mit einem E-Mail Server verwendet wird, der nicht SMTP zum Versenden benutzt, was allerdings in der Praxis kaum vorkommt. POP3 ist sehr simpel und eingeschränkt in der Funktionalität, was bereits in RFC 1939 angesprochen wird, mit einem Vermerk zu dem etwas mächtigeren IMAP4 Protokoll \QuoteIndirect{rfc1939}{S. 2}.
+
+Ähnlich wie SMTP ist auch POP3 ein Client-Server basiertes System. In gängigen E-Mail Servern befindet sich also häufig nicht nur ein SMTP, sondern auch ein POP3 Server.
+
+Ebenso wie SMTP ist auch POP3 TCP basiert. Die Kommunikation findet entweder über Port 110 \QuoteIndirect{rfc1939}{S. 3} statt oder im Falle von SSL/TSL Verschlüsselung über das POP3S Protokoll auf Port 995, welcher allerdings nach RFC 2595 \QuoteIndirect{rfc2595}{S. 9} als veraltet gilt und stattdessen STARTTLS auf dem Standardport 110 benutzt werden soll.
+
+POP3 ist ein sehr zustandsbehaftetes Protokoll, d.h. die Verbindung kann sich in verschiedenen Zuständen befinden. Der erste Zustand ist der \QuoteDirect{AUTHORIZATION state}{rfc1939}{S. 3}, in dem sich die Verbindung befindet nachdem der POP3 server das sogenannte \QuoteDirect{greeting}{rfc1939}{S. 3} gesendet hat. Nachfolgend muss sich der Client authentifizieren. Ist die Authentifizierung erfolgreich, so gelangt die Verbindung in den \QuoteDirect{TRANSACTION state}{rfc1939}{S. 3}. In diesem Zustand kann der Client diverse Anfragen senden, um mit den auf dem POP3 Server liegenden E-Mails zu interagieren. Der letzte Zustand, der sogenannte \QuoteDirect{UPDATE state}{rfc1939}{S. 3 f}, wird erreicht nachdem der Client das \verb#QUIT# Kommando gesendet hat. In diesem Zustand werden alle Ressourcen freigegeben, die während des \QuoteM{TRANSACTION state} belegt wurden. Erst danach wird die TCP Verbindung geschlossen. \QuoteIndirect{rfc1939}{S. 3 f}
+
+Dem POP3 Client stehen folgende Kommandos zur Kommunikation mit dem Server zur Verfügung:
+\begin{itemize}
+
+\item AUTHORIZATION state
+\begin{itemize}
+	\item \verb#USER <user>#: wird in Verbindung mit \verb#PASS# zur Authentifizierung verwendet, alternativ kann \verb#APOP# verwendet werden
+	\item \verb#PASS <password>#: wird in Verbindung mit \verb#USER# zur Authentifizierung verwendet, alternativ kann \verb#APOP# verwendet werden
+	\item \verb#APOP#: alternatives Authentifizierungsverfahren, welches das Passwort nicht als Klartext sendet
+	\item \verb#QUIT#: beendet die Verbindung
+\end{itemize}
+
+\item TRANSACTION state
+\begin{itemize}
+	\item \verb#STAT#: Abfrage des Status der Mailbox
+	\item \verb#LIST (i)#: zeigt Informationen zu der i-ten E-Mail oder zu allen E-Mails, gewöhnlicherweise Anzahl und Größe
+	\item \verb#RETR i#: lädt die i-te E-Mail vom Server herunter
+	\item \verb#DELE i#: löscht die i-te E-Mail
+	\item \verb#NOOP#: tut nichts, der Server antwortet immer positiv
+	\item \verb#RSET#: macht das löschen von E-Mails rückgängig
+	\item \verb#TOP i l#: lädt den Header und die ersten l Zeilen der i-ten E-Mail herunter
+	\item \verb#UIDL i#: zeigt die \QuoteM{unique-id} der E-Mail an
+\end{itemize}
+
+\item UPDATE state
+\begin{itemize}
+	\item \verb#QUIT#: beendet die Verbindung und führt mögliche \verb#DELE# Kommandos aus
+\end{itemize}
+
+\end{itemize}
+
+Eine mögliche POP3-Sitzung könnte so aussehen:
+\\
+\\
+\begin{minipage}{\linewidth}
+\begin{mail}{POP3-Sitzung}{POP3-Sitzung}
+S: <wartet auf Verbindung an TCP port 110>
+C: <client verbindet sich>
+S: +OK pop3.bauer.de POP3-Server
+C: USER hans@pop3.bauer.de
+S: +OK Valid user, now enter password
+C: PASS <Klartext-Passwort>
+S: +OK Password valid, maildrop locked and ready
+C: STAT
+S: +OK 500 4670
+C: LIST 670
+S: -ERR no such message
+C: LIST 67
+S: +OK 67 300
+C: RETR 67
+S: +OK 300 octets
+S: <der POP3 server sendet die vollständige E-Mail>
+S: .
+C: DELE 67
+S: +OK message 67 deleted
+C: QUIT
+S: +OK POP3 server signing off (maildrop empty)
+C: <beendet Verbindung>
+S: <wartet auf Verbindung an TCP port 110>
+\end{mail}
+\end{minipage}
+
+Wie hier zu sehen ist, liegt ein impliziter Zustand vor, welcher aus dem Kontext erschlossen werden muss.
+
+Wichtig anzumerken ist auch, dass das normale POP3 Authentifizierungsverfahren über die Kommandos \verb#USER# und \verb#PASS# unsicher ist, da die Daten als Klartext gesendet werden \QuoteIndirect{rfc1939}{S. 14}. Ebenso gilt das alternative APOP Authentifizierungsverfahren als unsicher \QuoteIndirect{apopinsec}{S. 1-18}.
+Stattdessen kann STARTTLS mit POP3 verwendet werden, gemäß RFC 2595 \RefIt{rfc2595}.

@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0054)https://trac.torproject.org/projects/tor/wiki/torbirdy -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+      torbirdy – Tor Bug Tracker &amp; Wiki
+    </title>
+      
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="https://trac.torproject.org/projects/tor/search">
+        <link rel="help" href="https://trac.torproject.org/projects/tor/wiki/TracGuide">
+        <link rel="alternate" href="https://trac.torproject.org/projects/tor/wiki/torbirdy?format=txt" type="text/x-trac-wiki" title="Plain Text">
+        <link rel="tracwysiwyg.base" href="https://trac.torproject.org/projects/tor">
+        <link rel="start" href="https://trac.torproject.org/projects/tor/wiki">
+        <link rel="stylesheet" href="./torbirdy – Tor Bug Tracker & Wiki_files/trac.css" type="text/css"><link rel="stylesheet" href="./torbirdy – Tor Bug Tracker & Wiki_files/wiki.css" type="text/css"><link rel="stylesheet" href="./torbirdy – Tor Bug Tracker & Wiki_files/wysiwyg.css" type="text/css"><link rel="stylesheet" href="./torbirdy – Tor Bug Tracker & Wiki_files/tractags.css" type="text/css">
+        <link rel="tracwysiwyg.stylesheet" href="./torbirdy – Tor Bug Tracker & Wiki_files/trac.css"><link rel="tracwysiwyg.stylesheet" href="https://trac.torproject.org/projects/tor/chrome/tracwysiwyg/editor.css">
+        <link rel="shortcut icon" href="https://trac.torproject.org/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="https://trac.torproject.org/images/favicon.ico" type="image/x-icon">
+      <link type="application/opensearchdescription+xml" rel="search" href="https://trac.torproject.org/projects/tor/search/opensearch" title="Search Tor Bug Tracker &amp; Wiki">
+    <script type="text/javascript">
+      var _tracwysiwyg={"escapeNewlines":false};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/en_US.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/wysiwyg.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./torbirdy – Tor Bug Tracker & Wiki_files/wysiwyg-load.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="./torbirdy – Tor Bug Tracker & Wiki_files/tor.css">
+  <style type="text/css">:root #content > #center > .dose > .dosesingle,
+:root #content > #right > .dose > .dosesingle,
+:root #header + #content > #left > #rlblock_left
+{display:none !important;}</style><link id="vTabsCoreCSS" rel="stylesheet" href="chrome-extension://okpnlgbgcfchbicbhjmmhldhkbkfilce/themes/styles.css"></head>
+  <body>
+    <div id="siteheader">
+    </div>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="https://trac.torproject.org/"><img src="./torbirdy – Tor Bug Tracker & Wiki_files/tor-logo.png" alt="The Tor Project"></a>
+      </div>
+      <form id="search" action="https://trac.torproject.org/projects/tor/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="">
+          <input type="submit" value="Search">
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="https://trac.torproject.org/projects/tor/login">Login</a></li><li><a href="https://trac.torproject.org/projects/tor/prefs">Preferences</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/TracGuide">Help/Guide</a></li><li><a href="https://trac.torproject.org/projects/tor/about">About Trac</a></li><li class="last"><a href="https://trac.torproject.org/projects/tor/register">Register</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="https://trac.torproject.org/projects/tor/report">View Tickets</a></li><li><a href="https://trac.torproject.org/projects/tor/browser">Browse Source</a></li><li><a href="https://trac.torproject.org/projects/tor/roadmap">Roadmap</a></li><li><a href="https://trac.torproject.org/projects/tor/timeline">Timeline</a></li><li class="active"><a href="https://trac.torproject.org/projects/tor/wiki">Wiki</a></li><li><a href="https://trac.torproject.org/projects/tor/search">Search</a></li><li class="last"><a href="https://trac.torproject.org/projects/tor/tags">Tags</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="https://trac.torproject.org/projects/tor/wiki">wiki:</a><a class="pathentry" href="https://trac.torproject.org/projects/tor/wiki/torbirdy" title="View torbirdy">torbirdy</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="https://trac.torproject.org/projects/tor/wiki/WikiStart">Start Page</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/TitleIndex">Index</a></li><li class="last"><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy?action=history">History</a></li>
+        </ul>
+        <hr>
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#QuickLinks">Quick Links</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Status">Status</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#QuickSetupGuide">Quick Setup Guide</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#BeforeusingTorBirdy">Before using TorBirdy</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Configuration">Configuration</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#RequiredSoftware">Required Software</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#StandaloneTorBirdy">Standalone TorBirdy</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#TorBirdywithTorandTorLauncher">TorBirdy with Tor and Tor Launcher</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SetupSteps">Setup Steps</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#VerifyingtheXPI">Verifying the XPI</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#InstallingTorBirdyinDebian">Installing TorBirdy in Debian</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Troubleshooting">Troubleshooting</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#FAQ">FAQ</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#IamchangingapreferencebutitsvalueisresetwhenThunderbirdrestarts.Whyisthishappening">I am changing a preference but its value is reset when Thunderbird …</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#HowdoIsendandreceiveHTMLemails">How do I send and receive HTML emails?</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Inoticedthatthetimeinformationonreceivedsentmessagesisincorrect.Whyisthat">I noticed that the time information on received/sent messages is …</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#WhyisThunderbirdnotcheckingfornewmessagesautomatically">Why is Thunderbird not checking for new messages automatically?</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#WhyaredraftmessagesforIMAPaccountssavedinLocalFoldersinsteadoftheremoteserver">Why are draft messages for IMAP accounts saved in <tt>Local Folders</tt> instead …</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#IsitsafetosubscribetoRSSfeedswithThunderbirdandTorBirdy">Is it safe to subscribe to RSS feeds with Thunderbird and TorBirdy?</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#TorBirdywithGmail">TorBirdy with Gmail</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Operation">Operation</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#KnownTorBirdyIssues">Known TorBirdy Issues</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#InfoLeaks">Info Leaks</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Usenet">Usenet</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SecurityRequirements">Security Requirements</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#ProxyObedience">Proxy Obedience</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#DiskAvoidance">Disk Avoidance</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#LocationNeutrality">Location Neutrality</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#AnonymitySetPreservation">Anonymity Set Preservation</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#AdditionalAdd-Ons">Additional Add-Ons</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#EnigmailOpenPGPGPGforThunderbird">Enigmail (OpenPGP GPG for Thunderbird)</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#mixminionandmixmasterremailerforThunderbird">mixminion and mixmaster remailer for Thunderbird</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#LightningCalendarforThunderbird">Lightning (Calendar for Thunderbird)</a></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#OtherAdd-Ons">Other Add-Ons</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Hacking">Hacking</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Branches">Branches</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Translations">Translations</a><ol><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SubmittingTranslations">Submitting Translations</a></li></ol></li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Acknowledgements">Acknowledgements</a></li></ol></div><p>
+</p>
+<h1 id="Codename:TorBirdy">Codename: TorBirdy<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Codename:TorBirdy" title="Link to this section"> ¶</a></h1>
+<p>
+TorBirdy is an extension for <a class="ext-link" href="https://www.mozilla.org/en-US/thunderbird/"><span class="icon">​</span>Mozilla Thunderbird</a> that configures it to make connections over the Tor network. TorBirdy automatically enhances the privacy settings of Thunderbird and configures it for use over Tor; think of it as <a class="ext-link" href="https://www.torproject.org/docs/torbutton/"><span class="icon">​</span>Torbutton</a> for Thunderbird.
+</p>
+<h2 id="QuickLinks">Quick Links<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#QuickLinks" title="Link to this section"> ¶</a></h2>
+<p>
+<a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SetupSteps">Installation</a> | <a class="ext-link" href="https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/"><span class="icon">​</span>Mozilla Add-ons (XPI)</a> |  <a class="ext-link" href="https://gitweb.torproject.org/torbirdy.git/"><span class="icon">​</span>Source Code</a> | <a href="https://trac.torproject.org/projects/tor/wiki/torbirdy/dev">Tickets</a>
+</p>
+<h2 id="Status">Status<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Status" title="Link to this section"> ¶</a></h2>
+<p>
+TorBirdy is in beta and should be considered experimental. Please make sure that before using it, you are aware of the known issues and leaks by reading the <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#BeforeusingTorBirdy">Before using TorBirdy</a> and <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#KnownTorBirdyIssues">Known TorBirdy Issues</a> sections below.
+</p>
+<p>
+You may also read <a href="https://trac.torproject.org/projects/tor/attachment/wiki/doc/TorifyHOWTO/EMail/Thunderbird/Thunderbird%2BTor.pdf">our design goals document</a> (PDF) to understand what we are trying to accomplish with TorBirdy for our users.
+</p>
+<h2 id="QuickSetupGuide">Quick Setup Guide<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#QuickSetupGuide" title="Link to this section"> ¶</a></h2>
+<p>
+This short guide should help you to set up your Thunderbird email client to send and fetch email via Tor. It can be used for both new and existing email accounts in Thunderbird.
+</p>
+<p>
+Please bear in mind that email accounts that have been used without Tor before offer <strong>less</strong> privacy/anonymity/weaker pseudonyms than email accounts that have always been accessed with Tor. But nevertheless, TorBirdy is still useful for existing accounts or real-name email addresses. For example, if you are looking for location anonymity -- you travel a lot and don't want to disclose all your locations by sending emails, TorBirdy works wonderfully!
+</p>
+<p>
+TorBirdy works with SMTP and IMAP/POP3 but POP3 is recommended over IMAP because POP3 is a much simpler protocol and less likely to have or introduce any new sketchy features.
+</p>
+<p>
+We have a <a class="ext-link" href="https://people.torproject.org/~sukhbir/torbirdy-gmail.ogv"><span class="icon">​</span>screencast</a> (ogv) that covers email account configuration (inserting the correct mailserver domain, username, ...) with TorBirdy for a Gmail account. JonDo also has a <a class="ext-link" href="https://anonymous-proxy-servers.net/en/help/thunderbird.html"><span class="icon">​</span>guide</a> that details configuring your email accounts for use with TorBirdy, among other helpful information.
+</p>
+<h2 id="BeforeusingTorBirdy">Before using TorBirdy<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#BeforeusingTorBirdy" title="Link to this section"> ¶</a></h2>
+<p>
+The preferences TorBirdy changes are documented <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/changes">here</a>.
+</p>
+<p>
+When you install TorBirdy, it modifies and adds many preferences to configure Thunderbird to be used securely over the Tor network.
+</p>
+<p>
+TorBirdy enforces the preferences it sets and attempts to change them using Thunderbird's settings or the configuration editor will not work as all such changes will be discarded when Thunderbird restarts. This is because we believe that these preferences should <em>not be changed</em>, whether deliberately, by mistake, or due to another extension, as doing so can compromise your anonymity. There are however some preferences that can be changed and they can be accessed through TorBirdy's <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/preferences">preferences</a> dialog. Please note that if you are not an advanced user, you should <strong>NOT</strong> change any setting unless you are very sure of what you are doing.
+</p>
+<p>
+The preferences that TorBirdy changes are restored to their original values when it is uninstalled or disabled, thus restoring your Thunderbird's state to exactly what it was prior to TorBirdy's installation. If you find that TorBirdy leaves evidence of its installation in any way, please file a bug report.
+</p>
+<h2 id="Configuration">Configuration<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Configuration" title="Link to this section"> ¶</a></h2>
+<p>
+See the <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/preferences">preferences</a> page for information about TorBirdy preferences and how you can configure them.
+</p>
+<h2 id="RequiredSoftware">Required Software<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#RequiredSoftware" title="Link to this section"> ¶</a></h2>
+<p>
+TorBirdy is currently available in two forms:
+</p>
+<h3 id="StandaloneTorBirdy">Standalone TorBirdy<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#StandaloneTorBirdy" title="Link to this section"> ¶</a></h3>
+<p>
+Available through Mozilla Add-ons: <a class="ext-link" href="https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/"><span class="icon">​</span>https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/</a>
+</p>
+<p>
+Standalone TorBirdy is just the TorBirdy extension. You need to have the Tor binary available, whether through the daemon or the Tor Browser Bundle for the standalone version of TorBirdy to function. This is considered stable and is the recommended method of using TorBirdy.
+</p>
+<ul><li>Components Required
+<ul><li>Thunderbird
+</li><li>Tor
+</li></ul></li></ul><h3 id="TorBirdywithTorandTorLauncher">TorBirdy with Tor and Tor Launcher<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#TorBirdywithTorandTorLauncher" title="Link to this section"> ¶</a></h3>
+<p>
+Distributed using torproject.org: <a class="ext-link" href="https://people.torproject.org/~sukhbir/tor-mail-0.0.1/"><span class="icon">​</span>https://people.torproject.org/~sukhbir/tor-mail-0.0.1/</a>
+</p>
+<p>
+Starting 0.1.2, TorBirdy is also available in a single bundle (extension) with Tor and Tor Launcher. Because all required components are bundled in a single package, you do not need the Tor daemon or the Tor Browser Bundle. Only advanced users should be using this bundle as it is still in the alpha stage and bugs are to be expected.
+</p>
+<ul><li>Components Required
+<ul><li>Thunderbird
+</li></ul></li></ul><p>
+To use the above package, it is recommended that you create a new profile or use this inside a VM. Creating and using profiles in Thunderbird is described on <a class="ext-link" href="https://support.mozillamessaging.com/en-US/kb/using-multiple-profiles"><span class="icon">​</span>Thunderbird support</a>.      After that, simply install the extension corresponding to your relevant platform. You will be presented with an option to add two extensions: TorBirdy and Tor Launcher. Click on <em>Install</em> and then Thunderbird will restart and Tor Launcher will attempt to connect to Tor automatically and once that is done, Thunderbird will start with TorBirdy and Tor enabled.
+</p>
+<p>
+Note that Tor has to start successfully for Thunderbird to be loaded; if Tor is unable to start and connect to the network, Thunderbird will not start because Tor Launcher will close it. We plan to fix this soon, but for now, you can set the environment variable <tt>TOR_SKIP_LAUNCH</tt> to <tt>1</tt> and then Tor Launcher will not start and you can use Thunderbird normally.
+</p>
+<h2 id="SetupSteps">Setup Steps<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SetupSteps" title="Link to this section"> ¶</a></h2>
+<ol><li>Install Tor:
+</li></ol><ul><li>On Windows and OS X, download and install the <a class="ext-link" href="https://www.torproject.org/download/download-easy.html.en"><span class="icon">​</span>Tor Browser Bundle</a>. When you want to use TorBirdy, you have to start the Bundle (if it is not already running.)
+<ul><li>If you have never used the Tor Browser Bundle before, please follow <a class="ext-link" href="https://securityinabox.org/en/tor_extract"><span class="icon">​</span>the detailed guide</a> by <em>Security in-a-box</em>.
+</li></ul></li><li>On Unix, Linux and BSD you should use your distributor's packages, or if available, the ones <a class="ext-link" href="https://www.torproject.org/download/download-unix.html.en"><span class="icon">​</span>provided by the torproject</a>. You can of course also use the Tor Browser Bundle.
+</li><li>Regardless of the OS, make sure Tor is running with default client settings (<tt>SocksPort</tt> is listening on <tt>127.0.0.1:9150</tt>).
+</li></ul><ol start="2"><li>Install the TorBirdy extension:
+</li></ol><ul><li>You can skip this step if you already have the TorBirdy XPI. If not, go to the Mozilla Add-ons page for TorBirdy at <a class="ext-link" href="https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/"><span class="icon">​</span>https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/</a>. Right-click on <em>Download Now</em> and click <em>Save Link As</em>. Save the file to some location on your computer.
+</li><li>Start Thunderbird and go to <em>Tools</em> and then select <em>Add-ons</em>. On the right side, click on the <em>Settings</em>-like icon (click <a class="ext-link" href="https://people.torproject.org/~sukhbir/screenshots/installation.png"><span class="icon">​</span>here</a> for an example) next to the <em>Search all add-ons</em> text box. Then select <em>Install Add-on From File</em> and go to the location where you saved the XPI. Select it and click <em>Open</em>. Then finally click on <em>Install</em>. Thunderbird will then you to restart it; click on <em>Restart Now</em>. Now you should be ready to go, there is no further configuration required.
+</li></ul><p>
+If you are using the TorBirdy with Tor bundle, you just need to follow step (2) above. We also have a <a class="ext-link" href="https://people.torproject.org/~sukhbir/torbirdy-bundle.ogv"><span class="icon">​</span>video</a> of this that shows how easy it is to use the TorBirdy + Tor bundle!
+</p>
+<p>
+(If you have never done this before, we also have <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/installation">step-by-step instructions</a> with screenshots of the above process on a Windows machine.)
+</p>
+<h2 id="VerifyingtheXPI">Verifying the XPI<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#VerifyingtheXPI" title="Link to this section"> ¶</a></h2>
+<p>
+The TorBirdy XPI is signed by Jacob Appelbaum with the key 0x744301A2. As an example, verifying the current stable release of TorBirdy:
+</p>
+<pre class="wiki">$ gpg --verify torbirdy-current.xpi.asc torbirdy-current.xpi
+gpg: Signature made Thursday 23 October 2014 08:03:09 PM IST using RSA key ID 744301A2
+gpg: Good signature from "Jacob Appelbaum &lt;jacob@appelbaum.net&gt;"
+gpg: WARNING: This key is not certified with sufficiently trusted signatures!
+gpg:          It is not certain that the signature belongs to the owner.
+Primary key fingerprint: D2C6 7D20 E9C3 6C2A C5FE  74A2 D255 D3F5 C868 227F
+     Subkey fingerprint: AA67 9F13 7971 DA32 FA86  E2E6 0263 6620 7443 01A2
+</pre><p>
+The signature and TorBirdy releases are available at <a class="ext-link" href="https://www.torproject.org/dist/torbirdy/"><span class="icon">​</span>https://www.torproject.org/dist/torbirdy/</a>.
+</p>
+<p>
+Instructions for verifying the XPI on Windows and OS X are available on the <a class="ext-link" href="https://www.torproject.org/docs/verifying-signatures.html.en"><span class="icon">​</span>verifying signatures page</a>.
+</p>
+<h2 id="InstallingTorBirdyinDebian">Installing TorBirdy in Debian<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#InstallingTorBirdyinDebian" title="Link to this section"> ¶</a></h2>
+<p>
+TorBirdy is in Debian starting version 0.1.2 (package: xul-ext-torbirdy). To install TorBirdy in Debian:
+</p>
+<pre class="wiki">apt-get install xul-ext-torbirdy
+</pre><h2 id="Troubleshooting">Troubleshooting<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Troubleshooting" title="Link to this section"> ¶</a></h2>
+<p>
+If things don't work for you:
+</p>
+<ol><li>Make sure Tor is running and listening on <tt>127.0.0.1</tt> (<tt>localhost</tt>) on port <tt>9150</tt>.
+</li><li>If you are using the Tor Browser Bundle, have a look at Vidalia's "Tor Network Map" to confirm that something is trying to use the Tor instance to connect to an SMTP/POP3/IMAP port while sending/fetching emails. If nothing is using your running Tor instance, Thunderbird is not connecting to your running Tor instance correctly. This could be because of the following reasons:
+<ul><li>tor is not running
+</li><li>tor's <tt>SocksPort</tt> is not running on the expected port <tt>127.0.0.1:9150</tt>.
+</li><li>TorBirdy was configured to connect to something else then <tt>127.0.0.1:9150</tt>
+</li></ul></li><li>If you see Thunderbird connecting to Tor and it is still not working, try hitting the "New Identity" button in Vidalia; it might be the case that the mail server you are trying to connect to does not like your source IP address (bad exit node).
+</li></ol><p>
+If none of the above works for you, come and talk to us! When asking for support, please make sure you include the version of Thunderbird and TorBirdy you are using (including the platform.) An easier and better way of getting this information is using Thunderbird itself: go to the <em>Help</em> menu, choose <em>Troubleshooting</em> and then select <em>Copy text to clipboard</em>. Before sending it to us, make sure you review the text to remove any information that you consider confidential. (By default, there is no information that can be used to identify you, but please check just to be sure.) The sections in the report that we need to help troubleshoot are <em>Application Basics</em>, <em>Mail and News Accounts</em>, and <em>Extensions</em>; feel free to remove other sections from the text.
+</p>
+<p>
+Mailing List: <a class="ext-link" href="https://lists.torproject.org/cgi-bin/mailman/listinfo/tor-talk"><span class="icon">​</span>| tor-talk</a>
+</p>
+<p>
+IRC: #tor, #tor-dev [irc.oftc.net]
+</p>
+<h2 id="FAQ">FAQ<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#FAQ" title="Link to this section"> ¶</a></h2>
+<h3 id="IamchangingapreferencebutitsvalueisresetwhenThunderbirdrestarts.Whyisthishappening">I am changing a preference but its value is reset when Thunderbird restarts. Why is this happening?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#IamchangingapreferencebutitsvalueisresetwhenThunderbirdrestarts.Whyisthishappening" title="Link to this section"> ¶</a></h3>
+<p>
+This is expected behaviour; please read the <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#BeforeusingTorBirdy">Before using TorBirdy</a> section for more information.
+</p>
+<h3 id="HowdoIsendandreceiveHTMLemails">How do I send and receive HTML emails?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#HowdoIsendandreceiveHTMLemails" title="Link to this section"> ¶</a></h3>
+<p>
+HTML email is disabled both for sending and receiving mail. This is because HTML emails are unsafe and can compromise your identity; emails you send will be in plain text and HTML emails you receive will be sanitized and converted to plain text. You cannot change this behavior. (And you should not be sending HTML emails anyways!)
+</p>
+<h3 id="Inoticedthatthetimeinformationonreceivedsentmessagesisincorrect.Whyisthat">I noticed that the time information on received/sent messages is incorrect. Why is that?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Inoticedthatthetimeinformationonreceivedsentmessagesisincorrect.Whyisthat" title="Link to this section"> ¶</a></h3>
+<p>
+The time is not incorrect but it is being reported in UTC (+0000) and not your local time zone. This is a side-effect of Thunderbird setting the time zone to UTC to prevent your local time zone (and thus your location) from being revealed. Please see the <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/preferences#a-DonotsetThunderbirdstimezonetoUTC">preferences</a> page for more information.
+</p>
+<h3 id="WhyisThunderbirdnotcheckingfornewmessagesautomatically">Why is Thunderbird not checking for new messages automatically?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#WhyisThunderbirdnotcheckingfornewmessagesautomatically" title="Link to this section"> ¶</a></h3>
+<p>
+TorBirdy prevents Thunderbird from automatically checking for new messages at startup and after a fixed time interval (usually ten minutes). Please see the <a class="wiki" href="https://trac.torproject.org/projects/tor/wiki/torbirdy/preferences#a-Selectlastaccessedmailfolderonstartup">preferences</a> page for more information.
+</p>
+<h3 id="WhyaredraftmessagesforIMAPaccountssavedinLocalFoldersinsteadoftheremoteserver">Why are draft messages for IMAP accounts saved in <tt>Local Folders</tt> instead of the remote server?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#WhyaredraftmessagesforIMAPaccountssavedinLocalFoldersinsteadoftheremoteserver" title="Link to this section"> ¶</a></h3>
+<p>
+Please see <a class="closed ticket" href="https://trac.torproject.org/projects/tor/ticket/10309" title="enhancement: TorBirdy - IMAP issue (closed: fixed)">#10309</a> for more information. If you have multiple identities for an account that was created after TorBirdy was installed, please read <a class="closed" href="https://trac.torproject.org/projects/tor/ticket/10309#comment:7" title="Comment 7 for Ticket #10309">comment:7:ticket:10309</a>.
+</p>
+<h3 id="IsitsafetosubscribetoRSSfeedswithThunderbirdandTorBirdy">Is it safe to subscribe to RSS feeds with Thunderbird and TorBirdy?<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#IsitsafetosubscribetoRSSfeedswithThunderbirdandTorBirdy" title="Link to this section"> ¶</a></h3>
+<p>
+TODO: The code doesn't seem to change any RSS preferences, and the documentation makes no mention of RSS as far as I could tell. Is automatic fetching disabled? Is HTML disabled? Are there other anonymity implications?
+</p>
+<h2 id="TorBirdywithGmail">TorBirdy with Gmail<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#TorBirdywithGmail" title="Link to this section"> ¶</a></h2>
+<p>
+We have a <a class="ext-link" href="https://people.torproject.org/~sukhbir/torbirdy-gmail.ogv"><span class="icon">​</span>screencast</a> (ogv) that shows how you can configure a Gmail account with TorBirdy's manual account configuration wizard.
+</p>
+<p>
+TorBirdy works fine with Gmail and there should be no issues except in rare cases where certain exit nodes cause Gmail to lock an account (and therefore POP/IMAP access) until the user logs in through the web interface and enters a CAPTCHA.
+</p>
+<p>
+Mike Hearn from Google addressed this issue on <a class="ext-link" href="https://lists.torproject.org/pipermail/tor-talk/2012-October/025923.html"><span class="icon">​</span>tor-talk</a>:
+</p>
+<blockquote>
+<p>
+Access to Google accounts via Tor (or any anonymizing proxy service) is not allowed unless you have established a track record of using those services beforehand. You have several ways to do that:
+</p>
+</blockquote>
+<blockquote>
+<p>
+1) With Tor active, log in via the web and answer a security quiz, if any is presented. You may need to receive a code on your phone. If you don't have a phone number on the account the access may be denied.
+</p>
+</blockquote>
+<blockquote>
+<p>
+2) Log in via the web without Tor, then activate Tor and log in again WITHOUT clearing cookies. The GAPS cookie on your browser is a large random number that acts as a second factor and will whitelist your access.
+</p>
+</blockquote>
+<blockquote>
+<p>
+Once we see that your account has a track record of being successfully accessed via Tor the security checks are relaxed and you should be able to use TorBirdy .
+</p>
+</blockquote>
+<h2 id="Operation">Operation<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Operation" title="Link to this section"> ¶</a></h2>
+<p>
+When TorBirdy is installed and starts for the first time:
+</p>
+<ul><li>it saves (all) the current proxy settings so that they can be restored when TorBirdy is uninstalled/disabled.
+</li><li>then it clears the proxy settings.
+<ul><li>Proxy Type
+</li><li>SSL Host, Port.
+</li><li>SOCKS Host, Port.
+</li><li>HTTP Host, Port.
+</li></ul></li><li>all plugins are disabled. (note: just plugins, <strong>not</strong> extensions.)
+</li><li>for IMAP accounts, the location of the drafts folder is changed from the remote folder to <tt>Local Folders</tt>
+</li><li>account-specific settings for all the accounts are saved so that they can also be restored later.
+<ul><li><tt>check_new_mail</tt>
+</li><li><tt>login_at_startup</tt>
+</li><li><tt>check_time</tt>
+</li><li><tt>download_on_biff</tt>
+</li><li><tt>socketType</tt>
+</li><li><tt>port</tt>
+</li><li><tt>authMethod</tt>
+</li></ul></li><li>the recommended security settings for existing accounts are set.
+</li><li>finally, all the recommended TorBirdy settings in TorBirdyPrefs in <tt>components/torbirdy.js</tt> are set.
+</li></ul><p>
+The last step is repeated every time Thunderbird starts.
+</p>
+<p>
+When TorBirdy is uninstalled:
+</p>
+<ul><li>all the TorBirdy preferences are cleared and reset to their original values.
+</li><li>the proxy settings we saved earlier are restored.
+</li><li>all plugins are re-enabled.
+</li><li>all remaining TorBirdy preferences (the custom settings) are cleared.
+</li></ul><h2 id="KnownTorBirdyIssues">Known TorBirdy Issues<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#KnownTorBirdyIssues" title="Link to this section"> ¶</a></h2>
+<h3 id="InfoLeaks">Info Leaks<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#InfoLeaks" title="Link to this section"> ¶</a></h3>
+<ul><li><a class="needs_review ticket" href="https://trac.torproject.org/projects/tor/ticket/6314" title="defect: prevent leak via Date header field (local timestamp disclosure) (needs_review)">#6314</a> leak via Date header field (local timestamp disclosure)
+</li><li><a class="closed ticket" href="https://trac.torproject.org/projects/tor/ticket/6315" title="defect: prevent leak via Message-ID header field (local timestamp disclosure) (closed: fixed)">#6315</a> leak via Message-ID header field (local timestamp disclosure)
+</li></ul><h3 id="Usenet">Usenet<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Usenet" title="Link to this section"> ¶</a></h3>
+<p>
+This section is only relevant for Usenet / NNTP users.
+</p>
+<ul><li>For NNTP accounts that were created before TorBirdy was installed, NNTPS is enabled, but if you create a NNTP account after installing TorBirdy, please enable SSL manually.
+</li><li>(See <a class="assigned ticket" href="https://trac.torproject.org/projects/tor/ticket/8069" title="defect: NNTP SSL broken? (assigned)">#8069</a>) Connections over SSL to NNTP servers are failing (with or without TorBirdy installed). We are not sure why this is happening. Try it and tell us if it works for you.
+</li></ul><h2 id="SecurityRequirements">Security Requirements<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SecurityRequirements" title="Link to this section"> ¶</a></h2>
+<h3 id="ProxyObedience">Proxy Obedience<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#ProxyObedience" title="Link to this section"> ¶</a></h3>
+<p>
+Except GnuPG which requires a HTTP proxy (fail-closed), all other content in Thunderbird obeys the SOCKS proxy.
+</p>
+<h3 id="DiskAvoidance">Disk Avoidance<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#DiskAvoidance" title="Link to this section"> ¶</a></h3>
+<p>
+TorBirdy does not leave any trace of its installation. Caching is also disabled.
+</p>
+<h3 id="LocationNeutrality">Location Neutrality<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#LocationNeutrality" title="Link to this section"> ¶</a></h3>
+<p>
+The time zone is set to UTC.
+</p>
+<h3 id="AnonymitySetPreservation">Anonymity Set Preservation<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#AnonymitySetPreservation" title="Link to this section"> ¶</a></h3>
+<p>
+No information about the user-agent or locale is leaked.
+</p>
+<p>
+<em>NOTE</em>: It may however be possible to find out that Thunderbird is being used by looking at the format of the <em>message-ID</em> header in the outgoing messages.
+</p>
+<h2 id="AdditionalAdd-Ons">Additional Add-Ons<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#AdditionalAdd-Ons" title="Link to this section"> ¶</a></h2>
+<h3 id="EnigmailOpenPGPGPGforThunderbird">Enigmail (OpenPGP GPG for Thunderbird)<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#EnigmailOpenPGPGPGforThunderbird" title="Link to this section"> ¶</a></h3>
+<p>
+Enigmail is supported and is safe to use with TorBirdy.
+</p>
+<p>
+However, Enigmail traffic is fail-closed -- TorBirdy ensures that no information is leaked by redirecting HTTP proxy to port 8118 but you will not be able to use Enigmail for communicating with keyservers until we find a HTTP -&gt; SOCKS5 shim. In most setups, GnuPG requires a HTTP proxy to properly work (not leak) on your system running at port 8118. If you are lucky and you are running gpg with curl (&gt;= 7.21.7) support, gpg can be used <a class="ext-link" href="http://lists.gnupg.org/pipermail/gnupg-devel/2012-September/026923.html"><span class="icon">​</span>without http proxy</a> (gpg on Windows has no curl support).
+</p>
+<p>
+To determine if your gpg installation has that kind of curl support you can run gpg with debug options and look for "curl version". The version number must be &gt;= 7.21.7:
+</p>
+<pre class="wiki">gpg --keyserver-options debug --search-keys somethingnonexisting
+</pre><p>
+Note that if gpg returns <tt>gpgkeys: curl version = GnuPG curl-shim</tt>, then SOCKS is <strong>not</strong> supported. If you are running Debian/ Ubuntu, installing the <tt>gnupg-curl</tt> package will alleviate this issue.
+</p>
+<h3 id="mixminionandmixmasterremailerforThunderbird">mixminion and mixmaster remailer for Thunderbird<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#mixminionandmixmasterremailerforThunderbird" title="Link to this section"> ¶</a></h3>
+<p>
+(See <a class="closed ticket" href="https://trac.torproject.org/projects/tor/ticket/6020" title="enhancement: Interoperation with mixgui (mixminion remailer for Thunderbird) (closed: fixed)">#6020</a>, <a class="closed ticket" href="https://trac.torproject.org/projects/tor/ticket/8125" title="enhancement: add alternative to mail providers (closed: wontfix)">#8125</a>)
+</p>
+<p>
+Please see the above tickets for a detailed discussion. In any case, do not mix mixgui with TorBirdy unless you have got some good data or good feedback.
+</p>
+<h3 id="LightningCalendarforThunderbird">Lightning (Calendar for Thunderbird)<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#LightningCalendarforThunderbird" title="Link to this section"> ¶</a></h3>
+<p>
+(See <a class="closed ticket" href="https://trac.torproject.org/projects/tor/ticket/6319" title="enhancement: Interoperability with Lightning (closed: fixed)">#6319</a>)
+</p>
+<p>
+Lightning is safe to use with TorBirdy and has been tested with Google Calendar/iCal.
+</p>
+<h3 id="OtherAdd-Ons">Other Add-Ons<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#OtherAdd-Ons" title="Link to this section"> ¶</a></h3>
+<p>
+Please do not install random add-ons. If they have not been reviewed by the TorBirdy developers, they can harm your anonymity. Open a ticket if you want to use a specific add-on with TorBirdy but are unsure about it.
+</p>
+<h2 id="Hacking">Hacking<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Hacking" title="Link to this section"> ¶</a></h2>
+<h3 id="Branches">Branches<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Branches" title="Link to this section"> ¶</a></h3>
+<p>
+TorBirdy maintains different preference branches to accomodate its settings:
+</p>
+<dl class="wiki"><dt>extensions.torbirdy.custom</dt><dd>Holds the custom preferences that are set through the preferences dialog.
+</dd><dt>extensions.torbirdy.restore</dt><dd>Holds the preferences whose values are saved when TorBirdy is installed and restored when it is uninstalled.
+</dd></dl>
+<p>
+(Don't change any of these preferences yourself!)
+</p>
+<h2 id="Translations">Translations<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Translations" title="Link to this section"> ¶</a></h2>
+<p>
+TorBirdy is currently available in the following languages:
+</p>
+<p>
+Arabic, Czech, Danish, German, English, Spanish, Basque, French, Hebrew, Italian, Japanese, Latvian, Malay, Dutch, Punjabi, Polish, Portuguese (Brazil), Russian, Swedish, Turkish, Chinese (China), Khmer, Farsi (Persian), Norwegian Bokmål, Korean, Ukrainian, French (Canada).
+</p>
+<h3 id="SubmittingTranslations">Submitting Translations<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#SubmittingTranslations" title="Link to this section"> ¶</a></h3>
+<p>
+We are always looking for assistance with translations. If you would like to use TorBirdy in the language of your choice, just send us the translation and we will gladly include it.
+</p>
+<p>
+Translations are handled through two files: <a class="ext-link" href="https://gitweb.torproject.org/torbirdy.git/blob/HEAD:/chrome/locale/en/torbirdy.dtd"><span class="icon">​</span>torbirdy.dtd</a> and <a class="ext-link" href="https://gitweb.torproject.org/torbirdy.git/blob/HEAD:/chrome/locale/en/torbirdy.properties"><span class="icon">​</span>torbirdy.properties</a>. The recommended way of submitting translations is through <a class="ext-link" href="https://transifex.com/"><span class="icon">​</span>Transifex</a>. You will need to create an account and submit your translations for both <a class="ext-link" href="https://www.transifex.com/projects/p/torproject/resource/3-torbirdy-torbirdy-dtd/"><span class="icon">​</span>torbirdy.dtd</a> and <a class="ext-link" href="https://www.transifex.com/projects/p/torproject/resource/3-torbirdy-torbirdy-properties/"><span class="icon">​</span>torbirdy.properties</a>. If you do not want to use Transifex, you can send us a pull request on <a class="ext-link" href="https://github.com/ioerror/torbirdy"><span class="icon">​</span>GitHub</a>. Incomplete translations cause problems and therefore only complete (100%) translations will be included.
+</p>
+<h2 id="Acknowledgements">Acknowledgements<a class="anchor" href="https://trac.torproject.org/projects/tor/wiki/torbirdy#Acknowledgements" title="Link to this section"> ¶</a></h2>
+<p>
+This project is by Jacob Appelbaum, Sukhbir Singh and tagnaq. JonDo support by Karsten N.
+</p>
+<p>
+<sub><a class="ext-link" href="https://github.com/ioerror/torbirdy/"><span class="icon">​</span>source code on github</a></sub> <br>  <sub><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy/dev">tickets</a></sub>
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy?action=diff&amp;version=120" title="Version 120 by sukhbir: we are fully reviewed; remove older section">Last modified</a> <a class="timeline" href="https://trac.torproject.org/projects/tor/timeline?from=2015-07-09T17%3A31%3A30Z&amp;precision=second" title="See timeline at Jul 9, 2015 5:31:30 PM">8 months ago</a></span>
+            <span class="trac-print">Last modified on Jul 9, 2015 5:31:30 PM</span>
+          </div>
+        
+        
+      </div><ul class="tags"><li class="header">Tags</li><li><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy" rel="tag">torbirdy</a> </li></ul>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="https://trac.torproject.org/projects/tor/wiki/torbirdy?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr>
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="./torbirdy – Tor Bug Tracker & Wiki_files/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"></a>
+      <p class="left">Powered by <a href="https://trac.torproject.org/projects/tor/about"><strong>Trac 1.0.1</strong></a><br>
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Tor project at<br><a href="https://www.torproject.org/">https://www.torproject.org/</a></p>
+    </div>
+    <div id="sitefooter">
+    </div>
+  
+<v-div id="vTabsPanelExtension" class="v-tabs-panel v-tabs-panel-hide classic-v-theme-StG1Q1" style="width: 245px; zoom: 80%;"><v-div class="v-tabs-resizer"></v-div><v-div class="v-tabs-menu"><v-div class="v-tabs-menu-btn v-tabs-menu-newpage" title="New tab"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-tabs v-tabs-menu-btn-active" title="Tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-recent" title="Recent tabs"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-keeper" title="Tab keeper"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks" title="Bookmarks manager"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-bookmarks-tree" title="Bookmarks browser"></v-div><v-div class="v-tabs-menu-btn v-tabs-menu-notes" title="Notes"></v-div><div class="v-tabs-menu-btn v-tabs-menu-settings" title="Settings"></div><div class="v-tabs-menu-btn v-tabs-menu-minimizer" title="Hide panel"></div><div class="v-tabs-menu-btn v-tabs-menu-blank"></div></v-div><v-div class="v-tabs-list-wrap"><v-div class="v-tabs-list" style="width: 185px;"><v-div class="v-tabs-item" data-tab-id="608" data-tab-index="0" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVQ4T2NkoBAwUqifAWTAISC2JdOgQyADPgAxP5kGfAAZwAfExUBcCMS8RBr0GaiuD4SRw0AUKFADxOlAzI7DoB9A8RlA3AbEr0FqQAbsAOJmID4K1aQEpKuAOB6IWaBif4D0QqjGe1AxayBdCzLgPxSDDCoD4itQBWpAugPKrgDSt6BsHSDdBcQeIAfADIC5+B+QsQ6IG5EMgsmBNNYDcRAQM8EE0Q2Aif8FMpYAMchrIDWgsIkBYmaYAkIGoKvDycflAvoacARoHShKyAFHqJKZyLEZrgcAW5MmRP1u4vIAAAAASUVORK5CYII="><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="608"></v-div><v-div class="v-tabs-text" title="Microsoft Word - DIME.docx">Microsoft Word - DIME.docx</v-div></v-div><v-div class="v-tabs-item" data-tab-id="616" data-tab-index="1" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="616"></v-div><v-div class="v-tabs-text" title="Email-Statistics-Report-2013-2017-Executive-Summary.pdf">Email-Statistics-Report-2013-2017-Executive-Summar</v-div></v-div><v-div class="v-tabs-item v-tabs-item-active" data-tab-id="626" data-tab-index="2" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAChUlEQVQ4T42SaUjTARjGn03336auObymTe0gSy1ZFx6BZIrMqC+BZSUJQkoWCp2kUTNzMEsFqw8lRQQDEzqU0gjK5XTVskznsTaduqVoutS5OXe5ZtBoqeX7/f29D7/3IWEF0+QATaFEzMQEdHYLxvhJMPxeI/1v/5ocofo+ZOvtiPIkoGYSeFrKg2xFAIcDHsfKIZrSU/cGbDSLmH4or+Sh78+jyybIwR0Kq6qGL2mTFQZFG2u37giRXE4eufV34mUBQUhcu+cAW+3gaBGY8O64BxmiyoMwrRjAwHb/1H2R4yaDBc3i0SgDmnuX8rVkgmikE/1o4Sclb7mon7SB4RsA8ZvONXPwGgE+Wf/pIAip3lNoqTiZn5tz9kw6TuWWYN7oD5PdDDKVLGhsqilaFsBBPP0HPt+ofng7L+NoFrrbXqLx2Qs8bxjA7og01H98AvWgJnIGg4ol3pju4QXxvaLinKwLRXzMzsyiuvgmBofbIZWPIjaYB/WoCkZiGpKOOooTYFuAuBzQEctJ28/R3r1fARrFD4ITQrDD6WiVitE1/B2bfZJBkGl43VcPw4w5Vg/lrzK5ABRwuSkp7PZHjx9gqGcSV/KFKBRm4lxeKcbtOgSb48EkVkE2/BbjpqnDJihr3AAMbIoI20D92vCqFqR5Gi5lX0fB1SPgny+DXNONUEsiqM4EStMHhKxbXfC+s67KDQBw6Elx3Nm4BC5KyvhQfVFAcFoIiUICOp0B74kYaI1KsMIoUGikix0s0HywPjAjkzfWo+gE05cFdb8KJJIVOq0nLFYywsLZGBjqcJZK5yrVoiL5YxfDirFD89DtnINtG8mpiYKAVk8QXdOcXhG+udf5J1++8RET8uI1AAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="626"></v-div><v-div class="v-tabs-text" title="torbirdy – Tor Bug Tracker &amp; Wiki">torbirdy – Tor Bug Tracker &amp; Wiki</v-div></v-div><v-div class="v-tabs-item" data-tab-id="628" data-tab-index="3" draggable="true"><img class="v-tabs-ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4T2NkoBAwIuuPior6j8O8xmXLljVgk8MwAKgQm6EPgZoXYDOEKAP+/funyMTEdACbIUQZAHJVRESEAjZDiDIA3e/I3iRoALpmUECPGjD8w4CYzIkzHRCjGV0NANuFdRGxZAtTAAAAAElFTkSuQmCC"><v-div class="v-tabs-ico v-tabs-close-btn" data-tab-id="628"></v-div><v-div class="v-tabs-text" title="Haraka SMTP Email Server">Haraka SMTP Email Server</v-div></v-div></v-div></v-div></v-div><v-div id="vTabsDropZone_gom4wkE&amp;1AfkprN" class="v-tabs-drop-zone classic-v-theme-StG1Q1"></v-div><v-div id="vTabsPanelActivator_FZBceIksle" class="v-tabs-panel-activator classic-v-theme-StG1Q1 v-tabs-panel-activator-type-half" style="zoom: 80%;"></v-div></body></html>

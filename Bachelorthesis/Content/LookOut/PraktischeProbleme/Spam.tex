@@ -1,0 +1,7 @@
+Wie für jedes E-Mail System stellt sich die Frage der Spamabwehr und ob das vorgeschlagene System diese erschwert. Theoretisch sind zumindest zwischen den Knoten auf der Anonymisierungs-Route alle gewöhnlichen Mechanismen zur Spamabwehr möglich. Allerdings liegt das Problem weniger auf Ebene der Knoten. Auch wenn diese E-Mails zurückweisen können, die von nicht authentischen Absendern sind oder diverse Formvorgaben an eine MystMail nicht einhalten, können sie jedoch praktisch keine Aussage darüber machen, ob die E-Mail, die für den schlussendlichen Empfänger bestimmt ist, Spam ist. Denn diese kann nur der Empfänger entschlüsseln und einsehen.
+
+Demnach kann eine Spam-Mail, die trotzdem eine korrekte MystMail ist, zwar beim Empfänger als solche erkannt werden, durchläuft aber dennoch die gesamte Anonymisierungs-Route und verursacht Traffic. Es muss untersucht werden, wie hoch das Potenzial einer Spam-Attacke ist, die DDoS-artige Auswüchse hat und eventuell das System als ganzes lahm legen könnte.
+Im schlimmsten Fall könnten diese Probleme sogar zum Blacklisting eigentlich unschuldiger Endknoten führen, die ohne ihr Wissen Spam weiterleiten, da sie gewissermaßen als Open Relays fungieren.
+
+Zumindest ist es denkbar, eine strikte Authentifizierung zwischen den Knoten zu etablieren, damit valide Knoten bekannt sind und verifiziert werden können. Dies würde auch teilweise das Problem von böswilligen Knoten lösen, die möglicherweise E-Mails nicht weiterleiten. Dafür ist ein sogenannter Directory Server von Nöten.
+

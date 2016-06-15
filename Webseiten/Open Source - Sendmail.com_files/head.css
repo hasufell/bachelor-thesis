@@ -1,0 +1,247 @@
+html, body {
+    height:auto; /*!important; FF and compliant browsers should automatically size the body/html. ie will set the body/html to 100%, anything overflowing that will (incorrectly) resize it. go IE */
+    min-height: 700px; /* when FF/etc automatically size the body/html it should be AT LEAST the height of the entire browser window, but can expand based on content. */
+    margin-top:10px;
+margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    scrollbar-base-color: #000;
+    scrollbar-track-color: #F4F4F4;
+    scrollbar-face-color: #003b73;
+    scrollbar-highlight-color: #F5F8F9;
+    scrollbar-3dlight-color: #739dd2;
+    scrollbar-darkshadow-color: #111111;
+    scrollbar-shadow-color: #DEDBDB;
+    scrollbar-arrow-color: #FFF;
+    font-family:Arial,Helvetica,Trebuchet MS,Times,sans-serif,"Times New Roman",sans-serif;
+    font-weight:normal;
+    font-size:13px;
+    color:#111111;
+    background-color:#FFF;
+background-color:#CCDDEC;
+background-color:#E6EEF5;
+    /* getting rid of the gradiated background for now.
+        background-color:#004081;
+        background-image: url(/sm/img/template/bg_gradient.png); background-repeat: repeat-x; background-position: top left; background-attachment: fixed;    */
+}
+
+/* Top Nav General: */
+table.nav_top_home { margin:5px 0px 0px 0px;padding:0px; } /* same as table.nav_top_home_ie */
+table.nav_top_home_ie { margin:4px 0px 0px 0px;padding:0px; } /* Fix for uber lame ie bug */
+td.nav_top_red_line { background:url(/sm/img/top/bg.red.pixel.png) repeat;background-position: top left; }
+
+#nav_top_btm_line { background-color:#98002e;width:inherit;height:2px;overflow:hidden; }
+
+/* .red_tab_pad { margin: 0px 6px 0px 6px; } */
+.red_tab_pad { margin-right:7px; }
+.blue_tab_pad { margin: 0px 8px 5px 8px;padding:12px 0px 0px 0px; }
+td.nav_top_bg { background: url(/sm/img/nav_top/bg_block.png) repeat;background-position:top left; }
+td.nav_top_bg { background: url(/sm/img/nav_top/bg_block_lt_blue_trans.png) repeat;background-position:top left; }
+
+a.nav_top { text-decoration:none;color:#FFF;font-size:13px;margin-left:10px;margin-right:10px;vertical-align:top; }
+a.nav_top:active { color: #003596; }
+a.nav_top:hover { color:yellow; }
+
+/* End Top Nav General */
+/* Begin Drop Down Nav CSS */
+
+#page {
+    margin: 30px;
+}
+
+#menuBar {
+    background-color:#00549e;
+    background: url(/sm/img/nav_top/bg_block.png) repeat;background-position:top left;
+    background: url(/sm/img/nav_top/bg_block_lt_blue_trans.png) repeat;background-position:top left;
+    display: block;
+    height:32px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom:0px;
+    /* width: 980px; */
+    width:100%;
+    width:inherit;
+    overflow: hidden;
+    vertical-align: top;
+    float:left;
+    border-bottom:none;
+    /* Note: Setting this border to 1px+ causes vertical misalignment in IE; it's not the actual case which is evident when the border is switched to 0px */
+    border:none;
+    align:center;
+}
+
+.menuHeader {
+    height:1px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    cursor: pointer;
+    display: inline-block;
+    _display: inline;
+    white-space: nowrap;
+    position: relative;
+    text-align:center;
+    vertical-align:top;
+    width:80px; /* default for small tabs, larger tabs are styled inline */
+    /*
+    padding:10px 5px 0px 0px;
+    _padding:0px 5px 0px 0px;
+    bottom:3px;
+    */
+}
+
+.menuHeader_long_red {
+    margin-left:0px;margin-right:0px;width:237px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_long.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;
+}
+.menuHeader_red_206 {
+    margin-left:0px;margin-right:0px;width:206px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_206.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+    margin-left:0px;margin-right:0px;width:206px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_206_trans.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_red_190 {
+    margin-left:0px;margin-right:0px;width:190px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_190.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+    margin-left:0px;margin-right:0px;width:190px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_190_trans.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_med_red {
+    margin-left:0px;margin-right:0px;width:168px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_medium.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_red_122 {
+    margin-left:0px;margin-right:0px;width:122px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_short.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_red_105 {
+    margin-left:0px;margin-right:0px;width:105px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_105_trans.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_red_90 {
+    margin-left:0px;margin-right:0px;width:90px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_90.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+.menuHeader_red_80 {
+    margin-left:0px;margin-right:0px;width:80px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_80.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+    margin-left:0px;margin-right:0px;width:80px;height:32px;background-image:url('/sm/img/nav_top/red_tabs/red_tab_80_trans.png');position:relative;top:0px;display:inline-block;_display:inline;text-align:center;vertical-align:top;
+}
+
+a.menuHeader_red {
+    color:#FFF;font-weight:700;position:relative;top:11px;width:inherit;vertical-align:middle;
+}
+a.menuHeader_red:hover {
+    color:#FFFFCC;
+}
+a.menuHeader {
+    color:#FFF;font-weight:700;position:relative;
+    top:11px;
+    width:inherit;
+}
+a.menuHeader:hover {
+    color:#FFFFCC;
+    /* font-weight:400; */
+}
+
+a.menuLink {
+    display: block;
+    color:#004081;
+color:#fff;
+    border-bottom: 1px solid #fff;
+    padding: 3px 7px;
+background-color: #FFFFFF;
+background-color: #739dd2;
+border:1px solid #444;
+border-top: none;
+
+}
+
+a.menuLink:link {
+    /* color: #000; */
+    text-decoration: none;
+}
+
+a.menuLink:visited {
+    /* color: #000; */
+    text-decoration: none;
+}
+
+a.menuLink:hover {
+
+    /*color: #98002e;*/
+color: #fff;
+    color: #004081;
+    /* background-color: #a6b4ac; */
+background-color: #00549e;
+    background-color: #fff;
+    text-decoration: none;
+}
+/*
+a.menuLink:active {
+	color: #98002e;
+	text-decoration: none;
+	background-color: #a6b4ac;
+}
+*/
+
+.menuDrop {
+    /* The dropped menu itself */
+
+    filter:alpha(opacity=95);-moz-opacity:.90;opacity:.96;
+    background-color:#CCCCCC;
+    font-size: 11px;
+    font-family: arial, Helvetica, sans-serif;
+    visibility: hidden;
+    margin: 2px 0px 0px 10px;
+    padding: 0;
+    position:absolute;
+    z-index: 1000;
+    top: 60px;
+    left: 0;
+    width: 150px;
+    height: auto;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: #fff;
+    border-width: 1px 1px 0px 1px;
+    margin:11px 0px 0px 10px; /*Safari fix - must occur last / IE fixes must occur after (if related) */
+    _margin: 3px 0px 0px 15px;
+
+}
+
+/* End Drop Down Nav CSS */
+
+
+#wrap { 
+    background-color:#fff;
+    border:1px solid #00549e;
+    width:984px;
+    _width:986px; 
+    }
+/* Needed for Customer login page: */
+.wrap { 
+    background-color:#fff;
+    border:1px solid #00549e;
+    width:986px; 
+    }
+
+#wrap_home { 
+    background-color:#fff;
+    border:1px solid #00549e;
+    width:980px;
+    _width:983px; 
+    }
+
+/* old stuff,  
+Same as "wrap_home" but needed for ff
+#wrap_home_ff { background-color:#fff;border:1px solid #00549e;width:980px; }
+Same as "wrap" but needed for ff 
+#wrap_ff { background-color:#fff;border:1px solid #00549e;width:984px; }
+ */
+
+.content_display_outer { background-color:#ffffff;margin:0px 0px 0px 0px;float:left;width:764px;text-align:left;border:0px solid blue; }
+.content_display_outer_full { background-color:#ffffff;margin:0px 0px 0px 0px;float:left;width:inherit;text-align:left;border:0px solid blue; }
+
+#content { display:block;width:auto;text-align:left;padding:10px 10px 0px 15px;min-height:700px;_height:650px;border:0px solid red; } /*ie min-height fix; only ie reads the underscore prefix on style calls */
+#content_home { display:block;width:inherit;text-align:left;padding:0px 0px 0px 0px;min-height:580px;_height:560px;border:0px solid red; } /*ie min-height fix; only ie reads the underscore prefix on style calls */
+
+#content_display_full { display:block;width:auto;text-align:left;padding:10px 10px 0px 15px;min-height:700px;_height:650px;border:0px solid red; } /*ie min-height fix; only ie reads the underscore prefix on style calls */
+
+/*For solutions pages only to allow for jump link box to be closer to the right margin */
+.content_display2 { margin:15px 7px 25px 23px;width:715px; }
+
+

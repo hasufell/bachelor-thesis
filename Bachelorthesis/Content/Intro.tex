@@ -1,0 +1,25 @@
+Dieses Kapitel soll eine Übersicht über die Bedeutung, Beschaffenheit und Funktionsweise der E-Mail geben, was sowohl Protokolle und Format als auch in der Praxis relevante Technologien betrifft. Ebenso beschreibt es das Zusammenwirken dieser Protokolle und das daraus entstehende Gesamtsystem, welches auch grob die in der Praxis aufzufindende Server-Struktur umreißt. Dies ist notwendig, um die Problematik praktischer Anonymisierung und Verschlüsselung nachfolgend darzulegen, welche sowohl technologischer als auch ökosystematischer Natur sind.
+
+Die E-Mail ist eines der ältesten digitalen Nachrichten-Übertragungsverfahren und wurde bereits im Arpanet über Erweiterungen des FTP Protokolls \QuoteIndirectNoPage{rfc196} \QuoteIndirectNoPage{rfc822}
+angewendet. So gesehen entstand sie über einen längeren Zeitraum und entwickelte sich über mehrere RFCs über die Jahrzehnte.
+Streng genommen bezeichnet die E-Mail jede Form briefähnlicher Nachrichten, die auf elektronischem Wege übertragen werden.
+
+Das am häufigsten benutzte E-Mail System
+setzt sich aus mehreren Komponenten zusammen, welche sehr stark miteinander korrelieren.
+Die Basis hierbei bildet das IMF vom RFC 5322 \RefIt{rfc5322},
+welches nur die Form einer Nachricht spezifiziert. Darauf aufbauend wurde das SMTP Protokoll im RFC 5321 \RefIt{rfc5321}
+entwickelt, welches den Transport von Nachrichten spezifiziert. Weiterhin existieren Protokolle, die die Verwaltung und den Zugriff auf E-Mails durch den Benutzer, nicht deren Transport zwischen Servern, beschreiben. Dazu zählen POP3 nach RFC 1939 \RefIt{rfc1939}
+und IMAP nach RFC 3501 \RefIt{rfc3501},
+die sich allerdings in ihrer Funktionalität teilweise stark unterscheiden.
+
+Konzeptionell besteht die gängige E-Mail in erster Linie aus einem äußeren Envelope, welcher Meta-Daten für den Transport beinhaltet. In diesem befinden sich Header und Body. Der Header beinhaltet ebenfalls Metadaten und die eigentliche Nachricht wird als Body bezeichnet.
+
+Dieses System bildet allerdings nur die minimale Basis heutiger internetbasierter E-Mail Kommunikation und wird in der Praxis durch eine Vielzahl von Technologien erweitert. Manche davon wurden speziell als Erweiterungen für E-Mail Protokolle entwickelt, andere werden lediglich systemkompatibel eingesetzt.
+
+Um die Relevanz heutiger E-Mail Kommunikation zu verstehen, ist es hilfreich Statistiken über Anzahl von E-Mail Konten und E-Mail Datenverkehr zu betrachten. Eine Studie der Radicati Group \RefIt{erep}
+im Jahr 2013 ergab, dass sich die Anzahl weltweiter E-Mail Konten auf ca. 3.9 Mrd. beläuft. Die Prognose für das Jahresende 2017 sah einen Anstieg auf ca. 4.9 Mrd. Konten vor, welches einer jährlichen Wachstumsrate von 6\% entspricht. Ca. 24\% aller E-Mail Konten sind dieser Studie zufolge geschäftliche E-Mail Konten.
+Der Datenverkehr insgesamt belief sich im Jahr 2013 auf ca. 182 Mrd. gesendeter E-Mails pro Tag. Es wird erwartet, dass dieses Volumen für geschäftliche E-Mails ansteigt. Zu bemerken ist allerdings, dass eine Abnahme des Volumens von Privatanwendern erwartet wird. Dies könnte laut der Radicati Group
+an dem Aufkommen neuer Kommunikationstechnologien wie Instant Messaging und sozialen Netzwerken liegen.
+Dennoch zeigen diese Zahlen, dass E-Mail Kommunikation äußerst relevant ist und sich als Kommunikationsform etabliert hat. \QuoteIndirect{erep}{S. 3, 4}
+
+Aufgrund der hohen Verbreitung von E-Mail Kommunikation müssen auch Lösungen zur Anonymisierung diskutiert werden, die möglicherweise nicht optimal, aber mittelfristig praktikabel und kompatibel mit dem bestehenden System sind.

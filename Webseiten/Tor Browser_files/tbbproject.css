@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+#maincol{
+  float:none;
+  width:auto;}
+#content img{
+  max-width:880px;}
+.tbbcol{
+  margin:0px;
+  padding:0;}
+a{
+  text-decoration:none;}
+a:hover{
+  text-decoration:underline;}
+.pjtitle{
+  padding-top:18px;
+  height:47px;}
+p{
+  font-size:16px;
+  line-height:20px;
+  margin-bottom:18px;}
+code{
+  font-size:14px;
+  display:block;
+  width:auto;
+  padding:5px;
+  background:#eee8f1;
+  border:1px solid #885ca4;}
+h2{
+  font-size:28px;
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  font-weight:normal;
+  line-height:28px;}
+h3{
+  font-size:20px;
+  padding-bottom:18px;
+  line-height: 20px;}
+.anchor{
+  height:35px;}
+.box{
+  margin:0px;
+  padding:0 0 15px 0;
+  border:1px solid #885CA4;
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+  text-align:left;}
+.box .pjtext{
+  padding:40px 0px 12px;
+  margin:0px 50px 0px;}
+.img-shadow {
+  float:none;
+  background:none !important;
+  margin:0px !important;}
+.img-shadow #sidenav{
+  margin:0px;
+  text-align:center;
+  width:auto;
+  padding:5px 0px 0px;
+  height:25px;
+  background:#885CA4;
+  border:1px solid #885CA4;
+  -webkit-border-top-left-radius:13px;
+  -webkit-border-top-right-radius:13px;
+  -moz-border-radius-topleft:13px;
+  -moz-border-radius-topright:13px;
+  border-top-left-radius:13px;
+  border-top-right-radius:13px;
+  display:block;
+  position:relative;}
+#sidenav ul li a:link,
+#sidenav ul li a:visited,
+#sidenav ul li ul li a:link,
+#sidenav ul li ul li a:visited{
+  display:inline;
+  color:#fff;
+  padding-left:0px;
+  padding:0px;
+  text-decoration: none;
+  line-height: 18px;
+  font-weight:bold;
+  height:auto;}
+#sidenav ul li a:hover,
+#sidenav ul li ul li a:hover{
+  text-decoration:underline;}
+#sidenav ul{
+  display:inline;
+  margin:0px;
+  padding:0px;
+  color:#FFFFFF;
+  font-weight:bold;
+  font-size:12px;
+  text-align:center;
+  list-style: none;
+  line-height: 20px;}
+#sidenav .dropdown{
+  display:inline;
+  width:auto;
+  margin:0px 2px 0px 0px;}
+#sidenav .dropdown:after{
+  content:":";
+  margin-left:0px;}
+#sidenav ul li.dropdown a.active {
+  font-weight:normal;
+  background:none;}
+#sidenav ul li{
+  border-bottom:none;
+  display:inline;
+  margin:0px;}
+#sidenav ul li ul li{
+  font-size:inherit;
+  margin:0 0px 0px 2px;}
+#sidenav ul li.active{
+  display:none;
+  color:#fff;
+  background:none;
+  width:auto;}
+#sidenav a.active{
+  color:#fff;}
+#sidenav ul li ul li:before{
+  content:"\2022";
+  margin-right:5px;}
+#sidenav ul li ul li:first-child:before{
+  content:none;
+  margin:0;}
+.tbb.box{
+  background:url(../images/tbb-bgrad.png) repeat-x scroll left 100px;
+  margin-top:10px;
+  padding-bottom:0px;}
+.tbb.box .pjtitle{
+  padding-top:21px;
+  margin:0px 50px 0px 350px;
+  height:54px;}
+.tbb.box .pjtext{
+  padding:30px 0px 0px 0px;
+  margin-left:350px;}
+.tbb.box .pjtext p{
+  font-size:17px;
+  line-height:21px;}
+.tbb.box .pjtext p:last-child{
+  font-size:15px;
+  text-align:right;}
+.tbb.box .pjsplash{
+  background:url(../images/tb-lg.png) no-repeat scroll 82px 35px;
+  margin-top:-374px;
+  position:relative;
+  margin-right:610px;
+  padding-top:205px;
+  height:185px;}
+.tbb.box .pjsplash p{
+  padding-top:35px;
+  text-align:center;}
+.pjsplash a:hover{
+  text-decoration:none;}
+.tbb.box .pjvids{
+  background:#885ca4;
+  padding-top:7px;
+  height:25px;}
+.tbb.box .pjvids h3{
+  margin:0px;
+  padding:0px;
+  font-size:16px;
+  line-height:16px;
+  font-weight:normal;
+  color:#fff;
+  text-align:center;}
+.downloads.box .pjtitle{
+  padding-top:31px;
+  margin-right:440px;
+  height:59px;}
+.downloads.box .pjflavor{
+  margin:-90px 30px 0px 520px;
+  padding-top:19px;
+  height:71px;}
+.downloads.box .pjflavor p{
+  line-height:17px;
+  font-size:1.1em;
+  font-style:italic;}
+.downloads.box{
+  background:url(../images/tbb-bgrad.png) repeat-x scroll left 90px;
+  float:none;
+  width:auto;
+  margin:0px;}  
+.macosx.box,
+.linux.box,
+.windows.box{
+  background:url(../images/tbb-bgrad.png) repeat-x scroll left 65px;}
+.macosx.box{
+  height:450px;}
+.macosx.box .pjtext{
+  padding-top:110px;
+  margin:0px auto 0px 40px;
+  width:420px;
+  height:280px;}
+.macosx.box .pjimage{
+  margin:-400px 40px 0px 504px;
+  padding-top:40px;
+  height:358px;
+  text-align:center;}
+.macosx.box img{
+  box-shadow:0px 0px 25px black;}
+.windows.box img{
+  padding:25px 0px;}
+.feedback.box{
+  background:url(../images/tbb-bgrad.png) repeat-x scroll left 0px;}
+.feedback.box p{
+  margin-left:20px;}
+.dltable table{
+  margin-left:1px;
+  border-collapse:collapse;
+  text-align:center;
+  width:856px;} 
+.dltable{
+  margin-bottom:30px;
+  font-size:12px;
+  background:none;
+  overflow:hidden;}
+.dltable table td,
+.dltable table th{
+  width:22%;
+  padding:12px 0;
+  text-align:center;}
+.dltable table thead th{
+  background:none;
+  color:#885ca4;
+  font-size:14px;
+  font-weight:bold;
+  border-bottom:1px solid #666666;
+  line-height:20px;} 
+.dltable table thead th em{
+  font-weight:normal;}
+.dltable table tbody td{
+  background:#ffffff;
+  border-left:1px solid #666666;
+  font-size:14px;
+  border-bottom:1px solid #666666;
+  font-weight:normal;}
+.dltable table tbody .alt td{
+  background:#f6ffd5;}
+.dltable table tbody td:first-child{
+  width:34%;
+  border-left:1px solid #666666;}
+.dltable table tbody td:last-child{
+  border-right:1px solid #666666;}
+.vidtable table{
+  border-collapse:collapse;
+  text-align:center;
+  width:100%;} 
+.vidtable{
+  font-size:12px;
+  background:none;
+  overflow:hidden;}
+.vidtable table td{
+  width:16%;
+  padding:12px 0;
+  text-align:center;}
+.vidtable table tbody tr{
+  border-bottom:1px solid #885ca4;}
+.vidtable table tbody tr:last-child{
+  border-bottom:none;}
+.vidtable table tbody td{
+  background:none;
+  border-left:1px solid #885ca4;
+  font-size:14px;
+  font-weight:normal;}
+.vidtable table tbody .alt td{
+  background:#eee8f1;}
+.vidtable table tbody td:first-child{
+  width:52%;
+  border-left:none;}
+.vidtable table tbody td:last-child{
+  border-right:none;}

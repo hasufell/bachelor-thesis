@@ -1,0 +1,33 @@
+Wie bereits erwähnt, basiert Haraka auf einem explizit entwickelten Plugin-System. Weite Teile der Kernfunktionalität von Haraka sind über das Plugin-System selbst implementiert und werden als Standard-Plugins mitgeliefert. Diese können dann über diverse Konfigurationsdateien im Ordner \verb#config# direkt gesteuert werden. Ebenso kann definiert werden, welche Plugins überhaupt ausgeführt werden und in welcher Reihenfolge. Dies ist der Kern der Haraka-Konfiguration und befindet sich in der Datei \verb#config/plugins# im Basisordner.
+
+Interessante hooks, die für die Implementierung von Bedeutung sind oder sein können, sind die folgenden:
+\begin{itemize}
+\item \verb#connect_init#: wird beim Start einer Verbindung aufgerufen
+\item \verb|lookup_rdns|: liefert den reverse DNS
+\item \verb#connect#: wird nach \verb|lookup_rdns| aufgerufen
+\item \verb#mail#: hier können die Absender examiniert werden
+\item \verb#rcpt#: hier können die Rezipienten examiniert werden
+\item \verb#data#: wird beim \verb#DATA# SMTP Kommando aufgerufen
+\item \verb#data_post#: wird am Ende des \verb#DATA# Kommandos aufgerufen, wenn der Client mit einem Punkt in einer Zeile signalisiert, dass die E-Mail Daten vollständig sind und der Server antworten kann
+\item \verb#queue#: bevor die Mail in die Queue gelangt
+\item \verb#get_mx#: wird beim Versenden aufgerufen, um den MX Record des empfangenden MTAs festzustellen
+\end{itemize}
+
+Das Plugin-Konzept sieht vor, dass mehrere Plugins denselben Hook verwenden können. Dafür muss am Ende der Funktion ein entsprechender Return Code zurückgegeben werden.
+
+Um ein Open Relay zu definieren, kann man beispielsweise beim \verb#rcpt# Hook ansetzen, und ,abhängig von diversen Regeln, eine Weiterleitung erlauben oder nicht:
+\begin{JavaScript}{Haraka Relay}{hrelay}
+/**
+ * This relays the mssage if is_valid_rcpt(recipient) returns true
+ */
+exports.hook_rcpt = function(next, connection, params) {
+	// check if the recipient is valid (e.g. in a list)
+	if (is_valid_rcpt(params[0]) == true) {
+		connection.relaying = true;
+	}
+	return next(OK); // no further plugins on this hook will run
+}
+\end{JavaScript}
+
+Wie hier zu sehen ist, existieren in Haraka einige grundsätzliche Objekte, die etwaige Informationen tragen. Auf der äußersten API Schicht befindet sich das \QuoteM{Connection Object} (\verb#connection# auf Code-Ebene). Dies wird für jede Verbindung, die Haraka mit einem anderen MTA eingeht erstellt und hat eine eindeutige UUID. Es trägt allgemeine Informationen über den Remote Server. Ebenso stellt es allerdings die Verbindung zur nächsten API-Schicht her, der Transaktion. \verb#connection.transaction# ist ein Objekt, das die gerade ablaufende Transaktion beschreibt. Es ist erst valide, nachdem \verb#MAIL FROM# gesendet wurde und wird beim Erreichen der Mail-Queue vernichtet wenn \verb#RSET# gesendet wird oder wenn \verb#MAIL FROM# nicht akzeptiert wurde. Innerhalb des Transaktions-Objekts sind weitere Objekte gekapselt, die die Informationen über den eigentlichen Vorgang enthalten. Das Transaktions-Objekt ist im Grunde der Umschlag der E-Mail. Es enthält die SMTP Informationen über Empfänger in \verb#transaction.rcpt_to# und Sender in \verb#transaction.mail_from#, ebenso wie die E-Mail selbst über die Objekte \verb#transaction.header# (alle Headerfelder) und \verb#transaction.body# (Text der E-Mail). Hierüber ist es möglich, an alle Informationen während einer SMTP-Sitzung zu gelangen, diese zu manipulieren oder abhängig von den Daten (z.B. Existenz von Headerfeldern) weitere Logik ausführen zu lassen. Weiterhin existiert ein ein \QuoteM{Outbound Modul}, welches über das Objekt \verb#outobund# ansprechbar ist. Über dieses Objekt ist es möglich, explizit E-Mails zu verschicken, beispielsweise wenn ein Plugin während der Verarbeitung selbst eine neue E-Mail schicken möchte.
+Als letztes interessantes Objekt existiert im Connection Objekt das Objekt \verb#connection.results#, welches dazu benutzt werden kann Zustände und Informationen zu speichern, die dann über mehrere Plugins hinaus abrufbar sind (z.B. logs).

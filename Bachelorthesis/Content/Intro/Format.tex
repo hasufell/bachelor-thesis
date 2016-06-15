@@ -1,0 +1,96 @@
+Das im Kontext aktueller E-Mail Systeme benutzte E-Mail Format ist das \QuoteM{Internet Message Format}, kurz IMF.
+
+Das IMF hat mehrere Versionen, angefangen beim RFC 822 \RefIt{rfc822},
+welches noch den Titel \QuoteM{STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES} trägt  und vom 13. August 1982 ist, bis hin zu RFC 2822 \RefIt{rfc2822},
+welches bereits den Titel \QuoteM{Internet Message Format} trägt und vom April 2001 ist. Auf Basis dieser beiden RFCs wurde im Oktober 2008 der RFC 5322 \RefIt{rfc5322} veröffentlicht und ist damit die aktuellste Version zum Zeitpunkt dieser Arbeit. Das Ziel des RFC 5322 ist es eine Spezifikation für das Format von Text-Nachrichten, die zwischen Computer-Benutzern verschickt werden, bereitzustellen. Es ist im Kontext der E-Mail eingebettet und korreliert somit sehr eng mit dem SMTP Protokoll. Es beschreibt allerdings lediglich das Format der Nachrichten, nicht wie diese Nachrichten verschickt oder empfangen werden.
+
+Das Format selbst setzt sich aus den Konzepten Header und Body zusammen. Der Header besteht aus mehreren Headerfeldern, welche jeweils einen Namen und einen Wert haben, die durch das Zeichen \verb-":"- getrennt werden. Die Headerfelder selbst werden durch einen Zeilenumbruch voneinander getrennt. Es gibt eine Reihe durch den RFC 5322 vordefinierter Headerfelder, die eine vorgegebene Bedeutung haben und von E-Mail Servern in bestimmter Weise verwertet werden. Dazu zählen vor allem folgende:
+\begin{itemize}
+\item \verb-From:- der Absender, beschrieben durch E-Mail Adresse, Name optional
+\item \verb-To:- eine Liste von Empfängern, beschrieben durch E-Mail Adresse, Name optional
+\item \verb-Date:- Zeitpunkt zu dem die Nachricht verfasst wurde, nicht Zeitpunkt des Transports
+\item \verb-Subject:- Betreff der Nachricht
+\item \verb#Message-ID:# eine von E-Mail Servern automatisch generierte ID wird intern benutzt, um mehrfache Zustellung zu verhindern
+\item \verb#Received:# wird von E-Mail Servern, die nur weiterleiten, der Nachricht hinzugefügt, somit kann der Weg, den eine E-Mail nimmt, nachvollzogen werden
+\end{itemize}
+Die einzigen obligatorischen Headerfelder sind sind \verb-From:- und \verb-Date:-. Jeder Header, der diese Felder nicht besitzt, muss als nicht wohlgeformt zurückgewiesen werden. Weiterhin sind Headerfelder möglich, die nicht im RFC 5322 beschrieben sind. Diese können von E-Mail Servern ignoriert werden. Manche Headerfelder sind für E-Mail Clients gedacht oder werden zum Beispiel von Nachrichtenfiltern ausgewertet.
+Dem Header folgt nach einer leeren Zeile der Body. Dieser besteht aus der eigentlichen Nachricht. Sowohl Header als auch Body sind auf 7-bit ASCII beschränkt.
+
+Eine vollständige E-Mail gemäß IMF könnte z.B. so aussehen:
+\\
+
+\begin{minipage}{\linewidth}
+\begin{mail}{E-Mail}{E-Mail}
+From: Hans Bauer <hans@bauer.de>
+To: Mina Meier <mina@meier.de>
+Date: Tue, 8 Mar 2016 06:46:18 -0800
+Subject: Beispiel-Mail
+Message-ID: <18283.122131@bauer.de>
+X-Mein-Header: True
+
+Dies ist ein Beispieltext
+über mehrere Zeilen.
+\end{mail}
+\end{minipage}
+\\
+
+Zeile 1 bis 6 stellen den vollständigen Header dar, getrennt durch die Leere Zeile 7. Der Body erstreckt sich über die Zeilen 8 bis 9.
+
+Aufgrund der Beschränkungen dieses Systems auf 7-bit ASCII Zeichen und dem Fehlen von Inhalten, die nicht Text sind, wurde \QuoteM{Multipurpose Internet Mail Extensions}, kurz MIME, entwickelt. Es ist beschrieben in RFC 2045 \RefIt{rfc2045},
+RFC 2046 \RefIt{rfc2046},
+RFC 2047 \RefIt{rfc2047},
+RFC 2049 \RefIt{rfc2049},
+RFC 4288 \RefIt{rfc4288} und
+RFC 4289 \RefIt{rfc4289}.
+Die Integration dieses Systems in SMTP ist in RFC 1521 \RefIt{rfc1521}
+und RFC 1522 \RefIt{rfc1522} beschrieben.
+
+MIME erweitert den IMF Standard, indem es Zeichen erlaubt, die außerhalb des 7-bit ASCII Bereichs liegen, sowohl für den Body als auch für die Header. Weiterhin ermöglicht es Inhalte, die nicht Text sind, wie Programme, Audio-Dateien, Video-Dateien oder Bilder.
+Anzumerken ist, dass MIME für unterschiedliche Protokolle verwendet wird, nicht nur für SMTP, sondern auch für beispielsweise HTTP \QuoteIndirect{Berjon:14:H}{Kapitel 4.7.10.3}.
+
+Die Integration in den bestehenden IMF Standard erfolgt über neue dedizierte Headerfelder, die die nötigen Informationen beinhalten, um etwaige spezielle Headerfelder oder nicht-Text Teile des Bodies interpretieren zu können. Die relevanten Headerfelder lauten wie folgt:
+\begin{itemize}
+\item \verb#MIME-Version:# die Version des MIME Standards
+\item \verb#Content-Type:# der Typ des Inhalts, z.b. \verb#text/plain#
+\item \verb#Content-Disposition:# wurde in RFC 2183 \RefIt{rfc2183}
+hinzugefügt und erlaubt das Angeben von sogenannten \QuoteM{Presentation Information}
+\end{itemize}
+
+Der MIME Standard erlaubt es aber vor allem sogenannte \QuoteM{MIME multipart messages} zu erstellen und zu interpretieren. Diese haben mehrere Bodies, die einzeln interpretiert werden. Getrennt werden diese durch das sogenannte \QuoteM{boundary}.
+
+Eine E-Mail mit einem gewöhnlichen Datei-Anhang würde beispielsweise so aussehen:
+
+\begin{minipage}{\linewidth}
+\begin{mail}{MIME-Mail}{MIME-Mail}
+From: Hans Bauer <hans@bauer.de>
+To: Mina Meier <mina@meier.de>
+Date: Tue, 8 Mar 2016 06:47:18 -0800
+Subject: Beispiel-MIME-Mail
+Message-ID: <18283.122131@bauer.de>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------080209010109060601000409"
+
+This is a multi-part message in MIME format.
+--------------080209010109060601000409
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Mit Anhang.
+
+--------------080209010109060601000409
+Content-Type: text/plain; charset=UTF-8;
+ name="Datei"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="Beispieldatei"
+
+RGF0ZWlpbmhhbHQK
+--------------080209010109060601000409--
+\end{mail}
+\end{minipage}
+\\
+
+Die ersten 8 Zeilen sind der E-mail Header, die 9. leere Zeile trennt Header und Body, welcher sich von Zeile 10 bis 25 erstreckt. Wichtig hierbei ist das Headerfeld \verb#Content-Type:# in Zeile 7, welches ankündigt, dass dies eine multipart MIME E-Mail ist. Ebenso gibt dieses Feld in Zeile 8 über \verb#boundary=# an, wo sich die einzelnen Teile im gesamten Body befinden. Dazu beinhalten die einzelnen Teile des Bodies erneut MIME Headerfelder, die eine korrekte Interpretation durch z.B. das E-Mail Programm vom Benutzer erlauben. So besitzt diese E-Mail einen gewöhnlichen Text-Anteil und einen Dateianhang, welcher Base64 verschlüsselt ist.
+
+Dem Benutzer würde in diesem Fall im E-Mail Programm der Text \verb#Mit Anhang.# angezeigt werden und die Möglichkeit angeboten werden, die Datei mit dem Namen \verb#Beispieldatei# herunterzuladen.

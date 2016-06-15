@@ -1,0 +1,33 @@
+STARTTLS ist eine Erweiterung für eine Reihe von Text-basierten Protokollen wie IMAP, POP3 und SMTP, aber auch FTP oder LDAP. Für IMAP und POP3 wurde diese in RFC 2595 \RefIt{rfc2595} definiert und für SMTP in RFC 3207 \RefIt{rfc3207}. Die Erweiterung benutzt das TLS Protokoll, hat aber im Vergleich zu einer gewöhnlichen TLS Kommunikation ein paar entscheidende Unterschiede:
+\begin{itemize}
+\item die Verbindung wird zunächst unverschlüsselt initiiert
+\item nach der Begrüßung antwortet der Server, dass er über STARTTLS verfügt und der Client kann eine TLS verschlüsselte Verbindung initiieren und anschließend z.B. Logindaten senden
+\item es wird kein dedizierter SSL Port benötigt
+\item STARTTLS ist allerdings protokollspezifisch
+\end{itemize}
+
+Nachfolgend eine SMTP-basierte STARTTLS Verbindung:
+\begin{mail}{SMTP-STARTTLS}{SMTP-STARTTLS}
+S: <wartet auf TCP Port 25>
+C: <öffnet Verbindung>
+S: 220 service ready
+C: EHLO bauer.de
+S: 250-bauer.de welcome
+S: 250-STARTTLS
+C: STARTTLS
+S: 220 Go ahead
+C: <startet TLS Verhandlung>
+C & S: <Verhandlung einer TLS Sitzung>
+C & S: <Überprüfen des Ergebnisses>
+...
+\end{mail}
+
+Ab Zeile 12 ist die Verbindung verschlüsselt und der Server kann beispielsweise über \verb#AUTH PLAIN# eine Klartext-basierte Authentifizierung anfordern, da diese nun innerhalb der verschlüsselten Verbindung sicher ist.
+
+Die Vorteile von STARTTLS sind einmal, dass keine zusätzlichen Ports benötigt werden, aber auch, dass optional eine unverschlüsselte Verbindung weitergeführt werden kann. Da dies aber häufig unerwünscht ist, ist es bedingt möglich den Server so zu konfigurieren, dass eine nachfolgende TLS Verbindung erforderlich ist \QuoteIndirect{rfc2595}{S. 3} \QuoteIndirect{rfc3207}{S. 3}. Für POP3/IMAP in Verbindung mit STARTTLS müssen Server so konfigurierbar sein, dass eine erfolgreiche TLS Verbindung etabliert sein muss, bevor jede Art von Benutzerauthentifizierung stattfindet \QuoteIndirect{rfc2595}{S. 3}. Auf SMTP Ebene ist es nur für Server erlaubt, die nicht \QuoteDirect{publicly-referenced}{rfc3207}{S. 3} sind, TLS Verschlüsselung zu erzwingen.
+
+Zu den Nachteilen gehört allerdings, dass bei STARTTLS mehr Metadaten verbreitet werden als bei direkter TLS Verbindung auf einem alternativen Port. Da die Verbindung initial unverschlüsselt ist, erlaubt dies auch weitere Angriffsvektoren wie z.b. \QuoteDirect{STARTTLS Command Injection Attack (CVE-2011-0411)}{rfc7457}{S. 4}, bei denen u.a. versucht werden kann, die Verbindung während der kurzen Periode von Klartextkommunikation herunterzustufen, indem das \verb#STARTTLS# Kommando vom Client gar nicht erst den Server erreicht. Dies hängt aber auch wie schon eingangs erwähnt von der Serverkonfiguration ab. Ebenso sagt die Spezifikation nicht aus wie ein Client sich exakt zu verhalten hat, wenn eine STARTTLS Verbindung fehlschlägt: \QuoteDirect{If the TLS negotiation fails or if the client receives a 454 response, the client has to decide what to do next.  There are three main choices: go ahead with the rest of the SMTP session, retry TLS at a later time, or give up and return the mail to the sender.}{rfc3207}{S. 6}.
+Dies bedeutet, dass der Client theoretisch versuchen kann, mit einer Klartext-Verbindung fortzufahren.
+Dies muss auf Clientebene gelöst werden und entsprechende Konfigurationsoptionen angeboten werden, ist aber nicht garantiert.
+
+Trotz der genannten Probleme ist STARTTLS das einzige Protokoll, das einen TLS-basierten Verbindungsaufbau von SMTP, POP3 und IMAP Servern überhaupt spezifiziert, im Gegensatz zu den Pseudoprotokollen SMTPS, POP3S und IMAPS, die keine konkrete Spezifikation haben und das Verhalten zwischen Client und Server demnach von Implementierungsdetails abhängt.

@@ -1,0 +1,24 @@
+Bei der Wahl der SMTP-Software waren mehrere Gesichtspunkte von besonderer Bedeutung:
+\begin{itemize}
+\item wird die Software tatsächlich eingesetzt?
+\item wird die Software aktiv entwickelt und gepflegt?
+\item in welcher Sprache ist die Software geschrieben?
+\item ist die Software (ausreichend) dokumentiert?
+\item wie kompliziert ist die Konfiguration?
+\item wie einfach lässt sich die innere Logik verändern?
+\end{itemize}
+
+Diese Punkte sind wichtig, um eine mögliche Weiterentwicklung der Idee auf Basis derselben Implementierung einfacher zu machen, obwohl diese nur eine Proof-of-Concept Implementierung ist. Ebenso vereinfachen sie die Implementierung an sich und machen diese einfacher zu verstehen. Einige der Punkte sind auch relevant für Sicherheitsbedenken. Dies betrifft vor allem die Programmiersprache und die Komplexität der inneren Logik.
+
+Zur näheren Auswahl kamen aufgrund der genannten Gesichtspunkte folgende SMTP-Softwarelösungen:
+\begin{enumerate}
+\item Sendmail \RefIt{sendmailhp}
+\item OpenSMTPD \RefIt{opensmtpdhp}
+\item Haraka \RefIt{harakahp}
+\end{enumerate}
+
+Sendmail kam in die nähere Auswahl, da es eine sehr alte Lösung ist, die extrem hohe Verbreitung hat. Ebenso ist der Code in weiten Teilen sehr gut dokumentiert. Allerdings ist die Konfigurationskomplexität äußerst hoch und der Code beinhaltet viel Indirektion, da der Code über die Zeit gewachsen ist. Sendmail ist in C geschrieben.
+
+Als Alternative zu Sendmail fiel der Blick auf OpenSMTPD, dessen erstes stabiles Release aus dem ersten Quartal 2013 stammt \RefIt{opensmtpdrel}. Dies versprach eine bessere Strukturierung des Codes als Sendmail. Allerdings musste festgestellt werden, dass so gut wie keine Dokumentation auf Code-Ebene vorhanden ist. OpenSMTPD ist ebenfalls in C geschrieben. Aufgrund der mangelhaften Dokumentation schied dies also Option aus.
+
+Als weitere Alternative wurde Haraka betrachtet. Haraka ist ein SMTP Server, welcher in Node.js geschrieben ist, also praktisch in Javascript. Dies öffnete einige Bedenken, da Javascript schwach und dynamisch typisiert ist und diverse Details des SMTP-Protokolls auf sehr exaktem Verhalten bezüglich der Bit-Länge gesendeter Nachrichten beruhen. Allerdings besitzt Haraka ein Plugin-System, welches auf Callbacks bzw. Hooks basiert, die es dem Programmierer erlauben, an unterschiedlichen Stellen in der Verarbeitung einer Transaktion anzusetzen und diese zu überschreiben oder lediglich zusätzliche Logik zu definieren. So ist es beispielsweise möglich, zu definieren was der Haraka Server nach einem empfangenen \verb#DATA# SMTP-Kommando tut, ohne bereits bestehenden Code verändern zu müssen. Ebenso ist die Dokumentation in weiten Teilen ausreichend, weshalb diese SMTP-Softwarelösung trotz der Bedenken über die Schwächen des Javascript-Typsystems als Basis der Implementierung ausgewählt wurde.

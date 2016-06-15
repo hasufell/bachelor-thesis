@@ -1,0 +1,418 @@
+% set font to sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[left=3.5cm,right=3.0cm,top=2cm,bottom=3cm]{geometry} % Page margins
+\usepackage[ngerman]{babel} % Better line breaking
+\usepackage[utf8]{inputenc} % Utf8 recognition
+\usepackage[T1]{fontenc} % Translate from latex code to draw font
+\usepackage{lmodern} % Bolder font
+\usepackage{graphicx} % Display images
+\usepackage{fancyhdr} % Header/footer
+\usepackage[pdfborder={0 0 0}]{hyperref} % Links without visible lines
+\usepackage[table]{xcolor} % Get the color in the table
+\usepackage{pdflscape} % Get the table into landscape mode
+\usepackage[lastpage]{zref} % Set a lable on the last page
+\usepackage{listings} % Display formatted code
+\usepackage{makeidx} % Generates the index
+\usepackage{acronym} % Generates the list of abbreviations
+\usepackage{multicol} % List of abbreviations with two columns
+\usepackage{bibgerm} % BibTex German Style DIN 1505
+\usepackage{longtable} % Multi page tables
+\usepackage[onehalfspacing]{setspace}
+
+% Tell LaTeX to generate an index
+\makeindex
+
+% No indent @ line start
+\parindent 10pt
+%\parskip2ex
+
+% The bibstyle
+% gerplain is for only numbers in alphabetic order
+% geralpha is for name+year in alphabetic order
+\bibliographystyle{gerplain}
+
+% Header
+\pagestyle{fancy}
+
+\fancypagestyle{plain}{}
+\fancyhead[RO,RE]{Seite \thepage\ von\reallastpage}
+\fancyhead[LO,LE]{\leftmark}
+
+% Set the lastpage counter -1 
+% So the statutory declaration is not part of the page counter
+\makeatletter
+\newcommand{\reallastpage}{
+  \the \numexpr \zref@extractdefault{LastPage}{page}{0}-1\relax
+}
+\makeatother
+
+% Header for starting section
+\fancypagestyle{rightmark}{
+	\fancyhead[LO,LE]{\rightmark}
+}
+
+% Empty footer
+\cfoot{}
+
+% Brake long url in cite
+\def\UrlBreaks{\do\/\do-}
+
+% Suppress clubs (Schusterjungen) 
+\clubpenalty = 10000
+
+% Suppress widows (Hurenkinder)
+\widowpenalty = 10000
+
+% Suppress widows in front of a formular
+\displaywidowpenalty = 10000
+
+% Macro for centering extreme wide tables/figures
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+%------------------------------------------------------------------------------
+% Macro for reusing sume text:
+%------------------------------------------------------------------------------
+
+% Use to define some text and then re use the very same text
+% \ref{sth:bla}
+% \textlabel{Something AAA}{sth:bla}
+\makeatletter
+\newcommand*{\Textlabel}[2]{%
+  \edef\@currentlabel{#1}% Set target label
+  \phantomsection% Correct hyper reference link
+  #1\label{#2}% Print and store label
+}
+\makeatother
+
+%------------------------------------------------------------------------------
+% Macro for the title:
+%------------------------------------------------------------------------------
+
+% The full title
+\newcommand*{\Title}{\TitleFirstLine~\TitleSecondLine}
+
+% Only the first line of the title
+\newcommand*{\TitleFirstLine}{Betrachtung von Datensicherheit in E-Mail Systemen und Entwicklung eines SMTP-basierten Anonymisierungs-Algorithmus}
+
+% Only the second line of the title
+\newcommand*{\TitleSecondLine}{}
+
+%------------------------------------------------------------------------------
+% Macros for the list of abbreviations:
+%------------------------------------------------------------------------------
+
+% To wirte the text only once
+\newcommand*{\ListOfAbbreviations}{Abkürzungsverzeichnis}
+
+% use reversed form
+\makeatletter
+\renewcommand*{\@acf}[1]{%
+\ifAC@footnote
+\acsfont{\AC@acs{#1}}%
+\footnote{\AC@placelabel{#1}\hskip\z@\AC@acl{#1}{} }%
+\else
+\acsfont{% Orig:\acffont
+\AC@placelabel{#1}\hskip\z@\AC@acs{#1}%Orig: \AC@acl{#1}
+\nolinebreak[3] %
+\acfsfont{(\acffont{\AC@acl{#1}})}%Orig: (\acsfont{\AC@acs{#1}})
+}%
+\fi
+\ifAC@starred\else\AC@logged{#1}\fi
+}
+\makeatother
+
+%------------------------------------------------------------------------------
+% Macros for the the Index:
+%------------------------------------------------------------------------------
+
+% The thickness of the line between the columns of the index and the list of 
+% Abbreviations; 0.4 pt is the LaTeX standart
+\newcommand*{\LineThickness}{0.4 pt}
+
+% Display twoculums with  vertical seperator line
+\makeatletter
+\renewenvironment{theindex}
+  {\if@twocolumn
+      \@restonecolfalse
+   \else
+      \@restonecoltrue
+   \fi
+   \setlength{\columnseprule}{\LineThickness} % Thikness of the columnseprule
+   \setlength{\columnsep}{35 pt}
+   \begin{multicols}{2}[\chapter*{\indexname}] % Amount of Columns
+   \markboth{\MakeUppercase\indexname}%
+            {\MakeUppercase\indexname}%
+   \thispagestyle{plain}
+   \setlength{\parindent}{0pt}
+   \setlength{\parskip}{0pt plus 0.3pt}
+   \relax
+   \let\item\@idxitem}%
+  {\end{multicols}\if@restonecol\onecolumn\else\clearpage\fi}
+\makeatother
+
+%------------------------------------------------------------------------------
+% Macros for table colors and longtables:
+%------------------------------------------------------------------------------
+
+% Table gray row
+\newcommand*{\Grayrow}{\rowcolor{gray!35}}
+
+% Table red cell
+\newcommand*{\Redcell}{\cellcolor{red!30}}
+
+% Table green cell
+\newcommand*{\Greencell}{\cellcolor{green!30}}
+
+% Generates a small empty row in a longtable
+\newcommand*{\EmptyRow}{\multicolumn{0}{l}{} \\[-9pt]}
+
+% Needs to be @ the end of the longtable, 
+% generates a caption with correct spacing
+% @par1: the text of the caption
+\newcommand*{\CaptionLongtable}[1]
+	{\multicolumn{0}{l}{} \\[-3pt]\caption{#1}}
+
+%------------------------------------------------------------------------------
+% Macros for quotes:
+%------------------------------------------------------------------------------
+
+% A direct quote
+% @par1: The quoted text
+% @par2: The source where the text is from
+% @par3: The page where the text is from
+\newcommand*{\QuoteDirect}[3]{\QuoteM{\emph{#1}} \cite[#3]{#2}}
+
+% A direct quote without page
+% @par1: The quoted text
+% @par2: The source where the text is from
+\newcommand*{\QuoteDirectNoPage}[2]{\QuoteM{\emph{#1}} \cite{#2}}
+
+% A indirect quote
+% @par1: The source where the text is from
+% @par2: The page where the text is from
+\newcommand*{\QuoteIndirect}[2]{(vgl. \cite[#2]{#1})}
+
+% A indirect quote without page
+% @par1: The source where the text is from
+\newcommand*{\QuoteIndirectNoPage}[1]{(vgl. \cite{#1})}
+
+% A reference
+% @par1: The source where the text is from
+\newcommand*{\RefIt}[1]{\cite{#1}}
+
+% A text with quotation marks
+% @par1: The text you want to quote
+% »text«
+\newcommand*{\QuoteM}[1]{\frqq #1\flqq}
+
+% A text with single quotation marks
+% @par1: The text you want to quote
+% ›text‹
+\newcommand*{\QuoteMs}[1]{\frq #1\flq}
+
+% To adjust some words to the flow
+% @par1: the adjusted words
+% [text]
+\newcommand*{\AdjustWords}[1]{{\normalfont[#1]}}
+
+% Displays a reference to the given object
+% @par1: the lable of the thing you want to see
+% (Siehe auch Abbildung 1.1 »Ein Bild« auf Seite 4)
+\newcommand*{\See}[1]
+{(Siehe auch \autoref{#1} \QuoteM{\nameref{#1}} auf \autopageref{#1})}
+
+% Displays a reference to an equation
+% @par1: the lable of the equation you want to see
+% (Siehe auch Gleichung 1.1 in »Dummy Section« auf Seite 5)
+\newcommand*{\SeeEq}[1]
+{(Siehe auch \autoref{#1} in \QuoteM{\nameref{#1}} auf \autopageref{#1})}
+
+% The symbol for a elision
+% Is used for more than missings one word or a sentence
+% [...]
+\newcommand*{\Elision}{{\normalfont[\dots]}}
+
+% The symbol for a small elision
+% Is used for only one missing word
+% [..]
+\newcommand*{\ElisionSmall}{{\normalfont[..]}}
+
+% This is used if a book is cited at whole 
+% passim means something like continuous
+% text (vgl. [Aut99, passim]).
+\newcommand*{\passim}{passim}
+
+% To show the audience that there is something
+% To display a wrong/importen part but not corrected in the quote
+% text error [sic!] text
+\newcommand*{\SIC}{{\normalfont[sic!]}}
+
+% The text for a note from the author
+% text, Anm. d. Autors
+\newcommand*{\NoteFromAuthor}{{\normalfont\unskip , Anm. d. Autors}}
+
+% Space btween \item in itemize
+\newcommand*{\Itemizespace}{0 pt}
+
+%------------------------------------------------------------------------------
+% Listings:
+%------------------------------------------------------------------------------
+
+% Change the text from a listings caption
+\renewcommand*{\lstlistingname}{Code}
+
+% Change the text from the \autoref
+\def\lstlistingautorefname{\lstlistingname}
+
+% Change the text from the list of listings
+\renewcommand*{\lstlistlistingname}{Codeverzeichnis}
+
+\lstset{literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% C++ code environment
+% @par1: The caption
+% @par2: The label
+% Used as:
+%   \begin{c++}{caption}{label}
+%      c++ code
+%   \end{c++}
+% Use empty brackets for code without caption and/or lable like:
+%   \begin{c++}{}{} 
+%      c++ code
+%   \end{c++}
+\lstnewenvironment{JavaScript}[2]{
+	\lstset{ % General command to set parameter(s)
+		language=JavaScript,
+		% The language of the code
+		basicstyle=\small \ttfamily,
+		% The size of the fonts that are used for the code
+		breaklines=true,
+		% Sets automatic line breaking
+		captionpos=b,
+		% Sets the caption-position to bottom
+		showstringspaces=false,
+		% Underline spaces within strings only
+		showspaces=false,
+		% Show spaces everywhere adding particular underscores;
+		% it overrides 'showstringspaces'
+		keepspaces=true,
+		% Keeps spaces in text, useful for keeping indentation
+		% of code (possibly needs columns=flexible)
+		numbers=left,
+		% Where to put the line-numbers; 
+		% possible values are (none, left, right)
+		showtabs=false,
+		% Show tabs within strings adding particular underscores
+		keywordstyle=\bfseries \color{blue},
+		% Keyword style
+		rulesepcolor=\color{gray},
+		% The color of the shadow of the box
+		identifierstyle=\ttfamily,
+		% The style for non-keywords
+		commentstyle=\bfseries \color{gray},
+		% Comment style
+		stringstyle=\ttfamily \color{red!50!brown},
+		% String literal style
+		numberstyle=\tiny,
+		% The style that is used for the line-numbers
+		tabsize=2,
+		% Sets default tabsize to 2 spaces
+		frame=shadowbox,
+		% Adds a frame around the code use single for no shadow
+		rulecolor=\color{black},
+		% If not set, the frame-color may be changed
+		% on line-breaks within not-black text
+		moredelim=[is][\underbar]{__}{__},
+		% To create a underlind text to highlight something: __text__
+		caption={#1},
+		% The caption of the code example will be 
+		% shown in the lstlistoflistings
+		label={#2}
+		% The lable used to make a ref to the code
+	}
+}{}
+
+\lstnewenvironment{mail}[2]{
+	\lstset{ % General command to set parameter(s)
+		basicstyle=\small \ttfamily,
+		% The size of the fonts that are used for the code
+		breaklines=true,
+		% Sets automatic line breaking
+		captionpos=b,
+		% Sets the caption-position to bottom
+		showstringspaces=false,
+		% Underline spaces within strings only
+		showspaces=false,
+		% Show spaces everywhere adding particular underscores;
+		% it overrides 'showstringspaces'
+		keepspaces=true,
+		% Keeps spaces in text, useful for keeping indentation
+		% of code (possibly needs columns=flexible)
+		numbers=left,
+		% Where to put the line-numbers; 
+		% possible values are (none, left, right)
+		showtabs=false,
+		% Show tabs within strings adding particular underscores
+		keywordstyle=\bfseries \color{blue},
+		% Keyword style
+		rulesepcolor=\color{gray},
+		% The color of the shadow of the box
+		identifierstyle=\ttfamily,
+		% The style for non-keywords
+		commentstyle=\bfseries \color{gray},
+		% Comment style
+		stringstyle=\ttfamily \color{red!50!brown},
+		% String literal style
+		numberstyle=\tiny,
+		% The style that is used for the line-numbers
+		tabsize=2,
+		% Sets default tabsize to 2 spaces
+		frame=shadowbox,
+		% Adds a frame around the code use single for no shadow
+		rulecolor=\color{black},
+		% If not set, the frame-color may be changed
+		% on line-breaks within not-black text
+		moredelim=[is][\underbar]{__}{__},
+		% To create a underlind text to highlight something: __text__
+		caption={#1},
+		% The caption of the code example will be 
+		% shown in the lstlistoflistings
+		label={#2}
+		% The lable used to make a ref to the code
+	}
+}{}

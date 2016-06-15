@@ -1,0 +1,5 @@
+Obwohl es hier primär um das Unterdrücken und Verschleiern von Informationen geht, ist in praktischen E-Mail Systemen das Verifizieren der Authentizität von Verbindungen im Kontext des SMTP-Protokolls von hoher Bedeutung und das aus einer Vielzahl von Gründen.
+
+Zum einen existiert, wie bereits erwähnt, das Problem der deformierten E-Mails und wie mit diesen umgegangen wird. Ebenso ist es möglich, auf IMF Ebene praktisch alle Headerfelder vorzutäuschen bzw. zu imitieren. Eine Teillösung hierfür wäre, alle Headerfelder mit DKIM \RefIt{rfc6376} zu schützen, was bedeutet, dass selbst ein MITM diese nicht verändern könnte, da die Verifikation beim empfangenden MTA fehlschlagen würde. Damit könnte auch das \verb#X-Myst-Mail# Headerfeld geschützt werden und es wäre nicht möglich, diesen zu entfernen.
+
+Dabei muss allerdings untersucht werden, welche Auswirkungen die Nutzung von DKIM auf das Kryptografiesystem insgesamt hat und ob dies zu Informationsflüssen führen kann, die die Anonymität der kommunizierenden Parteien kompromittieren kann.

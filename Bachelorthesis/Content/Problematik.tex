@@ -1,0 +1,19 @@
+Wie durch Kapitel 1 erhellt wurde, sind die involvierten Protokolle für E-Mail Kommunikation äußerst verbose und übermitteln eine Menge an Metadaten und Inhaltsdaten. Standardmäßig werden alle diese Daten als Klartext übermittelt. Dazu gehören: Absender, Empfänger, Passwörter, Inhalt der E-Mail, etc. Dies bezieht sich auf nahezu alle Stationen, die eine E-Mail über das Internet durchläuft, mindestens aber folgende:
+\begin{itemize}
+\item MUA kommuniziert mit entfernten MSA
+\item MTA kommuniziert mit entfernten MTA
+\item MUA kommuniziert mit entfernten POP3/IMAP4 Server
+\end{itemize}
+
+Bei komplexeren Konfigurationen kann es sogar möglich sein, dass Informationen innerhalb einer Server-Konfiguration (z.B. entfernte Datenbank) sichtbar werden.
+
+Um die Privatsphäre des Benutzers zu schützen, müssen so wenig Daten wie möglich und nur so viel wie nötig versendet werden. Die Daten, die gesendet werden müssen, sollten durch ein adäquates kryptografisches Verfahren verschlüsselt sein. Dies bezieht sich sowohl auf Metadaten als auch auf den Inhalt der E-Mail.
+
+Nahezu alle existierenden Protokolle wie SMTP, IMAP4 und POP3 besitzen eine gewisse Unterstützung für kryptografische Methoden, die nachfolgend noch dargelegt werden. Allerdings können aufgrund der Beschaffenheit der genannten Protokolle immer noch Verbindungsdaten abgefangen werden, selbst wenn die Transaktionen (z.B. die SMTP Sitzung) kryptografisch verschlüsselt sind. Keines der existierenden E-Mail Protokolle bietet für letzteres eine adäquate Lösung. Dies ist nämlich das Problem der Anonymisierung von Metadaten, die nicht durch Verschlüsselung selbst versteckt werden können.
+
+Anonymisierung von Metadaten in diesem Kontext unterscheidet sich also von der kryptografischen Verschlüsselung dadurch, dass, anstelle von Daten wie dem Inhalt einer Nachricht oder Transaktion, die Existenz der Transaktion oder Verbindung selbst für Außenstehende nicht nachvollziehbar ist, also die Verschleierung der Metadaten auf Netzwerkebene. Dies wird häufig über dedizierte Systeme erreicht, die über Routing-Algorithmen die Indirektion einer Verbindung vervielfachen. Diese Indirektion führt dazu, dass zum Nachvollziehen der Verbindung alle Stationen der Route bekannt sein müssen. Ein Beispiel eines solchen Algorithmus ist das \QuoteDirectNoPage{Onion Routing}{Syverson97anonymousconnections}.
+
+Allerdings sind alle genannten Protokolle in der Lage, zumindest auf der Seite der kryptografischen Verschlüsselung etwas zu leisten.
+
+Demnach liegt dieser Arbeit die Motivation zugrunde, das E-Mail System vor allem hinsichtlich der Anonymität für den Benutzer zu verbessern. Ob bestehende Systeme dies leisten können oder ob völlig neue Systeme entwickelt werden müssen, soll hier diskutiert werden.
+In dem Zuge wird nachfolgend der aktuelle Stand der Verschlüsselung und Anonymität von E-Mail Kommunikation untersucht und die Anforderungen an eine adäquate Lösung formuliert.

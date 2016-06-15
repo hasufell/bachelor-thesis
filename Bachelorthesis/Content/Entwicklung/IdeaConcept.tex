@@ -1,0 +1,8 @@
+Zur Lösung der Anforderungen in \autoref{tab:FunctionalRequirements} wird nachfolgend ein Algorithmus diskutiert und vorgestellt, der die Verbindung zwischen MTAs auf SMTP-Ebene anonymisieren soll, sodass Sender und Empfänger einer E-Mail nicht durch Verfolgung von IP-Adressdaten nachvollzogen werden können.
+
+Bei der Überlegung eines solchen Algorithmus spielt vor allem \autoref{text:NFA1} eine Rolle. Alternative E-Mail Systeme mit einem Schwerpunkt auf Datensicherheit wurden bereits in Kapitel 3 vorgestellt. Im Zuge dieser Arbeit wird allerdings versucht, der Akzeptanz halber eine SMTP-basierte Lösung zu entwickeln. Dies soll, mit minimalem Aufwand für E-Mail Server Betreiber und Nutzer, eine Verbesserung der Datensicherheit ermöglichen.
+
+Bei der Wahl und Entwicklung des Algorithmus wurde vor allem Wert darauf gelegt, dass keine spezifischen SMTP Erweiterungen notwendig sind. Somit soll dieser auf dem Minimum des IMF und SMTP Protokolls fußen.
+
+Die Anonymisierung soll über zufälliges Routing realisiert werden, welches kryptografisch gestützt wird. Alle Informationen zum Routing sollen in der E-Mail kodiert sein. Jeder Knoten soll zu jedem Zeitpunkt nur den Nachfolger und Vorgänger kennen. Die originale E-Mail darf nicht modifiziert werden, was bedeutet, dass ein Verschachtelungsverfahren angewendet werden muss.
+

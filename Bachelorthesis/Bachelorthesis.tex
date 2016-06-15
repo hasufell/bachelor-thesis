@@ -1,0 +1,161 @@
+\documentclass[	%draft, % To display over/unterfull hboxes
+				a4paper, % use DIN A4 Paper
+				onecolumn, % Only one Column of text
+				oneside, % Pint only right sides
+				titlepage, % Print a titlepage
+				openany, % Open new chapter on any page
+				12pt] % Text size
+				{report}
+
+\include{Content/Settings}
+
+\begin{document}
+
+
+
+\thispagestyle{empty}
+\input{Content/TitlePage}
+\input{Content/Abstract}
+
+
+\setcounter{page}{3}
+\tableofcontents
+
+\chapter{Einleitung}
+	\input{Content/Intro}
+	\section{E-Mail Format (IMF)}
+		\input{Content/Intro/Format}
+	\section{E-Mail Protokolle}
+		\input{Content/Intro/Protokolle}
+		\subsection{SMTP}
+			\input{Content/Intro/Protokolle/SMTP}
+		\subsection{POP3}
+			\input{Content/Intro/Protokolle/POP3}
+		\subsection{IMAP4}
+			\input{Content/Intro/Protokolle/IMAP4}
+	\section{E-Mail als Gesamtsystem}
+		\input{Content/Intro/Gesamtsystem}
+	
+\chapter{Motivation und Problematik}
+	\input{Content/Problematik}
+		\section{Betrachtung von Datenschutz in aktuellen E-Mail Systemen}
+			\input{Content/Problematik/BetrachtungDatenschutz}
+			\subsection{Verschlüsselung von E-Mail-Verkehr}
+				\input{Content/Problematik/BetrachtungDatenschutz/Verschluesselung}
+				\subsubsection{GPG}
+					\input{Content/Problematik/BetrachtungDatenschutz/Verschluesselung/GPG}
+			\subsubsection{TLS}
+				\input{Content/Problematik/BetrachtungDatenschutz/Verschluesselung/TLS}
+			\subsubsection{STARTTLS}
+				\input{Content/Problematik/BetrachtungDatenschutz/Verschluesselung/STARTTLS}
+		\subsection{Anonymität von E-Mail-Verkehr}
+			\input{Content/Problematik/BetrachtungDatenschutz/Anonymitaet}
+			\subsubsection{TorBirdy}
+					\input{Content/Problematik/BetrachtungDatenschutz/Anonymitaet/TorBirdy}
+		\subsection{Bewertung}
+			\input{Content/Problematik/BetrachtungDatenschutz/Bewertung}
+	\section{Anforderungen an eine adäquate Lösung}
+		\input{Content/Problematik/Anforderungen}
+	
+\chapter{Alternative Lösungen bzw. E-Mail Systeme}
+	\input{Content/AlternativeLoesungen}
+	\section{Dark Mail}
+		\input{Content/AlternativeLoesungen/DarkMail}
+	\section{Bewertung}
+		\input{Content/AlternativeLoesungen/Bewertung}
+		
+\chapter{Entwicklung eines SMTP-basierten Anonymisierungs-Algorithmus}
+	\input{Content/Entwicklung}
+	\section{Idee \& Konzept}
+		\input{Content/Entwicklung/IdeaConcept}
+		\subsection{Algorithmus}
+			\input{Content/Entwicklung/IdeaConcept/Algorithmus}
+	\section{Methoden}
+		\input{Content/Entwicklung/Methoden}
+	\section{Realisierung}
+		\input{Content/Entwicklung/Realisierung}	
+		\subsection{Testsystem}
+			\input{Content/Entwicklung/Realisierung/Testsystem}
+		\subsection{Implementierung}
+			\input{Content/Entwicklung/Realisierung/Implementierung}
+			\subsubsection{Wahl der SMTP-Software}
+				\input{Content/Entwicklung/Realisierung/Implementierung/Wahl}
+			\subsubsection{Übersicht über Haraka}
+				\input{Content/Entwicklung/Realisierung/Implementierung/Haraka}
+			\subsubsection{Wahl des Einsprungpunktes}
+				\input{Content/Entwicklung/Realisierung/Implementierung/Einsprungpunkt}				
+	
+			\subsubsection{Implementierung MTA-Entscheider}
+				\input{Content/Entwicklung/Realisierung/Implementierung/MTA-Entscheider}
+			\subsubsection{SMTP-Gateway und MystMail Erstellung}
+				\input{Content/Entwicklung/Realisierung/Implementierung/SMTP-gateway}
+			\subsubsection{Haraka Konfiguration}
+				\input{Content/Entwicklung/Realisierung/Implementierung/Konfiguration}				
+							
+\chapter{Evaluation \& Validation}
+	\input{Content/EvaluationValidation}
+	
+\chapter{Ausblick}
+	\input{Content/LookOut}
+	\section{Theoretische Probleme}
+		\input{Content/LookOut/TheoretischeProbleme}
+		\subsubsection{Verschlüsselungsalgorithmus}
+			\input{Content/LookOut/TheoretischeProbleme/Verschluesselung}
+		\subsubsection{Public-Key System}
+			\input{Content/LookOut/TheoretischeProbleme/PublicKey}
+		\subsubsection{Routing-Algorithmus}
+			\input{Content/LookOut/TheoretischeProbleme/RoutingAlgo}				\subsubsection{Kryptografie-System insgesamt}
+			\input{Content/LookOut/TheoretischeProbleme/KryptografieSystem}	
+		\subsubsection{Fehlen einer Spezifikation}
+			\input{Content/LookOut/TheoretischeProbleme/Spezifikation}		
+
+	\section{Praktische Probleme}
+		\input{Content/LookOut/PraktischeProbleme}
+		\subsubsection{Professionelle Implementierung}
+			\input{Content/LookOut/PraktischeProbleme/Implementierung}
+		\subsubsection{Fehlerbehandlung}
+			\input{Content/LookOut/PraktischeProbleme/Fehlerbehandlung}
+		\subsubsection{Verifizierung und Authentizität}
+			\input{Content/LookOut/PraktischeProbleme/Verify}		
+		\subsubsection{Spam-Abwehr und Traffic}
+			\input{Content/LookOut/PraktischeProbleme/Spam}
+		\subsubsection{Directory Server}
+			\input{Content/LookOut/PraktischeProbleme/DirectoryServer}	
+		\subsubsection{Zuverlässigkeit}
+			\input{Content/LookOut/PraktischeProbleme/Zuverlaessigkeit}		
+		\subsubsection{Gesamtsystem}
+			\input{Content/LookOut/PraktischeProbleme/Gesamtsystem}	
+		
+		
+% appendix
+\input{Appendix}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\lstlistoflistings
+
+\cleardoublepage
+\phantomsection
+\markboth{\uppercase{\ListOfAbbreviations}}{}
+\chapter*{\ListOfAbbreviations}
+\addcontentsline{toc}{chapter}{\ListOfAbbreviations}
+\input{Content/ListOfAbbreviations/ListOfAbbreviations}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{BachelorthesisLiterature}
+
+
+\end{document}

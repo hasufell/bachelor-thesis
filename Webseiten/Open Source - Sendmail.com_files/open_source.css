@@ -1,0 +1,137 @@
+blockquote {
+background-color:#EBEBEB;
+font-style:italic;
+padding:5px 20px;
+}
+
+.clean_bordered_table {border-collapse:collapse;border:1px solid #AAA;}
+.clean_bordered_table td {border:1px solid #AAA;padding:6px;}
+
+/* round corner box for the apps pages. */
+.b1h, .b2h, .b3h, .b4h, .b2bh, .b3bh, .b4bh{font-size:1px; overflow:hidden; display:block;}
+.b1h {height:1px; background:#CAD3DD; margin:0 5px;}
+.b2h, .b2bh {height:1px; background:#CAD3DD; border-right:2px solid #CAD3DD; border-left:2px solid #CAD3DD; margin:0 3px;}
+.b3h, .b3bh {height:1px; background:#CAD3DD; border-right:1px solid #CAD3DD; border-left:1px solid #CAD3DD; margin:0 2px;}
+.b4h, .b4bh {height:2px; background:#CAD3DD; border-right:1px solid #CAD3DD; border-left:1px solid #CAD3DD; margin:0 1px;}
+.b2bh, .b3bh, .b4bh {background: #CAD3DD;}
+.headh {background: #CAD3DD; border-right:1px solid #CAD3DD; border-left:1px solid #CAD3DD;}
+.headh h2, .headh h3, .headh h4 {margin: 0px 10px 0px 10px; padding-bottom: 6px;color:#00549E;}
+.contenth {background: #FFF; border-right:1px solid #CAD3DD; border-left:1px solid #CAD3DD;}
+/* .contenth div {margin-left: 12px; padding-top: 5px;} */
+
+.shoppingcart_top {float:right;margin:0 10px 0 0;border:0;}
+.shoppingcart_btm {float:right;margin:10px 10px 0 0;border:0;}
+
+.applayout_top {width:940px;}
+.applayout_left_box {width:160px;float:left;}
+.applayout_right_box_content {background: #FFF; border-right:1px solid #CAD3DD; border-left:1px solid #CAD3DD;margin-left:159px;}
+.applayout_right_box_content_btm {margin-left:159px;}
+
+
+.module_outter {width:770px;}
+.module_inner {width:760px;}
+.module_inner h3 {color:#8C312F;}
+.module_icon {float:left;margin:18px 0 0 10px;}
+.module_desc {margin-left:95px;width:660px;}
+.module_desc li {list-style-type:disc;color:#98002E;}
+
+/* setting colors for apps tables */
+.apptable table {background-color:#CAD3DD;border-collapse:collapse;display:block;border:0;} /* width:953px;? do we need collapse? */
+/* .apptable td {vertical-align:top;text-align:center;width:20%;border-right:1px solid #aaa;background:#FFF;} */
+.apptable td {vertical-align:top;width:16.6%;text-align:center;border-right:1px solid #aaa;background:#FFF;}
+.apptable td.logos {vertical-align:middle;height:150px;}
+.apptable td.logos_no_right_border {vertical-align:middle;height:150px;border-right:0;}
+.apptable td.desc {text-align:left;padding:15px;}
+.apptable td.desc_no_right_border {text-align:left;padding:15px;border-right:0;} 
+/* .apptable th {vertical-align:top;text-align:center;width:20%;border-right:1px solid #aaa;font-size:11pt;background-color:#CAD3DD;border-collapse:collapse;} */
+.apptable th {vertical-align:top;text-align:center;border-right:1px solid #aaa;font-size:11pt;background-color:#CAD3DD;border-collapse:collapse;}
+.apptable .no_right_border {border-right:0;border-collapse:display:block;}
+.apptable img {border:0;}
+
+/* app portal */
+.app_portal_outter {width:955px;}
+.headline {color:#00549E;font-size:12pt;}
+.subhead {color:#98002E;margin:10px 0 10px 0;}
+.text_body {margin-left:40px;}
+/* .text_body_2 {width:380px;} */
+.text_bottom {margin:44px 0 0 20px;}
+
+/* general css params */
+.centered {text-align:center;}
+.noborder {border:0;}
+.black {color:#000;}
+.blue {color:#00549E;}
+.reg {font-size:smaller;vertical-align:top}
+
+hr {margin-left:10px;width:760px;}
+
+/* checkout form */
+
+/* #web_program_copy {float:left;width:300px;border:1px solid orange;background-color:#ffffff;} */
+#web_program_form_sf {float:right;width:320px;background-color:#ffffff;margin-top:12px;margin-left:19px;}
+#wp_form_col_span {width:auto;text-align:left;clear:right;padding:10px 0px 10px 20px;font-color:red;}
+form .wp {padding:10px 0px 10px;}
+.wp_form_div {width:350;margin-top:20px;border:0px solid orange;} 
+.wp_form_col_lt{float:left;width:150px;height:30px;text-align:right;padding:0px 10px 0px 0px;border:0px solid #00549e;}
+.wp_form_col_rt{float:left;width:180px;height:30px;text-align:left;clear: right;border:0px solid #00549e;}
+
+
+#hard_appliance_feature_table {
+	width:100%;
+	border-collapse: collapse;
+	margin-bottom:20px;
+}
+#hard_appliance_feature_table th { color:#fff; background-color: #00549e; }
+#hard_appliance_feature_table .gray { background-color: #A6B4AC; }
+#hard_appliance_feature_table .left_td {}
+
+#signing_keys_table {
+        width:100%;
+        border-collapse: collapse;
+        margin-bottom:20px;
+	text-align:center;
+}
+#signing_keys_table th { color:#fff; background-color: #00549e; }
+#signing_keys_table .gray { background-color: #A6B4AC; }
+#signing_keys_table .left_td {}
+
+#contact_table {
+        width:90%;
+        border-collapse: collapse;
+        margin-bottom:20px;
+	text-align:left;
+	border:1px solid #000;
+}
+#contact_table th { color:#fff; background-color: #00549e;width:50%; border:1px solid #000; padding:.4em 2em .4em 1em; }
+#contact_table td { width:50%;padding:.4em 2em .4em 1em; border:1px solid #000; }
+#contact_table .gray { background-color: #A6B4AC; }
+#contact_table .left_td {}
+
+#docs_table {
+        width:90%;
+        border-collapse: collapse;
+        margin-bottom:20px;
+	text-align:left;
+	border:1px solid #000;
+}
+#docs_table th { color:#fff; background-color: #00549e;width:50%; border:1px solid #000; padding:.4em 2em .4em 1em; }
+#docs_table td { width:25%;padding:.4em 2em .4em 1em; border:1px solid #000; }
+#docs_table .gray { background-color: #DADADA; }
+
+#private_dns h4 { margin: 2em 0 1em 0; }
+
+#bottom_dotted_table { border-collapse:collapse; 
+			vertical-align:top;
+			border-bottom:none;
+}
+#bottom_dotted_table td { border-bottom:1px dotted #000; 
+			padding:1em;
+			vertical-align:middle;
+}
+
+#bottom_dotted_table td.no_bottom_border { border-bottom:none; } 
+
+/* this is in resources/white_papers, but its using the tablet that is defined here. prob should put the table in main or something */
+#gartner_mq_table_head th { width:33%; padding:.5em;}
+#gartner_mq_table thead td { text-align:center;padding:.7em; }
+#gartner_mq_table td { border:1px solid #CAD3DD; padding:.3em; width:33%; }
